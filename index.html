@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fasset Korean Copy Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F2F3F5;--surface:#FFFFFF;--surface-2:#E9EBEF;--line:#D8DCE2;--line-strong:#B5BCC6;
+  --ink:#171A20;--ink-2:#4A5361;--ink-3:#7A838F;
+  --accent:#2247C0;--accent-soft:#E3E9FB;--accent-ink:#fff;
+  --ok:#1E7A4C;--ok-soft:#DCF2E5;--warn:#B1600D;--warn-soft:#FBEBD3;--bad:#A83838;--bad-soft:#F8E0E0;
+  --shadow:0 1px 2px rgba(23,26,32,.06),0 10px 30px -14px rgba(23,26,32,.25);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --kr:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --top:56px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--paper);color:var(--ink);font:14px/1.5 var(--sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+[lang="ko"]{font-family:var(--kr);word-break:keep-all}
+
+/* top bar */
+.top{height:var(--top);display:flex;align-items:center;gap:14px;padding:0 18px;background:var(--surface);border-bottom:1px solid var(--line);position:relative;z-index:30}
+.top .where{display:flex;align-items:baseline;gap:8px;min-width:0;margin-right:auto}
+.top .where .j{color:var(--ink-3)}
+.top .where .s{font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pill{background:var(--surface-2);border-radius:999px;padding:4px 12px;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:7px;border:1px solid var(--line-strong);background:var(--surface);font-weight:500;white-space:nowrap}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.btn.primary:hover{filter:brightness(1.08);background:var(--accent)}
+.btn.icon{width:34px;height:34px;justify-content:center;padding:0;font-size:18px}
+.btn:disabled{opacity:.45;cursor:default}
+.seg{display:flex;background:var(--surface-2);border-radius:7px;padding:2px}
+.seg button{padding:4px 10px;border-radius:5px;color:var(--ink-2);font-size:13px}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.saved{font-size:12px;color:var(--ink-3);white-space:nowrap}
+
+/* main */
+.main{display:grid;grid-template-columns:minmax(0,1fr) clamp(360px,30vw,480px);height:calc(100vh - var(--top))}
+.stage{overflow:auto;display:flex;justify-content:center;align-items:flex-start;padding:16px}
+.stage-inner{display:flex;gap:28px;align-items:flex-start}
+.phone-col{display:flex;flex-direction:column;align-items:center;gap:8px}
+.phone-col .cap{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.phone{position:relative;border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow);border:1px solid var(--line)}
+.phone img{display:block;width:100%;height:100%}
+.ov{position:absolute;inset:0}
+.box{position:absolute;cursor:pointer;border-radius:3px;outline:0 solid transparent;transition:background .12s,outline .12s}
+.box:hover,.box.hover{background:rgba(34,71,192,.14)}
+.box.sel{outline:2px solid var(--accent);outline-offset:1px;background:rgba(34,71,192,.08)}
+.box.fixed{cursor:default}
+.box.fixed:hover{background:transparent;outline:1.5px dashed var(--line-strong)}
+.patch{position:absolute;display:flex;overflow:visible;pointer-events:none;white-space:pre-wrap}
+.patch span{display:block;white-space:nowrap}
+.patch.multi span{white-space:normal}
+.patch.over span{text-decoration:underline dotted var(--warn) 1.5px;text-underline-offset:.12em}
+.patch.over2 span{text-decoration-color:var(--bad)}
+.tip{position:absolute;z-index:5;background:var(--ink);color:#fff;font-size:12px;padding:5px 8px;border-radius:5px;pointer-events:none;max-width:240px;transform:translateY(-100%);margin-top:-6px}
+.hint-narrow{display:none;padding:8px 16px;background:var(--warn-soft);color:var(--warn);font-size:13px}
+
+/* panel */
+.panel{background:var(--surface);border-left:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+.panel-head{padding:14px 18px 10px;border-bottom:1px solid var(--line)}
+.panel-head h2{margin:0;font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.panel-head p{margin:4px 0 0;font-size:12px;color:var(--ink-3)}
+.panel-list{overflow:auto;flex:1;min-height:0;padding-bottom:16px}
+.card{padding:12px 18px 12px 20px;border-bottom:1px solid var(--line);position:relative;display:grid;gap:7px}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:-1px;width:3px;background:transparent}
+.card.edited::before{background:var(--accent)}
+.card.ok::before{background:var(--ok)}
+.card.sel{background:var(--accent-soft)}
+.card .en{color:var(--ink-2);font-size:13px}
+.card .en .ph,.card .ko-view .ph{background:var(--surface-2);border-radius:3px;padding:0 4px;font-size:.9em;font-family:ui-monospace,Menlo,monospace}
+.card label.small{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);font-weight:600}
+.card textarea{width:100%;border:1px solid var(--line);border-radius:7px;padding:8px 10px;background:var(--surface);font-family:var(--kr);font-size:15px;line-height:1.45;resize:vertical;min-height:40px;word-break:keep-all}
+.card textarea:focus{border-color:var(--accent);outline:0;box-shadow:0 0 0 3px var(--accent-soft)}
+.card .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--ink-3)}
+.card .row .sp{margin-left:auto}
+.card .link{color:var(--accent);font-weight:500;font-size:12px}
+.card .link:hover{text-decoration:underline}
+.chk{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-2);cursor:pointer;user-select:none}
+.chk input{width:16px;height:16px;accent-color:var(--ok);margin:0}
+.chk.on{color:var(--ok);font-weight:500}
+.note{background:var(--warn-soft);border-radius:7px;padding:8px 10px;font-size:12.5px;color:var(--ink-2);display:grid;gap:4px}
+.note b{color:var(--warn);font-weight:600}
+.note .alt{font-family:var(--kr);color:var(--ink);font-size:13.5px}
+.fit{font-size:12px;display:flex;gap:6px;align-items:center}
+.fit.warn{color:var(--warn)}.fit.bad{color:var(--bad)}
+.fit i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.err{font-size:12px;color:var(--bad)}
+.tag{font-size:11px;padding:1px 6px;border-radius:4px;background:var(--surface-2);color:var(--ink-2)}
+.tag.edited{background:var(--accent-soft);color:var(--accent)}
+.section{padding:10px 18px;border-bottom:1px solid var(--line);background:var(--paper)}
+.section button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;color:var(--ink-2);font-weight:500}
+.section button .n{color:var(--ink-3);font-weight:400}
+.section button .chev{margin-left:auto;transition:transform .15s}
+.section button[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.section .why{font-size:12px;color:var(--ink-3);margin:6px 0 0 0}
+.panel-foot{padding:12px 18px;border-top:1px solid var(--line);display:grid;gap:8px;background:var(--surface)}
+.panel-foot .confirm{font-size:13px;color:var(--ink-2);display:grid;gap:8px}
+.panel-foot .confirm .r{display:flex;gap:8px}
+.empty{padding:30px 18px;color:var(--ink-3);text-align:center}
+
+/* drawer */
+.drawer{position:fixed;top:var(--top);left:0;bottom:0;width:340px;background:var(--surface);border-right:1px solid var(--line);box-shadow:var(--shadow);z-index:25;transform:translateX(-100%);transition:transform .18s ease;overflow:auto;padding:14px 12px 30px}
+.drawer.open{transform:none}
+.drawer h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin:14px 8px 6px;font-weight:600}
+.drawer h3:first-of-type{margin-top:0}
+.drawer .scr{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:8px 8px;border-radius:7px;color:var(--ink-2)}
+.drawer .scr:hover{background:var(--surface-2)}
+.drawer .scr[aria-current="true"]{background:var(--accent-soft);color:var(--ink);font-weight:500}
+.drawer .scr .dot{width:9px;height:9px;border-radius:50%;background:var(--line-strong);flex:none}
+.dot.edited{background:var(--accent)}.dot.done{background:var(--ok)}
+.drawer .scr .cnt{margin-left:auto;font-size:11px;color:var(--ink-3);white-space:nowrap}
+.drawer .scr .fitdot{width:7px;height:7px;border-radius:50%;flex:none}
+.fitdot.warn{background:var(--warn)}.fitdot.bad{background:var(--bad)}
+.scrim{position:fixed;inset:var(--top) 0 0 0;background:rgba(23,26,32,.25);z-index:24;display:none}
+.scrim.open{display:block}
+
+/* overlay / help */
+.overlay{position:fixed;inset:0;background:rgba(23,26,32,.45);display:grid;place-items:center;z-index:50;padding:20px}
+.overlay[hidden]{display:none}
+.modal{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);max-width:560px;width:100%;padding:26px 28px;display:grid;gap:14px}
+.modal h2{margin:0;font-size:18px}
+.modal ol{margin:0;padding-left:22px;display:grid;gap:10px;color:var(--ink-2)}
+.modal ol li b{color:var(--ink)}
+.modal .foot{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.modal .foot .sp{margin-left:auto}
+.banner{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:9px;font-size:13px;z-index:60;box-shadow:var(--shadow);max-width:90vw}
+.banner[hidden]{display:none}
+@media (max-width:1100px){
+  body{overflow:auto}
+  .main{grid-template-columns:1fr;height:auto}
+  .stage{overflow:visible}
+  .panel{border-left:0;border-top:1px solid var(--line)}
+  .panel-list{max-height:none}
+  .hint-narrow{display:block}
+}
+@media (max-width:760px){.stage-inner{flex-direction:column;align-items:center}.top .saved,.top .pill{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="where"><span class="j" id="t-journey">—</span><span class="s" id="t-screen">Loading…</span></div>
+  <span class="pill" id="t-progress">Screen 1 of 39 · 0 done</span>
+  <button class="btn" id="b-all">All screens</button>
+  <button class="btn icon" id="b-prev" title="Previous screen (←)" aria-label="Previous screen">‹</button>
+  <button class="btn icon" id="b-next" title="Next screen (→)" aria-label="Next screen">›</button>
+  <div class="seg" id="zoom"><button data-z="fit" aria-pressed="true">Fit</button><button data-z="large" aria-pressed="false">Larger</button></div>
+  <span class="saved" id="t-saved">Saved in this browser</span>
+  <button class="btn primary" id="b-export">Save my edits to a file</button>
+  <button class="btn icon" id="b-help" title="How this works" aria-label="How this works">?</button>
+</header>
+<div class="hint-narrow">This tool works best in a wider window.</div>
+
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="All screens"></nav>
+
+<main class="main">
+  <section class="stage" id="stage">
+    <div class="empty" id="rest-note" hidden style="max-width:520px;margin-top:40px;text-align:left;line-height:1.6"><b style="color:var(--ink)">No picture for these strings yet.</b><br>The app has about 400 screens and 32 have been photographed so far. Everything that is not on one of those pictures is listed in the panel on the right, grouped by area. Edit it there as text. As more screens are photographed, these strings will move to their pictures.</div>
+    <div class="stage-inner">
+      <div class="phone-col"><span class="cap">English (as it is today)</span><div class="phone" id="ph-en"><img id="img-en" alt=""><div class="ov" id="ov-en"></div></div></div>
+      <div class="phone-col"><span class="cap">Korean (preview)</span><div class="phone" id="ph-ko"><img id="img-ko" alt=""><div class="ov" id="ov-ko"></div></div></div>
+    </div>
+  </section>
+  <aside class="panel">
+    <div class="panel-head"><h2><span>Strings on this screen</span><span class="tag" id="p-count">0</span></h2><p>Click any text on either phone, or edit here. Changes show on the Korean phone as you type.</p></div>
+    <div class="panel-list" id="p-list"></div>
+    <div class="panel-foot" id="p-foot"></div>
+  </aside>
+</main>
+
+<div class="overlay" id="help" hidden>
+  <div class="modal" role="dialog" aria-labelledby="help-title">
+    <h2 id="help-title">How this works</h2>
+    <ol>
+      <li><b>On the left is the app in English. On the right is how it will look in Korean.</b> Click any text on either phone to edit it.</li>
+      <li><b>Fix the Korean in the panel on the right.</b> Your changes show up on the phone as you type. Tick “Looks good” when a line is fine.</li>
+      <li><b>When a screen is finished, press “Mark this screen as done”.</b> Your work saves automatically in this browser. When you are done for the day, press “Save my edits to a file” and send us the file.</li>
+    </ol>
+    <p style="margin:0;font-size:12.5px;color:var(--ink-3)">The Korean phone is a preview drawn over the English picture, so spacing is close to the real app but not exact. Text underlined in orange or red is likely too long for its space.</p>
+    <div class="foot">
+      <label class="btn" for="import-file" style="cursor:pointer">Continue from a file</label><input id="import-file" type="file" accept="application/json" hidden>
+      <span class="sp"></span>
+      <button class="btn primary" id="b-gotit">Got it</button>
+    </div>
+  </div>
+</div>
+<div class="banner" id="banner" hidden></div>
+
+<script>
+(async function(){
+  const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const PH_RE=/\{\{\s*(\w+)\s*\}\}/g;
+  const SAMPLE={amount:'1,250.00',currency:'USD',name:'지민',count:'3',coin:'BTC',percent:'1.00',time:'30',days:'7',balance:'6,800.60',limit:'2,500',code:'AB12CD',value:'jimin@email.com',otpType:'SMS',spend:'BTC',receive:'USDT',from:'BTC',to:'USDT',min:'10',max:'5,000',type:'USDT',symbol:'BTC',timer:'10',suffix:'···4821',channelName:'GoPay',current:'2',total:'5',deviceName:'iPhone 15',transactionType:'P2P',dynamicLink:'fasset.link/abc',appLink:'fasset.com/app'};
+  const fmtPh=s=>esc(s).replace(PH_RE,(m,n)=>`<span class="ph">{{${n}}}</span>`);
+  const withSample=s=>s.replace(PH_RE,(m,n)=>SAMPLE[n]??n);
+
+  const [copyRows,scr,ocr]=await Promise.all(['data/copy.json','data/screens.json','data/ocr.json'].map(u=>fetch(u).then(r=>r.json())));
+  const byKey=Object.fromEntries(copyRows.map(r=>[r.k,r]));
+  const screens=scr.screens.slice();
+  screens.push({id:'__rest',journey:'rest',journeyName:'Not yet captured',name:'All other strings',seq:1,img:null,ns:[]});
+  const REST_ID='__rest';
+
+  /* ---- state ---- */
+  const LS='fasset-ko-review-v2';
+  let S={edits:{},approved:{},done:{},seen:false};
+  try{S={...S,...JSON.parse(localStorage.getItem(LS)||'{}')}}catch(e){}
+  let savedAt=null;
+  function persist(){try{localStorage.setItem(LS,JSON.stringify(S));savedAt=new Date();tickSaved();}catch(e){$('#t-saved').textContent='Could not save in this browser';}}
+  function tickSaved(){ if(!savedAt) return; const m=Math.round((Date.now()-savedAt)/60000); $('#t-saved').textContent='Saved in this browser · '+(m<1?'just now':m+' min ago'); }
+  setInterval(tickSaved,30000);
+  const koOf=k=>S.edits[k]??byKey[k].ko;
+
+  /* ---- fit measurement ---- */
+  const mctx=document.createElement('canvas').getContext('2d');
+  function fitRatio(k,m){ // m = ocr match box (image px)
+    const fs=m.lh*0.9; mctx.font=`500 ${fs}px "Noto Sans KR", sans-serif`;
+    const txt=withSample(koOf(k)); const lines=m.lines||1;
+    const wKo=mctx.measureText(txt).width; const avail=m.w*lines; return wKo/Math.max(avail,1);
+  }
+  function fitLevel(r){return r>1.15?'bad':r>1?'warn':''}
+
+  /* ---- per screen model ---- */
+  let idx=Math.max(0,screens.findIndex(s=>s.id===(localStorage.getItem(LS+':screen')||''))); if(idx<0) idx=0;
+  let sel=null, zoom='fit', scale=1, imgW=1080, imgH=2400, sampleCtx=null;
+  let restQ='';
+  function screenModel(s){
+    if(s.id===REST_ID){
+      const onScreen=new Set(); for(const sid in ocr) ocr[sid].matches.forEach(m=>onScreen.add(m.k));
+      const covered=new Set(); scr.screens.forEach(x=>x.ns.forEach(n=>covered.add(n)));
+      let hidden=copyRows.filter(r=>r.canon===r.k&&!r.keep&&!onScreen.has(r.k)&&!covered.has(r.ns));
+      if(restQ){const q=restQ.toLowerCase(); hidden=hidden.filter(r=>r.en.toLowerCase().includes(q)||r.ko.toLowerCase().includes(q));}
+      hidden.sort((a,b)=>a.ns.localeCompare(b.ns)||a.k.localeCompare(b.k));
+      return {visible:[],hidden,unmatched:[],rest:true};
+    }
+    const o=ocr[s.id]; const visible=[]; const seenK=new Set();
+    for(const m of o.matches){ if(seenK.has(m.k)) { visible.find(v=>v.k===m.k).boxes.push(m); continue;} seenK.add(m.k); visible.push({k:m.k,boxes:[m]}); }
+    visible.sort((a,b)=>a.boxes[0].y-b.boxes[0].y||a.boxes[0].x-b.boxes[0].x);
+    const ns=new Set(s.ns);
+    const hidden=copyRows.filter(r=>r.canon===r.k&&!r.keep&&ns.has(r.ns)&&!seenK.has(r.k)).sort((a,b)=>a.k.localeCompare(b.k));
+    return {visible,hidden,unmatched:o.unmatched};
+  }
+  function screenStatus(s){ if(s.id===REST_ID) return {done:false,edited:false,checked:0,total:0,fit:''}; const M=screenModel(s); const keys=M.visible.map(v=>v.k); const edited=keys.some(k=>S.edits[k]!=null); let fit=''; for(const v of M.visible){const l=fitLevel(fitRatio(v.k,v.boxes[0])); if(l==='bad') fit='bad'; else if(l==='warn'&&!fit) fit='warn';} return {done:!!S.done[s.id],edited,checked:keys.filter(k=>S.approved[k]||S.edits[k]!=null).length,total:keys.length,fit}; }
+
+  /* ---- layout ---- */
+  function layout(){
+    const stage=$('#stage'); const availH=stage.clientHeight-32; const availW=stage.clientWidth-32-28;
+    let h= zoom==='fit'? Math.min(availH, (availW/2)*imgH/imgW) : Math.max(availH*1.6, 1400);
+    if(window.innerWidth<=1100&&zoom==='fit') h=Math.min(h, window.innerHeight*0.9);
+    const w=h*imgW/imgH; scale=w/imgW;
+    ['#ph-en','#ph-ko'].forEach(q=>{const el=$(q); el.style.width=w+'px'; el.style.height=h+'px';});
+    renderOverlays();
+  }
+  window.addEventListener('resize',layout);
+  $('#zoom').addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return; zoom=b.dataset.z; document.querySelectorAll('#zoom button').forEach(x=>x.setAttribute('aria-pressed',x===b)); layout();});
+
+  /* ---- colour sampling from the English capture ---- */
+  function sampleColors(m){
+    if(!sampleCtx) return {bg:'#fff',fg:'#111'};
+    const x0=Math.max(0,m.x-6), y0=Math.max(0,m.y-4), w=Math.min(imgW-x0,m.w+12), h=Math.min(imgH-y0,m.h+8);
+    let d; try{d=sampleCtx.getImageData(x0,y0,w,h).data}catch(e){return {bg:'#fff',fg:'#111'}}
+    // bg = median of border pixels; fg = pixel most distant from bg
+    const border=[]; const step=Math.max(1,Math.floor((w+h)/80));
+    for(let x=0;x<w;x+=step){border.push((0*w+x)*4);border.push(((h-1)*w+x)*4);} for(let y=0;y<h;y+=step){border.push((y*w+0)*4);border.push((y*w+w-1)*4);}
+    const rs=[],gs=[],bs=[]; border.forEach(i=>{rs.push(d[i]);gs.push(d[i+1]);bs.push(d[i+2]);});
+    const med=a=>{a.sort((p,q)=>p-q);return a[a.length>>1]};
+    const bg=[med(rs),med(gs),med(bs)];
+    let best=0,fg=[0,0,0];
+    for(let i=0;i<d.length;i+=16){const dist=Math.abs(d[i]-bg[0])+Math.abs(d[i+1]-bg[1])+Math.abs(d[i+2]-bg[2]); if(dist>best){best=dist;fg=[d[i],d[i+1],d[i+2]];}}
+    if(best<60) fg=[20,20,20];
+    return {bg:`rgb(${bg.join(',')})`,fg:`rgb(${fg.join(',')})`};
+  }
+
+  /* ---- overlays ---- */
+  const colorCache={};
+  function renderOverlays(){
+    const s=screens[idx]; const M=screenModel(s);
+    const ovEn=$('#ov-en'), ovKo=$('#ov-ko'); let en='', ko='';
+    for(const v of M.visible){
+      for(const m of v.boxes){
+        const st=`left:${m.x*scale}px;top:${m.y*scale}px;width:${m.w*scale}px;height:${m.h*scale}px`;
+        const cls=`box ${sel===v.k?'sel':''}`;
+        en+=`<div class="${cls}" data-k="${esc(v.k)}" style="${st}" title="${esc(byKey[v.k].en)}"></div>`;
+        const ck=s.id+'|'+m.x+'|'+m.y; const c=colorCache[ck]||(colorCache[ck]=sampleColors(m));
+        const fs=m.lh*0.9*scale; const cx=m.x+m.w/2; const align= Math.abs(cx-imgW/2)<40?'center':(m.x>imgW*0.55?'right':'left');
+        const r=fitRatio(v.k,m); const lvl=fitLevel(r);
+        const txt=withSample(koOf(v.k)); const multi=(m.lines||1)>1;
+        const pad=4*scale;
+        ko+=`<div class="patch ${multi?'multi':''} ${lvl==='warn'?'over':lvl==='bad'?'over over2':''}" style="left:${(m.x-pad)*scale}px;top:${(m.y-2)*scale}px;width:${(m.w+2*pad)*scale}px;min-height:${m.h*scale}px;background:${c.bg};color:${c.fg};font-size:${fs}px;line-height:${(m.lh*1.15)*scale}px;justify-content:${align==='center'?'center':align==='right'?'flex-end':'flex-start'};text-align:${align};padding:0 ${pad}px;align-items:${multi?'flex-start':'center'}" lang="ko"><span>${esc(txt)}</span></div>`;
+        ko+=`<div class="${cls}" data-k="${esc(v.k)}" style="${st}"></div>`;
+      }
+    }
+    for(const u of M.unmatched){
+      const st=`left:${u.x*scale}px;top:${u.y*scale}px;width:${u.w*scale}px;height:${u.h*scale}px`;
+      en+=`<div class="box fixed" data-fixed="1" style="${st}"></div>`; ko+=`<div class="box fixed" data-fixed="1" style="${st}"></div>`;
+    }
+    ovEn.innerHTML=en; ovKo.innerHTML=ko;
+  }
+  function bindOverlay(ov){
+    let tip=null;
+    ov.addEventListener('click',e=>{const b=e.target.closest('.box'); if(!b||b.dataset.fixed) return; select(b.dataset.k,true);});
+    ov.addEventListener('mouseover',e=>{const b=e.target.closest('.box'); if(!b) return;
+      if(b.dataset.fixed){ tip=document.createElement('div'); tip.className='tip'; tip.textContent='This text is fixed in the app for now. You do not need to check it.'; tip.style.left=b.style.left; tip.style.top=b.style.top; ov.appendChild(tip); return; }
+      document.querySelectorAll(`.box[data-k="${CSS.escape(b.dataset.k)}"]`).forEach(x=>x.classList.add('hover'));
+      const card=document.querySelector(`.card[data-k="${CSS.escape(b.dataset.k)}"]`); if(card) card.classList.add('hover');
+    });
+    ov.addEventListener('mouseout',e=>{const b=e.target.closest('.box'); if(!b) return; if(tip){tip.remove();tip=null;} document.querySelectorAll('.box.hover').forEach(x=>x.classList.remove('hover'));});
+  }
+  bindOverlay($('#ov-en')); bindOverlay($('#ov-ko'));
+
+  /* ---- panel ---- */
+  let hiddenOpen=false;
+  function card(k,m){
+    const r=byKey[k]; const ko=koOf(k); const edited=S.edits[k]!=null; const ok=!!S.approved[k];
+    const enPh=[...r.en.matchAll(PH_RE)].map(x=>x[1]); const koPh=[...ko.matchAll(PH_RE)].map(x=>x[1]);
+    const missing=enPh.filter(p=>!koPh.includes(p));
+    let fitHTML=''; if(m){const l=fitLevel(fitRatio(k,m)); if(l==='warn') fitHTML=`<div class="fit warn"><i></i>A bit long. It may wrap or get cut off in the app.</div>`; if(l==='bad') fitHTML=`<div class="fit bad"><i></i>Too long for this space. Please shorten.</div>`;}
+    let noteHTML=''; const f=r.flag;
+    if(f&&f.type==='needs_context'&&f.cells[3]) noteHTML=`<div class="note"><b>Translator's note</b><span>${esc(f.cells[3])}</span>${f.cells[4]?`<span class="alt">${esc(f.cells[4])}</span><span><button class="link" data-alt="${esc(f.cells[4].split(/\s(?:if|when|\()/)[0].replace(/^`|`$/g,''))}">Use this instead</button></span>`:''}</div>`;
+    else if(f&&f.type==='length_flags') noteHTML=`<div class="note"><b>Translator's note</b><span>The Korean here is longer than the English. ${esc(f.cells.slice(1).join(' '))}</span></div>`;
+    return `<article class="card ${edited?'edited':''} ${ok?'ok':''} ${sel===k?'sel':''}" data-k="${esc(k)}">
+      <div class="en">${fmtPh(r.en)}</div>
+      <textarea lang="ko" data-k="${esc(k)}" rows="${ko.length>40?3:1}" aria-label="Korean">${esc(ko)}</textarea>
+      ${missing.length?`<div class="err">This needs the same ${missing.map(p=>`{{${p}}}`).join(', ')} tag as the English. Press “Reset to original” to bring it back.</div>`:''}
+      ${fitHTML}${noteHTML}
+      <div class="row">
+        <label class="chk ${ok?'on':''}"><input type="checkbox" data-ok="${esc(k)}" ${ok?'checked':''} ${missing.length?'disabled':''}> Looks good</label>
+        ${edited?'<span class="tag edited">edited</span>':''}
+        <span class="sp"></span>
+        ${edited?`<button class="link" data-reset="${esc(k)}">Reset to original</button>`:''}
+      </div>
+    </article>`;
+  }
+  function renderPanel(){
+    const s=screens[idx]; const M=screenModel(s);
+    $('#p-count').textContent=M.rest?M.hidden.length:M.visible.length;
+    let html=M.visible.map(v=>card(v.k,v.boxes[0])).join('');
+    if(M.rest){
+      html=`<div class="section" style="background:var(--surface)"><div class="search" style="display:flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:7px;padding:6px 10px;background:var(--paper)"><span aria-hidden="true">⌕</span><input id="rest-q" value="${esc(restQ)}" placeholder="Search these strings…" style="border:0;background:none;flex:1;outline:0"></div><p class="why">These strings appear on screens that have not been photographed yet, so there is no picture. Edit them here as text.</p></div>`;
+      html+=M.hidden.slice(0,restShown).map(r=>card(r.k,null)).join('');
+      if(M.hidden.length>restShown) html+=`<div style="padding:12px 18px"><button class="btn" id="rest-more">Show more (${M.hidden.length-restShown} left)</button></div>`;
+      $('#p-list').innerHTML=html; $('#p-foot').innerHTML=''; return;
+    }
+    if(!M.visible.length) html='<div class="empty">No translatable text was found on this picture.</div>';
+    if(M.hidden.length){
+      html+=`<div class="section"><button aria-expanded="${hiddenOpen}" id="b-hidden"><span>Also used on this screen but not shown in this picture</span><span class="n">(${M.hidden.length})</span><span class="chev">›</span></button>${hiddenOpen?'<p class="why">You cannot see these in the picture. They appear in another state of the screen, for example an error message.</p>':''}</div>`;
+      if(hiddenOpen) html+=M.hidden.map(r=>card(r.k,null)).join('');
+    }
+    $('#p-list').innerHTML=html;
+    // footer
+    const st=screenStatus(s); const unchecked=st.total-st.checked;
+    let foot='';
+    if(st.done) foot=`<button class="btn primary" id="b-done-next">Done · go to next screen</button><button class="link" id="b-undone" style="justify-self:center">Undo done</button>`;
+    else if(confirmDone) foot=`<div class="confirm"><span>${unchecked} string${unchecked===1?'':'s'} on this screen ${unchecked===1?'has':'have'} not been checked. Mark done anyway?</span><div class="r"><button class="btn primary" id="b-done-yes">Yes, mark done</button><button class="btn" id="b-done-no">Go back</button></div></div>`;
+    else foot=`<button class="btn primary" id="b-done">Mark this screen as done</button>`;
+    $('#p-foot').innerHTML=foot;
+  }
+  let confirmDone=false, restShown=100;
+  $('#p-list').addEventListener('input',e=>{ if(e.target.id==='rest-q'){ restQ=e.target.value; restShown=100; const pos=e.target.selectionStart; renderPanel(); const q=$('#rest-q'); if(q){q.focus(); q.setSelectionRange(pos,pos);} } });
+  $('#p-list').addEventListener('click',e=>{ if(e.target.closest('#rest-more')){ restShown+=100; renderPanel(); } });
+  $('#p-list').addEventListener('input',e=>{const t=e.target; if(t.tagName!=='TEXTAREA') return; const k=t.dataset.k; const v=t.value;
+    if(v===byKey[k].ko) delete S.edits[k]; else S.edits[k]=v;
+    if(S.approved[k]) delete S.approved[k];
+    persist(); renderOverlays(); refreshCardChrome(k);
+  });
+  function refreshCardChrome(k){ // update card classes without re-rendering textarea
+    const c=document.querySelector(`.card[data-k="${CSS.escape(k)}"]`); if(!c) return;
+    const edited=S.edits[k]!=null, ok=!!S.approved[k];
+    c.classList.toggle('edited',edited); c.classList.toggle('ok',ok);
+    const chk=c.querySelector('input[data-ok]'); if(chk){chk.checked=ok; chk.closest('.chk').classList.toggle('on',ok);}
+    const row=c.querySelector('.row'); const hasReset=!!c.querySelector('[data-reset]');
+    if(edited&&!hasReset){ row.insertAdjacentHTML('beforeend',`<button class="link" data-reset="${esc(k)}">Reset to original</button>`); row.querySelector('.sp').insertAdjacentHTML('afterend',''); if(!c.querySelector('.tag.edited')) row.querySelector('.chk').insertAdjacentHTML('afterend','<span class="tag edited">edited</span>'); }
+    if(!edited){ c.querySelector('[data-reset]')?.remove(); c.querySelector('.tag.edited')?.remove(); }
+    // fit line
+    const s=screens[idx]; const m=ocr[s.id].matches.find(x=>x.k===k); const old=c.querySelector('.fit'); if(old) old.remove();
+    if(m){const l=fitLevel(fitRatio(k,m)); if(l){const d=document.createElement('div'); d.className='fit '+l; d.innerHTML=`<i></i>${l==='warn'?'A bit long. It may wrap or get cut off in the app.':'Too long for this space. Please shorten.'}`; c.querySelector('textarea').after(d);} }
+    // placeholder error
+    const r=byKey[k]; const ko=koOf(k); const enPh=[...r.en.matchAll(PH_RE)].map(x=>x[1]); const koPh=[...ko.matchAll(PH_RE)].map(x=>x[1]); const missing=enPh.filter(p=>!koPh.includes(p));
+    const oldErr=c.querySelector('.err'); if(oldErr) oldErr.remove();
+    if(missing.length){const d=document.createElement('div'); d.className='err'; d.textContent=`This needs the same ${missing.map(p=>`{{${p}}}`).join(', ')} tag as the English. Press “Reset to original” to bring it back.`; c.querySelector('textarea').after(d);}
+    if(chk) chk.disabled=!!missing.length;
+    renderDrawer(); renderTop();
+  }
+  $('#p-list').addEventListener('change',e=>{const t=e.target; if(!t.dataset.ok) return; const k=t.dataset.ok; if(t.checked) S.approved[k]=true; else delete S.approved[k]; persist(); refreshCardChrome(k);});
+  $('#p-list').addEventListener('click',e=>{
+    const rs=e.target.closest('[data-reset]'); if(rs){const k=rs.dataset.reset; delete S.edits[k]; persist(); const ta=document.querySelector(`textarea[data-k="${CSS.escape(k)}"]`); if(ta) ta.value=byKey[k].ko; renderOverlays(); refreshCardChrome(k); return;}
+    const alt=e.target.closest('[data-alt]'); if(alt){const k=alt.closest('.card').dataset.k; const v=alt.dataset.alt.trim(); if(v){S.edits[k]=v; delete S.approved[k]; persist(); const ta=document.querySelector(`textarea[data-k="${CSS.escape(k)}"]`); if(ta) ta.value=v; renderOverlays(); refreshCardChrome(k);} return;}
+    if(e.target.closest('#b-hidden')){hiddenOpen=!hiddenOpen; renderPanel(); return;}
+    const c=e.target.closest('.card'); if(c&&!e.target.matches('textarea,input,button,label')) select(c.dataset.k,false);
+  });
+  $('#p-list').addEventListener('focusin',e=>{if(e.target.tagName==='TEXTAREA') select(e.target.dataset.k,false);});
+  $('#p-list').addEventListener('mouseover',e=>{const c=e.target.closest('.card'); if(!c) return; document.querySelectorAll(`.box[data-k="${CSS.escape(c.dataset.k)}"]`).forEach(x=>x.classList.add('hover'));});
+  $('#p-list').addEventListener('mouseout',e=>{document.querySelectorAll('.box.hover').forEach(x=>x.classList.remove('hover'));});
+  $('#p-foot').addEventListener('click',e=>{
+    const s=screens[idx]; const st=screenStatus(s);
+    if(e.target.closest('#b-done')){ if(st.total-st.checked>0){confirmDone=true; renderPanel();} else {S.done[s.id]=true; persist(); confirmDone=false; renderPanel(); renderDrawer(); renderTop(); checkAllDone();} }
+    if(e.target.closest('#b-done-yes')){S.done[s.id]=true; persist(); confirmDone=false; renderPanel(); renderDrawer(); renderTop(); checkAllDone();}
+    if(e.target.closest('#b-done-no')){confirmDone=false; renderPanel();}
+    if(e.target.closest('#b-undone')){delete S.done[s.id]; persist(); renderPanel(); renderDrawer(); renderTop();}
+    if(e.target.closest('#b-done-next')){ if(idx<screens.length-1) go(idx+1); }
+  });
+  function select(k,scroll){
+    sel=k; document.querySelectorAll('.box.sel').forEach(x=>x.classList.remove('sel')); document.querySelectorAll(`.box[data-k="${CSS.escape(k)}"]`).forEach(x=>x.classList.add('sel'));
+    document.querySelectorAll('.card.sel').forEach(x=>x.classList.remove('sel'));
+    let c=document.querySelector(`.card[data-k="${CSS.escape(k)}"]`);
+    if(!c&&!hiddenOpen){hiddenOpen=true; renderPanel(); c=document.querySelector(`.card[data-k="${CSS.escape(k)}"]`);}
+    if(c){c.classList.add('sel'); if(scroll){c.scrollIntoView({block:'center',behavior:'smooth'}); const ta=c.querySelector('textarea'); ta.focus({preventScroll:true});}}
+  }
+
+  /* ---- drawer, top bar ---- */
+  function renderDrawer(){
+    let html='',last='';
+    screens.forEach((s,i)=>{ if(s.journey!==last){html+=`<h3>${esc(s.journeyName)}</h3>`; last=s.journey;}
+      const st=screenStatus(s); const dot=st.done?'done':st.edited?'edited':'';
+      if(s.id===REST_ID){ const M=screenModel(s); const chk=M.hidden.filter(r=>S.approved[r.k]||S.edits[r.k]!=null).length; html+=`<button class="scr" data-i="${i}" aria-current="${i===idx}"><span class="dot ${st.done?'done':chk?'edited':''}"></span><span>${esc(s.name)}</span><span class="cnt">${chk} of ${M.hidden.length} checked</span></button><p class="why" style="font-size:12px;color:var(--ink-3);margin:6px 8px 0">The app has about 400 screens and 32 are captured so far. Strings for the rest are listed here as text only, and get pictures as more captures arrive.</p>`; return; }
+      html+=`<button class="scr" data-i="${i}" aria-current="${i===idx}"><span class="dot ${dot}"></span><span>${esc(s.name)}</span>${st.fit?`<span class="fitdot ${st.fit}" title="Some text may be too long"></span>`:''}<span class="cnt">${st.checked} of ${st.total} checked</span></button>`; });
+    $('#drawer').innerHTML=html;
+  }
+  $('#drawer').addEventListener('click',e=>{const b=e.target.closest('.scr'); if(b){go(+b.dataset.i); closeDrawer();}});
+  function openDrawer(){$('#drawer').classList.add('open');$('#scrim').classList.add('open');}
+  function closeDrawer(){$('#drawer').classList.remove('open');$('#scrim').classList.remove('open');}
+  $('#b-all').addEventListener('click',()=>$('#drawer').classList.contains('open')?closeDrawer():openDrawer());
+  $('#scrim').addEventListener('click',closeDrawer);
+  function renderTop(){
+    const s=screens[idx]; const done=Object.keys(S.done).filter(id=>screens.some(x=>x.id===id)).length;
+    $('#t-journey').textContent=s.journeyName+' ·'; $('#t-screen').textContent=s.name;
+    const real=screens.length-1;
+    $('#t-progress').textContent= s.id===REST_ID ? `${done} of ${real} screens done` : `Screen ${idx+1} of ${real} · ${done} done`;
+    $('#b-prev').disabled=idx===0; $('#b-next').disabled=idx===screens.length-1;
+  }
+  $('#b-prev').addEventListener('click',()=>idx>0&&go(idx-1)); $('#b-next').addEventListener('click',()=>idx<screens.length-1&&go(idx+1));
+  document.addEventListener('keydown',e=>{ if(e.target.matches('input,textarea')) return; if(e.key==='ArrowLeft'&&idx>0) go(idx-1); if(e.key==='ArrowRight'&&idx<screens.length-1) go(idx+1); if(e.key==='Escape'){closeDrawer();$('#help').hidden=true;} });
+
+  /* ---- go to screen ---- */
+  function go(i){
+    idx=i; sel=null; confirmDone=false; hiddenOpen=false; try{localStorage.setItem(LS+':screen',screens[idx].id)}catch(e){}
+    const s=screens[idx]; const img=$('#img-en'), img2=$('#img-ko');
+    sampleCtx=null; $('#ov-en').innerHTML=''; $('#ov-ko').innerHTML='';
+    const rest=s.id===REST_ID; $('.stage-inner').hidden=rest; $('#rest-note').hidden=!rest;
+    if(rest){ renderTop(); renderDrawer(); renderPanel(); return; }
+    img.alt=`${s.journeyName} · ${s.name} (English)`; img2.alt=`${s.journeyName} · ${s.name} (Korean preview)`;
+    const load=new Image(); load.crossOrigin='anonymous';
+    load.onload=()=>{ imgW=load.naturalWidth; imgH=load.naturalHeight; const c=document.createElement('canvas'); c.width=imgW; c.height=imgH; const cx=c.getContext('2d',{willReadFrequently:true}); cx.drawImage(load,0,0); sampleCtx=cx; for(const k in colorCache) if(k.startsWith(s.id+'|')) delete colorCache[k]; layout(); };
+    load.src=s.img; img.src=s.img; img2.src=s.img;
+    renderTop(); renderDrawer(); renderPanel(); layout();
+    $('#stage').scrollTop=0; $('#p-list').scrollTop=0;
+  }
+
+  /* ---- export / import ---- */
+  function banner(msg,ms=6000){const b=$('#banner'); b.textContent=msg; b.hidden=false; clearTimeout(banner.t); banner.t=setTimeout(()=>b.hidden=true,ms);}
+  $('#b-export').addEventListener('click',()=>{
+    const edits=Object.entries(S.edits).map(([k,v])=>({key:k,english:byKey[k]?.en,original_korean:byKey[k]?.ko,new_korean:v,approved:!!S.approved[k],also_used_as:byKey[k]?.dupes||[]}));
+    const out={exported:new Date().toISOString(),app:'Fasset CashApp',locale:'ko',edits,approved_unchanged:Object.keys(S.approved).filter(k=>S.edits[k]==null),screens_done:Object.keys(S.done),counts:{edits:edits.length,approved:Object.keys(S.approved).length,screens_done:Object.keys(S.done).length}};
+    const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`fasset-korean-review-${new Date().toISOString().slice(0,10)}.json`; document.body.appendChild(a); a.click(); a.remove();
+    banner('Your file is downloading. Send it to Hamis when you are finished for the day. You can keep working; it does not clear anything.');
+  });
+  $('#import-file').addEventListener('change',async e=>{
+    const f=e.target.files[0]; if(!f) return; let d; try{d=JSON.parse(await f.text())}catch(err){banner('That file could not be read.');return;}
+    const has=Object.keys(S.edits).length||Object.keys(S.approved).length||Object.keys(S.done).length;
+    if(has&&!confirm('This browser already has edits. Replace them with the file?')) return;
+    S.edits={}; S.approved={}; S.done={};
+    (d.edits||[]).forEach(x=>{ if(byKey[x.key]){S.edits[x.key]=x.new_korean; if(x.approved) S.approved[x.key]=true;} });
+    (d.approved_unchanged||[]).forEach(k=>{if(byKey[k]) S.approved[k]=true});
+    (d.screens_done||[]).forEach(id=>S.done[id]=true);
+    persist(); $('#help').hidden=true; go(idx);
+    banner(`Loaded ${(d.edits||[]).length} edits and ${(d.screens_done||[]).length} finished screens.`);
+    e.target.value='';
+  });
+  function checkAllDone(){ if(screens.filter(s=>s.id!==REST_ID).every(s=>S.done[s.id])) banner(`All ${screens.length-1} screens are marked done. Press “Save my edits to a file” and send it to Hamis. Thank you.`,10000); }
+
+  /* ---- help ---- */
+  $('#b-help').addEventListener('click',()=>$('#help').hidden=false);
+  $('#b-gotit').addEventListener('click',()=>{$('#help').hidden=true; S.seen=true; persist();});
+  $('#help').addEventListener('click',e=>{if(e.target===e.currentTarget){$('#help').hidden=true;}});
+  if(!S.seen) $('#help').hidden=false;
+
+  document.fonts?.ready.then(()=>renderOverlays());
+  go(idx); savedAt=null; $('#t-saved').textContent='Saves automatically in this browser';
+})();
+</script>
+</body>
+</html>

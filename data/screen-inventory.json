@@ -1,0 +1,6362 @@
+[
+  {
+    "route": "AppTabs",
+    "file": "src/route/TabNavigators.ios.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "login_06_dashboard",
+      "dashboard_01_home"
+    ],
+    "note": "nested navigator: main bottom tabs",
+    "container": true
+  },
+  {
+    "route": "WithdrawalMethodP2P",
+    "file": "src/screens/Dashboard/p2p/p2pNew/Withdrawal/WithdrawalMethod/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "p2pV2"
+    ],
+    "namespace_call_counts": {
+      "p2pV2": 4
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddWithdrawalMethod",
+    "file": "src/screens/Dashboard/p2p/p2pNew/Withdrawal/AddWithdrawalMethod/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "p2pV2",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "p2pV2": 3,
+      "new": 2
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EditWithdrawalMethod",
+    "file": "src/screens/Dashboard/p2p/p2pNew/Withdrawal/EditWithdrawalMethod/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "p2pV2",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "p2pV2": 5,
+      "new": 2
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pOrderCreatedScreen",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2pOrderCreatedScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "sellFlow": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 15,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pSellerOrderCreatedScreen",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2pSellerOrderCreatedScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "p2pTabs"
+    ],
+    "namespace_call_counts": {
+      "new": 2,
+      "p2pTabs": 2
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 12,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2PRealeasingFunds",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2PRealeasingFunds.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 15,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANHomeScreen",
+    "file": "src/screens/Dashboard/iban/screens/IBANHomeScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pWithdrawalMethod",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2pWithdrawalMethod.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 11,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pRemoveBank",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2pRemoveBank.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 9,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pHistory",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2pHistory.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pTransactionDetail",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2pTransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "MarketAssetListing",
+    "file": "src/screens/Dashboard/market_v4/screens/MarketAssetListing.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "market_v4"
+    ],
+    "namespace_call_counts": {
+      "market_v4": 19
+    },
+    "t_calls": 19,
+    "hardcoded_literals_estimate": 2,
+    "captured": true,
+    "capture_ids": [
+      "market_02_commodities",
+      "market_03_funds",
+      "market_04_bundles"
+    ]
+  },
+  {
+    "route": "DepositAvailability",
+    "file": "src/screens/Dashboard/today/screens/DepositAvailabilityScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositExchangeVerification",
+    "file": "src/screens/Dashboard/today/screens/DepositExchangeVerificationScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 15,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EditWatchList",
+    "file": "src/screens/Dashboard/portfolio/watchlist/editWatchList.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "portfolio",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "portfolio": 6,
+      "new": 2
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CoinDetail",
+    "file": "src/screens/Dashboard/market/detail/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PersonalInfo",
+    "file": "src/screens/Dashboard/account/personalInfo/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "myFasset",
+      "new_ob",
+      "account"
+    ],
+    "namespace_call_counts": {
+      "myFasset": 6,
+      "new_ob": 1,
+      "account": 1,
+      "new": 7
+    },
+    "t_calls": 15,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "UpdateInfo",
+    "file": "src/screens/Dashboard/account/updateInfo/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "myFasset",
+      "new_ob"
+    ],
+    "namespace_call_counts": {
+      "myFasset": 16,
+      "new_ob": 6
+    },
+    "t_calls": 22,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ReferralProgram",
+    "file": "src/screens/Dashboard/account/referral/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "referralProgram",
+      "account"
+    ],
+    "namespace_call_counts": {
+      "account": 2,
+      "referralProgram": 3
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "OtpAuthentication",
+    "file": "src/screens/Authentication/otpAuthentication/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "verifyDevice",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "new": 6,
+      "verifyDevice": 3,
+      "signUp": 2
+    },
+    "t_calls": 11,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "NewPhone",
+    "file": "src/screens/Dashboard/account/newPhone/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "myFasset",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "new": 2,
+      "myFasset": 2,
+      "signUp": 1
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "VerifyOtp",
+    "file": "src/screens/Dashboard/account/verifyOtp/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "myFasset",
+      "new",
+      "verifyDevice",
+      "pin"
+    ],
+    "namespace_call_counts": {
+      "new": 4,
+      "pin": 1,
+      "verifyDevice": 3,
+      "myFasset": 5
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SelectCrypto",
+    "file": "src/screens/Dashboard/trade/buy/selectCryptoBuy/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BuyCrypto",
+    "file": "src/screens/Dashboard/trade/buy/buyCrypto/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 17
+    },
+    "t_calls": 17,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Buy",
+    "file": "src/screens/Dashboard/trade/buy-sell/Screens/Buy/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "disclaimer",
+      "new",
+      "portfolio",
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "disclaimer": 6,
+      "new": 1,
+      "portfolio": 1,
+      "voucher": 1
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ConfirmBuy",
+    "file": "src/screens/Dashboard/trade/buy/confirmBuy/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "checkOut"
+    ],
+    "namespace_call_counts": {
+      "checkOut": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ConfirmBuyBanxa",
+    "file": "src/screens/Dashboard/trade/buy/confirmBuy/confirmBuyBanxa.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BuyReceipt",
+    "file": "src/screens/Dashboard/trade/buy/buyReceipt/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 12
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SelectCryptoSell",
+    "file": "src/screens/Dashboard/trade/sell/selectCryptoSell/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SellCrypto",
+    "file": "src/screens/Dashboard/trade/sell/sellCrypto/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Sell",
+    "file": "src/screens/Dashboard/trade/buy-sell/Screens/Sell/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "disclaimer",
+      "new",
+      "portfolio",
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "disclaimer": 6,
+      "new": 1,
+      "portfolio": 1,
+      "voucher": 1
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ConfirmSell",
+    "file": "src/screens/Dashboard/trade/sell/confirmSell/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 9
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddPayMethod",
+    "file": "src/screens/Authentication/addPayMethod/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "new": 25,
+      "signUp": 1
+    },
+    "t_calls": 26,
+    "hardcoded_literals_estimate": 1,
+    "captured": true,
+    "capture_ids": [
+      "kyc_ae_04_link_bank"
+    ]
+  },
+  {
+    "route": "BankStatement",
+    "file": "src/screens/Authentication/bankStatement/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 13
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewBuy",
+    "file": "src/screens/Dashboard/trade/buy/buyCrypto/PreviewBuy.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "vouchers",
+      "poa",
+      "voucher",
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "new": 8,
+      "vouchers": 1,
+      "poa": 1,
+      "voucher": 1,
+      "staking": 1
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewBuyv3",
+    "file": "src/screens/Dashboard/trade/buy/buyCrypto/PreviewBuyv3.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "voucher",
+      "poa",
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "new": 5,
+      "voucher": 2,
+      "poa": 1,
+      "staking": 1
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TradePreview",
+    "file": "src/screens/Dashboard/trade_v4/buy/TradePreview.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 5
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 1,
+    "captured": true,
+    "capture_ids": [
+      "buy_06_confirmation",
+      "sell_06_confirmation"
+    ]
+  },
+  {
+    "route": "Buy_v4",
+    "file": "src/screens/Dashboard/trade_v4/buy/Buy_v4.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 5,
+    "captured": true,
+    "capture_ids": [
+      "buy_01_trade_sheet"
+    ]
+  },
+  {
+    "route": "SelectAsset",
+    "file": "src/screens/Dashboard/trade_v4/buy/SelectAsset.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "tradeV4"
+    ],
+    "namespace_call_counts": {
+      "tradeV4": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "buy_02_asset_list"
+    ]
+  },
+  {
+    "route": "SellPaymentMethods",
+    "file": "src/screens/Dashboard/trade_v4/sell/SellPaymentMethods.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "sellFlow": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "sell_03_payment_method"
+    ]
+  },
+  {
+    "route": "SelectSellAsset",
+    "file": "src/screens/Dashboard/trade_v4/sell/SelectSellAsset.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "sellFlow": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "sell_02_asset_list"
+    ]
+  },
+  {
+    "route": "BuyKeyboardScreen",
+    "file": "src/screens/Dashboard/trade_v4/buy/BuyKeyboardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 37
+    },
+    "t_calls": 37,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "buy_04_amount_empty",
+      "buy_05_amount_filled"
+    ]
+  },
+  {
+    "route": "SellKeyboardScreen",
+    "file": "src/screens/Dashboard/trade_v4/sell/SellKeyboardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "sellFlow",
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "sellFlow": 26,
+      "buyV4": 17
+    },
+    "t_calls": 43,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "sell_04_amount_empty",
+      "sell_05_amount_filled"
+    ]
+  },
+  {
+    "route": "SelectPaymentMethod",
+    "file": "src/screens/Dashboard/trade_v4/buy/SelectPaymentMethod.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 1,
+    "captured": true,
+    "capture_ids": [
+      "buy_03_payment_method"
+    ]
+  },
+  {
+    "route": "Sell_v4",
+    "file": "src/screens/Dashboard/trade_v4/sell/Sell_v4.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 6,
+    "captured": true,
+    "capture_ids": [
+      "sell_01_trade_sheet"
+    ]
+  },
+  {
+    "route": "SwapAsset",
+    "file": "src/screens/Dashboard/trade_v4/swape/SwapAsset.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "swap_v4"
+    ],
+    "namespace_call_counts": {
+      "swap_v4": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Converted",
+    "file": "src/screens/Dashboard/trade_v4/swape/Converted.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "swap_v4"
+    ],
+    "namespace_call_counts": {
+      "swap_v4": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SwapKeyboardScreen",
+    "file": "src/screens/Dashboard/trade_v4/swape/SwapKeyboardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "swap_v4"
+    ],
+    "namespace_call_counts": {
+      "swap_v4": 22
+    },
+    "t_calls": 22,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Swap_v4",
+    "file": "src/screens/Dashboard/trade_v4/swape/Swap_v4.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "swap_v4"
+    ],
+    "namespace_call_counts": {
+      "swap_v4": 25
+    },
+    "t_calls": 25,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SwapTransactionDetail_v4",
+    "file": "src/screens/Dashboard/trade_v4/swape/SwapTransactionDetail_v4.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "swap_v4"
+    ],
+    "namespace_call_counts": {
+      "swap_v4": 15
+    },
+    "t_calls": 15,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TradeSuccess",
+    "file": "src/screens/Dashboard/trade_v4/buy/TradeSuccess.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "buy_07_success",
+      "sell_07_success"
+    ]
+  },
+  {
+    "route": "BuyTransactionDetail_v4",
+    "file": "src/screens/Dashboard/trade_v4/buy/BuyTransactionDetail_v4.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4",
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 15,
+      "sellFlow": 2
+    },
+    "t_calls": 17,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "history_03_detail"
+    ]
+  },
+  {
+    "route": "StockBuyTransactionDetail_v4",
+    "file": "src/screens/Dashboard/allTransactionHistory/StockBuyTransactionDetail_v4/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "sellFlow": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StockSellTransactionDetail_v4",
+    "file": "src/screens/Dashboard/allTransactionHistory/StockSellTransactionDetail_v4/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "swap_v4",
+      "buyV4",
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "swap_v4": 8,
+      "buyV4": 5,
+      "sellFlow": 4
+    },
+    "t_calls": 17,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BundleTransactionDetail_v4",
+    "file": "src/screens/Dashboard/allTransactionHistory/BundleTransactionDetail_v4/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4",
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 16,
+      "sellFlow": 2
+    },
+    "t_calls": 18,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ReceiveTransactionDetail_v4",
+    "file": "src/screens/Dashboard/allTransactionHistory/ReceiveTransactionDetail_v4/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SellTransactionDetail_v4",
+    "file": "src/screens/Dashboard/trade_v4/sell/SellTransactionDetail_v4.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4",
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 13,
+      "sellFlow": 5
+    },
+    "t_calls": 18,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewSell",
+    "file": "src/screens/Dashboard/trade/sell/sellCrypto/PreviewSell.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "poa",
+      "voucher",
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "new": 7,
+      "poa": 1,
+      "voucher": 1,
+      "staking": 1
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewConvert",
+    "file": "src/screens/Dashboard/trade/convert/convertCrypto/PreviewConvert.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "poa",
+      "voucher",
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "new": 5,
+      "poa": 1,
+      "voucher": 1,
+      "staking": 1
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SelectCryptoConvert",
+    "file": "src/screens/Dashboard/trade/convert/selectCryptoConvert/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ConvertCrypto",
+    "file": "src/screens/Dashboard/trade/convert/convertCrypto/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 16
+    },
+    "t_calls": 16,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FinancingCrypto",
+    "file": "src/screens/Dashboard/financing/financingCrypto/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "Financing"
+    ],
+    "namespace_call_counts": {
+      "Financing": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FinancingIntroScreen",
+    "file": "src/screens/Dashboard/financing/financingCrypto/IntroScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "RepayLoan",
+    "file": "src/screens/Dashboard/financing/financingCrypto/RepayPage.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "disclaimer",
+      "new",
+      "socialApp",
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "new": 1,
+      "socialApp": 1,
+      "disclaimer": 2,
+      "voucher": 1
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "LoanHistoryDetails",
+    "file": "src/screens/Dashboard/financing/financingCrypto/LoanHistoryDetails.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 7,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FinancingPreview",
+    "file": "src/screens/Dashboard/financing/financingCrypto/FinancingPreview.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "financing",
+      "modals"
+    ],
+    "namespace_call_counts": {
+      "financing": 10,
+      "modals": 3
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FinancingSuccess",
+    "file": "src/screens/Dashboard/financing/financingCrypto/FinancingSuccess.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ConfirmConvert",
+    "file": "src/screens/Dashboard/trade/convert/confirmConvert/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 7
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SelectCryptoSend",
+    "file": "src/screens/Dashboard/trade/send/selectCryptoSend/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 5
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CryptoSend",
+    "file": "src/screens/Dashboard/cryptoSend/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "cryptoWithDraw"
+    ],
+    "namespace_call_counts": {
+      "new": 6,
+      "cryptoWithDraw": 2
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 11,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendKeyboard",
+    "file": "src/screens/Dashboard/cryptoSend/SendKeyboard/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendOtp",
+    "file": "src/screens/Dashboard/cryptoSend/SendOtp/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendFunds",
+    "file": "src/screens/Dashboard/sendFunds/SendFunds.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 8,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SearchContacts",
+    "file": "src/screens/Dashboard/sendFunds/SearchContacts.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FindMyFriends",
+    "file": "src/screens/Dashboard/sendFunds/FindMyFriends.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PaymentLink",
+    "file": "src/screens/Dashboard/sendFunds/PaymentLink.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendFundsKeyboardScreen",
+    "file": "src/screens/Dashboard/sendFunds/SendFundsKeyboardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewSendFunds",
+    "file": "src/screens/Dashboard/sendFunds/PreviewSendFunds.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "sendFundsTransactionDetailScreen",
+    "file": "src/screens/Dashboard/sendFunds/SendFundsTransactionDetailScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "accountsV4",
+      "buyV4",
+      "transactionStatus"
+    ],
+    "namespace_call_counts": {
+      "accountsV4": 2,
+      "buyV4": 2,
+      "transactionStatus": 1
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 7,
+    "captured": true,
+    "capture_ids": [
+      "history_03_detail"
+    ]
+  },
+  {
+    "route": "SelectSendFundsAsset",
+    "file": "src/screens/Dashboard/sendFunds/SelectSendFundsAsset.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendScreen",
+    "file": "src/screens/Dashboard/trade/send/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 9,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendTravelRule",
+    "file": "src/screens/Dashboard/cryptoSend/SendTravelRule/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 8,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendAdditional",
+    "file": "src/screens/Dashboard/cryptoSend/SendAdditional/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 13,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SelectSendInternalCrypto",
+    "file": "src/screens/Dashboard/trade/sendInternal/sendInternalCrypto/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SelectCryptoReceive",
+    "file": "src/screens/Dashboard/trade/receive/selectCryptoReceive/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 5
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SetupComplete",
+    "file": "src/screens/Authentication/completeSetup/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "poa"
+    ],
+    "namespace_call_counts": {
+      "new": 8,
+      "poa": 1
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AllSet",
+    "file": "src/screens/Authentication/allSet/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "new": 6,
+      "portfolio": 1
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TwoFaOtpVerify",
+    "file": "src/screens/Dashboard/account/2faOtpVerify/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "verifyDevice",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "new": 3,
+      "verifyDevice": 3,
+      "signUp": 1
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Browser",
+    "file": "src/screens/Miscs/Browser.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack",
+      "Root stack"
+    ],
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AccSetup",
+    "file": "src/screens/Authentication/accSetup/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "kyc",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "kyc": 4,
+      "new": 3
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 6,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CountrySelect",
+    "file": "src/screens/Authentication/countrySelect/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "signUp",
+      "signup_new",
+      "new",
+      "new_ob",
+      "myFasset",
+      "tooltip",
+      "voucher",
+      "kyc"
+    ],
+    "namespace_call_counts": {
+      "signUp": 7,
+      "tooltip": 1,
+      "new": 5,
+      "new_ob": 5,
+      "voucher": 1,
+      "signup_new": 7,
+      "myFasset": 2,
+      "kyc": 1
+    },
+    "t_calls": 29,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Verify",
+    "file": "src/screens/Authentication/verifyAcc/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "signUp",
+      "verifyDevice",
+      "signup_new",
+      "ff_onboarding_3_copy_refresh",
+      "myFasset"
+    ],
+    "namespace_call_counts": {
+      "new": 7,
+      "signUp": 6,
+      "signup_new": 2,
+      "ff_onboarding_3_copy_refresh": 2,
+      "myFasset": 1,
+      "verifyDevice": 3
+    },
+    "t_calls": 21,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "livingCountry",
+    "file": "src/screens/Authentication/livingCountry/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "prepareNationality",
+    "file": "src/screens/Authentication/prepareNationality/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 15
+    },
+    "t_calls": 15,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "documentList",
+    "file": "src/screens/Authentication/documentList/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AccSetup1",
+    "file": "src/screens/Authentication/accSetup1/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 29
+    },
+    "t_calls": 29,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "UploadPOA",
+    "file": "src/screens/Authentication/uploadPOA/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "new": 11,
+      "signUp": 2
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "kyc_ae_02_proof_of_address"
+    ]
+  },
+  {
+    "route": "AccSetup2",
+    "file": "src/screens/Authentication/accSetup2/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 7
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "QnA",
+    "file": "src/screens/Authentication/QnA/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 10
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "kycFinish",
+    "file": "src/screens/Authentication/kycFinish/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 5
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "MarketAd",
+    "file": "src/screens/Miscs/MarketAd.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BanxaSuccess",
+    "file": "src/screens/Miscs/banxa/success.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BanxaFailed",
+    "file": "src/screens/Miscs/banxa/failed.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BanxaCancelled",
+    "file": "src/screens/Miscs/banxa/cancelled.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddBankWireTransfer",
+    "file": "src/screens/Dashboard/wallet/deposit/wireTransfer_v4/AddBankWireTransfer.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 12,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WireTransferKeyboard",
+    "file": "src/screens/Dashboard/wallet/deposit/wireTransfer_v4/WireTransferKeyboard.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewTransfer",
+    "file": "src/screens/Dashboard/wallet/deposit/wireTransfer_v4/PreviewTransfer.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WireTransferTransactionDetail",
+    "file": "src/screens/Dashboard/wallet/deposit/wireTransfer_v4/WireTransferTransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 14
+    },
+    "t_calls": 14,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2PNew",
+    "file": "src/screens/Dashboard/p2p/p2pNew/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pOnBoarding",
+    "file": "src/screens/Dashboard/p2p/p2pNew/P2pOnBoarding.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawP2p",
+    "file": "src/screens/Dashboard/wallet/withdraw/withdrawP2p/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Details",
+    "file": "src/screens/Dashboard/p2p/p2pNew/Details.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawPreviewNew",
+    "file": "src/screens/Dashboard/wallet/withdraw/withdrawP2p/WithdrawPreview.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddPayment",
+    "file": "src/screens/Dashboard/p2p/AddPayment/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "signUp": 1,
+      "new": 8
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddPaymentForm",
+    "file": "src/screens/Dashboard/p2p/AddPaymentForm/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "signUp",
+      "indoDepositPayList"
+    ],
+    "namespace_call_counts": {
+      "new": 28,
+      "indoDepositPayList": 2,
+      "signUp": 3
+    },
+    "t_calls": 33,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "MyAdsForm",
+    "file": "src/screens/Dashboard/p2p/MyAdsForm/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "signUp",
+      "p2pTabs"
+    ],
+    "namespace_call_counts": {
+      "new": 42,
+      "signUp": 2,
+      "p2pTabs": 1
+    },
+    "t_calls": 45,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "OrderDetails",
+    "file": "src/screens/Dashboard/p2p/OrderDetails/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "signUp",
+      "indoDepositPayList",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "new": 109,
+      "portfolio": 1,
+      "indoDepositPayList": 2,
+      "signUp": 3
+    },
+    "t_calls": 115,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Chat",
+    "file": "src/screens/Dashboard/p2p/Chat/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BuySellOrders",
+    "file": "src/screens/Dashboard/p2p/BuySellOrders/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 10
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AdDetails",
+    "file": "src/screens/Dashboard/p2p/AdDetails/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 13
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositBank",
+    "file": "src/screens/Dashboard/wallet/deposit/depositIndo/depositBank.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "depositV4",
+      "indoDepositPayList",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "depositV4": 14,
+      "indoDepositPayList": 6,
+      "new": 1
+    },
+    "t_calls": 21,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "NetworkScreen",
+    "file": "src/screens/Dashboard/wallet/recieve/NetworkScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BankTransfer",
+    "file": "src/screens/Dashboard/wallet/deposit/BankTransfer/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 12,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositEwallet",
+    "file": "src/screens/Dashboard/wallet/deposit/depositIndo/depositEwallet.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "depositV4"
+    ],
+    "namespace_call_counts": {
+      "depositV4": 16,
+      "new": 25
+    },
+    "t_calls": 41,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositInstructions",
+    "file": "src/screens/Dashboard/wallet/deposit/depositIndo/depositInstructions.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 8,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EWalletQR",
+    "file": "src/screens/Dashboard/wallet/deposit/depositIndo/eWalletQR.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "new": 10,
+      "portfolio": 1
+    },
+    "t_calls": 11,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TransactionStatus",
+    "file": "src/screens/Dashboard/wallet/deposit/depositIndo/transactionStatus.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "new": 18,
+      "portfolio": 1
+    },
+    "t_calls": 19,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PaymentScreen",
+    "file": "src/screens/Dashboard/wallet/deposit/depositIndo/PaymentScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "depositV4"
+    ],
+    "namespace_call_counts": {
+      "new": 10,
+      "depositV4": 10
+    },
+    "t_calls": 20,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawBank",
+    "file": "src/screens/Dashboard/wallet/withdraw/withdrawIndo/withdrawBank.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "indoWithdrawPayList",
+      "indoDepositPayList"
+    ],
+    "namespace_call_counts": {
+      "new": 9,
+      "indoDepositPayList": 1,
+      "indoWithdrawPayList": 3
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Reviews",
+    "file": "src/screens/Dashboard/p2p/Reviews/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 4
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SelectBankList",
+    "file": "src/screens/Dashboard/account/selectBankList/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "indoWithdrawPayList"
+    ],
+    "namespace_call_counts": {
+      "new": 4,
+      "indoWithdrawPayList": 1
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddBankAccount",
+    "file": "src/screens/Dashboard/account/addBankAccontDetail/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "indoWithdrawPayList",
+      "youDontHaveBankAccount"
+    ],
+    "namespace_call_counts": {
+      "indoWithdrawPayList": 1,
+      "new": 3,
+      "youDontHaveBankAccount": 1
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddIndobank",
+    "file": "src/screens/Dashboard/account/addIndobank/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 17
+    },
+    "t_calls": 17,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawBankSelect",
+    "file": "src/screens/Dashboard/wallet/withdraw/WithdrawBankScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawCBB",
+    "file": "src/screens/Dashboard/wallet/withdraw/withdrawCBB/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 12
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawPreview",
+    "file": "src/screens/Dashboard/wallet/withdraw/WithdrawPreview.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 7,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Deposit",
+    "file": "src/screens/Dashboard/wallet/deposit/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "depositV4",
+      "lean",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "depositV4": 3,
+      "new": 1,
+      "lean": 2
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SanctionSecurity",
+    "file": "src/screens/Authentication/SanctionSecurity/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new_ob"
+    ],
+    "namespace_call_counts": {
+      "new_ob": 10
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddNewBank",
+    "file": "src/screens/Dashboard/wallet/deposit/addBank/AddNewBank.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "modals"
+    ],
+    "namespace_call_counts": {
+      "modals": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BankDeposit",
+    "file": "src/screens/Dashboard/wallet/bankDeposit/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 28
+    },
+    "t_calls": 28,
+    "hardcoded_literals_estimate": 7,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositCash",
+    "file": "src/screens/Dashboard/wallet/deposit/depositCash/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "depositCKO",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "depositCKO": 4,
+      "new": 2
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositPreview",
+    "file": "src/screens/Dashboard/wallet/deposit/depositPreview/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "depositCKO",
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "depositCKO": 8,
+      "voucher": 1
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositTransaction",
+    "file": "src/screens/Dashboard/wallet/deposit/depositTransaction/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "voucher": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositReceipt",
+    "file": "src/screens/Dashboard/wallet/deposit/depositWire/DepositReceipt.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 6,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Withdraw",
+    "file": "src/screens/Dashboard/wallet/withdraw/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "indoWithdrawPayList"
+    ],
+    "namespace_call_counts": {
+      "indoWithdrawPayList": 2,
+      "new": 21
+    },
+    "t_calls": 23,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawV4",
+    "file": "src/screens/Dashboard/wallet/withdraw_v4/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawMain",
+    "file": "src/screens/Dashboard/wallet/withdraw_v4/WithdrawIndex.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "p2pTabs"
+    ],
+    "namespace_call_counts": {
+      "p2pTabs": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawOtp",
+    "file": "src/screens/Dashboard/wallet/withdraw_v4/WithdrawOtp.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawSuccess",
+    "file": "src/screens/Dashboard/wallet/withdraw_v4/WithdrawSucess.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawTransactionDetailScreen",
+    "file": "src/screens/Dashboard/wallet/withdraw_v4/WithdrawTransactionDetailScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CryptoWarn",
+    "file": "src/screens/Dashboard/wallet/cryptoWarn/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Recieve",
+    "file": "src/screens/Dashboard/wallet/recieve/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "depositV4"
+    ],
+    "namespace_call_counts": {
+      "new": 11,
+      "depositV4": 10
+    },
+    "t_calls": 21,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Send",
+    "file": "src/screens/Dashboard/wallet/send/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendInternal",
+    "file": "src/screens/Dashboard/wallet/sendInternal/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "tabBar"
+    ],
+    "namespace_call_counts": {
+      "tabBar": 1,
+      "new": 12
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FiatInfo",
+    "file": "src/screens/Dashboard/wallet/fiatInfo/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "tabBar"
+    ],
+    "namespace_call_counts": {
+      "new": 9,
+      "tabBar": 1
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CryptoInfo",
+    "file": "src/screens/Dashboard/wallet/cryptoInfo/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "tabBar",
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "new": 15,
+      "tabBar": 3,
+      "staking": 3
+    },
+    "t_calls": 21,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StockInfo",
+    "file": "src/screens/Dashboard/wallet/stockInfo/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "tabBar"
+    ],
+    "namespace_call_counts": {
+      "new": 4,
+      "tabBar": 1
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BankInfo",
+    "file": "src/screens/Dashboard/wallet/bankInfo/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "portfolio": 1,
+      "new": 2
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 9,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Receipt",
+    "file": "src/screens/Dashboard/wallet/receipt/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 10
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TranHistory",
+    "file": "src/screens/Dashboard/wallet/tranHistory/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 5
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TranHistoryAll",
+    "file": "src/screens/Dashboard/wallet/tranHistoryAll/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "checkOut"
+    ],
+    "namespace_call_counts": {
+      "new": 2,
+      "checkOut": 2
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CryptoHistory",
+    "file": "src/screens/Dashboard/wallet/cryptoHistory/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "tabBar"
+    ],
+    "namespace_call_counts": {
+      "new": 7,
+      "tabBar": 1
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TransactionDetail",
+    "file": "src/screens/Dashboard/trade/buy/buyCrypto/TransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 7
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendReceiveTransactionDetail",
+    "file": "src/screens/Dashboard/transactionDetail/sendReceiveTransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 14
+    },
+    "t_calls": 14,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EarlyAccessDetailScreen",
+    "file": "src/screens/Dashboard/transactionDetail/EarlyAccessDetailScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 6,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CardTopUpTxnScreen",
+    "file": "src/screens/Dashboard/transactionDetail/CardTopUpTxnScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4",
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 23,
+      "fassetCard": 1
+    },
+    "t_calls": 24,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SwapTransactionDetail",
+    "file": "src/screens/Dashboard/transactionDetail/swapTransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 8
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BuySellTransactionDetail",
+    "file": "src/screens/Dashboard/transactionDetail/buySellTransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 7
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FiatTransactionDetail",
+    "file": "src/screens/Dashboard/transactionDetail/fiatTransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "new": 23,
+      "portfolio": 2
+    },
+    "t_calls": 25,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EarnTransactionDetail",
+    "file": "src/screens/Dashboard/transactionDetail/earnTransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "earn": 21,
+      "new": 5
+    },
+    "t_calls": 26,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Security",
+    "file": "src/screens/Dashboard/account/security/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "signUp",
+      "account"
+    ],
+    "namespace_call_counts": {
+      "new": 22,
+      "signUp": 2,
+      "account": 1
+    },
+    "t_calls": 25,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PaymentMethods",
+    "file": "src/screens/Dashboard/account/paymentMethods/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "account"
+    ],
+    "namespace_call_counts": {
+      "new": 7,
+      "account": 1
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PayMethodInfo",
+    "file": "src/screens/Dashboard/account/payMethodInfo/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "signUp",
+      "poa"
+    ],
+    "namespace_call_counts": {
+      "new": 9,
+      "signUp": 2,
+      "poa": 1
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ChangePass",
+    "file": "src/screens/Dashboard/account/changePass/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "signUp",
+      "new",
+      "myFasset",
+      "nonSocial",
+      "account"
+    ],
+    "namespace_call_counts": {
+      "new": 5,
+      "signUp": 6,
+      "nonSocial": 1,
+      "myFasset": 5,
+      "account": 1
+    },
+    "t_calls": 18,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ChangePhone",
+    "file": "src/screens/Dashboard/account/changePhone/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "account",
+      "myFasset"
+    ],
+    "namespace_call_counts": {
+      "new": 4,
+      "myFasset": 1,
+      "account": 2
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AntiPhishing",
+    "file": "src/screens/Dashboard/account/antiPhishing/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "myFasset"
+    ],
+    "namespace_call_counts": {
+      "myFasset": 2,
+      "new": 5
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "NewNumber",
+    "file": "src/screens/Dashboard/account/newNumber/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "new": 8,
+      "signUp": 2
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Devices",
+    "file": "src/screens/Dashboard/account/devices/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "education"
+    ],
+    "namespace_call_counts": {
+      "new": 17,
+      "education": 1
+    },
+    "t_calls": 18,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TwoFactorAuth",
+    "file": "src/screens/Dashboard/account/twoFactorAuth/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "myFasset"
+    ],
+    "namespace_call_counts": {
+      "new": 30,
+      "myFasset": 2
+    },
+    "t_calls": 32,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Activity",
+    "file": "src/screens/Dashboard/account/activity/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IndoBankDetails",
+    "file": "src/screens/Dashboard/account/indoBankDetails/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "signUp",
+      "poa"
+    ],
+    "namespace_call_counts": {
+      "signUp": 1,
+      "new": 10,
+      "poa": 1
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SetupGauth",
+    "file": "src/screens/Dashboard/account/setupGauth/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "signUp",
+      "nonSocial"
+    ],
+    "namespace_call_counts": {
+      "nonSocial": 1,
+      "new": 7,
+      "signUp": 2
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Notifications",
+    "file": "src/screens/Dashboard/account/notifications/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DeleteAccount",
+    "file": "src/screens/Dashboard/account/deleteAccount/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 10
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Preferences",
+    "file": "src/screens/Dashboard/account/preferences/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "preferences",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 6,
+      "preferences": 7
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "settings_02_language",
+      "settings_03_currency"
+    ]
+  },
+  {
+    "route": "referralProgress",
+    "file": "src/screens/Dashboard/account/referralProgress/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WithdrawCrypto",
+    "file": "src/screens/Dashboard/wallet/withdrawCrypto/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "cryptoWithDraw",
+      "signUp",
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "cryptoWithDraw": 13,
+      "new": 26,
+      "signUp": 3,
+      "staking": 1
+    },
+    "t_calls": 43,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Stake",
+    "file": "src/screens/Dashboard/trade/staking/onBoarding/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "onBoardingScreen"
+    ],
+    "namespace_call_counts": {
+      "onBoardingScreen": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StakingHistory",
+    "file": "src/screens/Dashboard/trade/staking/stakingHistory/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StakingEntry",
+    "file": "src/screens/Dashboard/trade/staking/StakingEntry/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 6,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EthereumWallet",
+    "file": "src/screens/Dashboard/trade/staking/EthereumWallet/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EarnWallet",
+    "file": "src/screens/Dashboard/trade/staking/EarnWallet/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StakeCompleteFlash",
+    "file": "src/screens/Dashboard/trade/staking/stake-completed/flash-screen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StakingWallet",
+    "file": "src/screens/Dashboard/wallet/stakingWallet/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "staking": 4
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StakingAmount",
+    "file": "src/screens/Dashboard/trade/staking/stakingAmount/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "staking",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "staking": 1,
+      "new": 1
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StakingPreview",
+    "file": "src/screens/Dashboard/trade/staking/stakingPreview/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "staking": 8
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StakingTransactionDetails",
+    "file": "src/screens/Dashboard/trade/staking/transactionDetails/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "staking",
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "voucher": 8,
+      "staking": 11
+    },
+    "t_calls": 19,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StakeCoin",
+    "file": "src/screens/Dashboard/trade/staking/stakeCoin/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "staking",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "staking": 25,
+      "signUp": 1
+    },
+    "t_calls": 26,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EarnWalletDetail",
+    "file": "src/screens/Dashboard/trade/staking/EarnWallet/EarnWalletDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "modals"
+    ],
+    "namespace_call_counts": {
+      "modals": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CryptoBundleDetails",
+    "file": "src/screens/Dashboard/crypto-bundle/screens/CryptoBundleDetailScreen.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "bundle"
+    ],
+    "namespace_call_counts": {
+      "bundle": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CryptoBundleAmount",
+    "file": "src/screens/Dashboard/crypto-bundle/screens/InsertBundleAmount.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "bundles"
+    ],
+    "namespace_call_counts": {
+      "bundles": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BundleTransactionHistory",
+    "file": "src/screens/Dashboard/crypto-bundle/screens/BundleTransactionHistoryScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BundleTransactionHistoryDetails",
+    "file": "src/screens/Dashboard/crypto-bundle/screens/BundleTransactionHistoryDetailScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BundlePreview",
+    "file": "src/screens/Dashboard/crypto-bundle/screens/BundlePreviewScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 7,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BundlePortfolio",
+    "file": "src/screens/Dashboard/crypto-bundle/screens/BundlePortfolioScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "bundle"
+    ],
+    "namespace_call_counts": {
+      "new": 2,
+      "bundle": 2
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BundleList",
+    "file": "src/screens/Dashboard/crypto-bundle/screens/BundleListScreen.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "market_v4"
+    ],
+    "namespace_call_counts": {
+      "market_v4": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "market_04_bundles"
+    ]
+  },
+  {
+    "route": "Donations",
+    "file": "src/screens/Dashboard/donation/screens/DonationsScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "donations"
+    ],
+    "namespace_call_counts": {
+      "donations": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DonationDetails",
+    "file": "src/screens/Dashboard/donation/screens/ProjectDetailScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "donations"
+    ],
+    "namespace_call_counts": {
+      "donations": 7
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DonationOrgDetails",
+    "file": "src/screens/Dashboard/donation/screens/OrgDetailScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "donations"
+    ],
+    "namespace_call_counts": {
+      "donations": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DonationAmount",
+    "file": "src/screens/Dashboard/donation/screens/DonateScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "donations"
+    ],
+    "namespace_call_counts": {
+      "donations": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DonationsHistory",
+    "file": "src/screens/Dashboard/donation/screens/DonationsHistory.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "donations"
+    ],
+    "namespace_call_counts": {
+      "donations": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DonationTypes",
+    "file": "src/screens/Dashboard/donation/screens/DonationTypeScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "donations"
+    ],
+    "namespace_call_counts": {
+      "donations": 4
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "KycJourney",
+    "file": "src/screens/Authentication/kycJourney/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "new",
+      "newKYCQuestion",
+      "kycQuest",
+      "kyc",
+      "pep"
+    ],
+    "namespace_call_counts": {
+      "kyc": 4,
+      "newKYCQuestion": 12,
+      "new": 25,
+      "pep": 3,
+      "kycQuest": 7
+    },
+    "t_calls": 51,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "kyc_ae_01_financial_profile",
+      "kyc_ae_03_money_questions"
+    ]
+  },
+  {
+    "route": "BundleIntro",
+    "file": "src/screens/Dashboard/crypto-bundle/screens/BundleIntroScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositAccounts",
+    "file": "src/screens/Dashboard/wallet/deposit/depositLean/DepositAccounts.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "LinkBank",
+    "file": "src/screens/Dashboard/wallet/deposit/depositLean/LinkBank.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "LeanPayment",
+    "file": "src/screens/Dashboard/wallet/deposit/depositLean/LeanPayment.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "lean"
+    ],
+    "namespace_call_counts": {
+      "lean": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositCBB",
+    "file": "src/screens/Dashboard/wallet/deposit/depositCBB/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 35
+    },
+    "t_calls": 35,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "LeanOnBoarding",
+    "file": "src/screens/Dashboard/wallet/deposit/depositLean/LeanOnBoarding.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "lean"
+    ],
+    "namespace_call_counts": {
+      "lean": 11
+    },
+    "t_calls": 11,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "kyc_ae_04_link_bank"
+    ]
+  },
+  {
+    "route": "DepositWire",
+    "file": "src/screens/Dashboard/wallet/deposit/depositWire/DepositWire.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositP2p",
+    "file": "src/screens/Dashboard/wallet/deposit/depositP2p/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "new_ob"
+    ],
+    "namespace_call_counts": {
+      "new": 2,
+      "new_ob": 1
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositSummary",
+    "file": "src/screens/Dashboard/wallet/deposit/depositP2p/DepositSummary.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "p2pV2"
+    ],
+    "namespace_call_counts": {
+      "p2pV2": 4
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewOrder",
+    "file": "src/screens/Dashboard/wallet/deposit/depositP2p/PreviewOrder.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 12,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "OrderCreated",
+    "file": "src/screens/Dashboard/wallet/deposit/depositP2p/OrderCreated.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "sellFlow": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 21,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositInitPreview",
+    "file": "src/screens/Dashboard/wallet/deposit/depositWire/DepositInitPreview.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "depositCKO"
+    ],
+    "namespace_call_counts": {
+      "depositCKO": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 7,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "LeanKeyboardScreen",
+    "file": "src/screens/Dashboard/wallet/deposit/depositLeanV4/LeanKeyboardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "LeanPreviewTransfer",
+    "file": "src/screens/Dashboard/wallet/deposit/depositLeanV4/LeanPreviewTransfer.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "LeanTransactionDetail",
+    "file": "src/screens/Dashboard/wallet/deposit/depositLeanV4/LeanTransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 14
+    },
+    "t_calls": 14,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pKeyboardScreen",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2pKeyboardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "p2pTabs",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2,
+      "p2pTabs": 7
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 21,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pMarketplaceBuyScreen",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2pMarketplaceBuyScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 9,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ChatScreen",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/ChatScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2pBankListScreen",
+    "file": "src/screens/Dashboard/wallet/p2pVersion2/P2pBankListScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 8,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DepositCard",
+    "file": "src/screens/Dashboard/wallet/deposit/DepositCardV4/DepositCard.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "depositeScreen"
+    ],
+    "namespace_call_counts": {
+      "depositeScreen": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewDepositCard",
+    "file": "src/screens/Dashboard/wallet/deposit/DepositCardV4/PreviewDepositCard.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "MainCardSelectionScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/MainCardSelectionScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "cardKyc",
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "cardKyc": 1,
+      "fassetCard": 1
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 14,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPaySettings",
+    "file": "src/screens/Dashboard/FassetPay/screens/SettingsScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 22
+    },
+    "t_calls": 22,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPayStatement",
+    "file": "src/screens/Dashboard/FassetPay/screens/StatementScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard",
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 16,
+      "buyV4": 3
+    },
+    "t_calls": 19,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPayLimits",
+    "file": "src/screens/Dashboard/FassetPay/screens/LimitsScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 14
+    },
+    "t_calls": 14,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPayTopUp",
+    "file": "src/screens/Dashboard/CardTopUp/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 21
+    },
+    "t_calls": 21,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CardTopUp",
+    "file": "src/screens/Dashboard/CardTopUp/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 21
+    },
+    "t_calls": 21,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CardWithdraw",
+    "file": "src/screens/Dashboard/CardWithdraw/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 8
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CardWithdrawPreview",
+    "file": "src/screens/Dashboard/CardWithdraw/screens/CardWithdrawPreview.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 13
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CardTxnDetails",
+    "file": "src/screens/Dashboard/CardWithdraw/screens/CardTxnDetails.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 12
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ActivatePhysicalCardScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/ActivatePhysicalCardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 8,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PhysicalCards",
+    "file": "src/screens/Dashboard/PhysicalCards/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EnterPINCard",
+    "file": "src/screens/Dashboard/FassetPay/screens/EnterPINCard.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "pin",
+      "new",
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "pin": 5,
+      "new": 5,
+      "voucher": 1
+    },
+    "t_calls": 11,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AllTransactionCardScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/AllTransactionCardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddToWalletScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/AddToWalletScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPayCardPIN",
+    "file": "src/screens/Dashboard/FassetPay/screens/FassetPayCardPINScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 14
+    },
+    "t_calls": 14,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ProfileVerification",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/ProfileVerification.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "card"
+    ],
+    "namespace_call_counts": {
+      "card": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IDVerification",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/IDVerification.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "card"
+    ],
+    "namespace_call_counts": {
+      "card": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IDVerificationInfo",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/IDVerificationInfo.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "card"
+    ],
+    "namespace_call_counts": {
+      "card": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TakeSelfie",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/TakeSelfie.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 6,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TakeSelfieInfo",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/TakeSelfieInfo.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "UploadSignatureInfo",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/UploadSignatureInfo.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "MailingAddress",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/MailingAddress.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 25,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "RainCardFinancialDetails",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/RainCardFinancialDetails.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 32
+    },
+    "t_calls": 32,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "RainCardAddressScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/RainCardAddressScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 21
+    },
+    "t_calls": 21,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DeliveryAddress",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/DeliveryAddress.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 33,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ConfirmOrderScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/ConfirmOrderScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 14
+    },
+    "t_calls": 14,
+    "hardcoded_literals_estimate": 20,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CardActivationScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/CardActivationScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 12,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "RainCardConfirmOrderScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/RainCardConfirmOrderScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 42
+    },
+    "t_calls": 42,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddPassportNumber",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/AddPassportNumber.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "card"
+    ],
+    "namespace_call_counts": {
+      "card": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 7,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPayActivateNewCard",
+    "file": "src/screens/Dashboard/FassetPay/screens/ActivateNewCardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 18,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PurchaseCardSuccessScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/PurchaseCardSuccessScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SelectCardScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/SelectCardScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewCardOrderScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/PreviewCardOrderScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 9
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPayTopUpPreview",
+    "file": "src/screens/Dashboard/FassetPay/screens/TopUpPreviewScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetPay"
+    ],
+    "namespace_call_counts": {
+      "fassetPay": 8
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPayTransactions",
+    "file": "src/screens/Dashboard/FassetPay/screens/TransactionScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "fassetPay"
+    ],
+    "namespace_call_counts": {
+      "fassetPay": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPayTxnDetails",
+    "file": "src/screens/Dashboard/FassetPay/screens/TransactionDetailScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4",
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 3,
+      "fassetCard": 2
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPayFAQs",
+    "file": "src/screens/Dashboard/FassetPay/screens/FAQScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FAQDetail",
+    "file": "src/screens/Dashboard/FassetPay/screens/FAQDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PINList",
+    "file": "src/screens/Dashboard/account/PIN/PINList/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "pin"
+    ],
+    "namespace_call_counts": {
+      "pin": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "NewPIN",
+    "file": "src/screens/Dashboard/account/PIN/NewPIN/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "pin"
+    ],
+    "namespace_call_counts": {
+      "pin": 4
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ConfirmNewPIN",
+    "file": "src/screens/Dashboard/account/PIN/ConfirmNewPIN/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "pin"
+    ],
+    "namespace_call_counts": {
+      "pin": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "VerifyPIN",
+    "file": "src/screens/Dashboard/account/PIN/VerifyPIN/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "pin"
+    ],
+    "namespace_call_counts": {
+      "pin": 8
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "POAList",
+    "file": "src/screens/Authentication/POA/POAList/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "poa",
+      "new",
+      "account"
+    ],
+    "namespace_call_counts": {
+      "poa": 4,
+      "account": 1,
+      "new": 4
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "kyc_ae_02_proof_of_address"
+    ]
+  },
+  {
+    "route": "POADetails",
+    "file": "src/screens/Authentication/POA/POADetails/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "poa",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "poa": 7,
+      "new": 2
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "kyc_ae_02_proof_of_address"
+    ]
+  },
+  {
+    "route": "POASuccess",
+    "file": "src/screens/Authentication/POA/POASuccess/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "poa"
+    ],
+    "namespace_call_counts": {
+      "poa": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StockDetail",
+    "file": "src/screens/Dashboard/stocks/detail/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "BuyStock",
+    "file": "src/screens/Dashboard/stocks/buy/buyStock/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "stockMarketClosed",
+      "depositCKO",
+      "Continue"
+    ],
+    "namespace_call_counts": {
+      "new": 8,
+      "depositCKO": 1,
+      "stockMarketClosed": 2,
+      "Continue": 1
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SellStock",
+    "file": "src/screens/Dashboard/stocks/sell/sellStock/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "stockMarketClosed"
+    ],
+    "namespace_call_counts": {
+      "new": 14,
+      "stockMarketClosed": 2
+    },
+    "t_calls": 16,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewStockBuy",
+    "file": "src/screens/Dashboard/stocks/buy/preview/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "stock",
+      "staking",
+      "modals",
+      "voucher",
+      "poa"
+    ],
+    "namespace_call_counts": {
+      "new": 9,
+      "stock": 2,
+      "modals": 1,
+      "staking": 2,
+      "voucher": 1,
+      "poa": 1
+    },
+    "t_calls": 16,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewStockSell",
+    "file": "src/screens/Dashboard/stocks/sell/preview/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "stock",
+      "poa",
+      "voucher",
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "new": 5,
+      "stock": 3,
+      "poa": 1,
+      "voucher": 1,
+      "staking": 1
+    },
+    "t_calls": 11,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StockTransactionDetail",
+    "file": "src/screens/Dashboard/stocks/transactionDetail/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "Status",
+      "Total"
+    ],
+    "namespace_call_counts": {
+      "Status": 1,
+      "new": 3,
+      "Total": 1
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StockStatistics",
+    "file": "src/screens/Dashboard/stocks/screens/stocksStatistics.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 7,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "GlobalOnBoarding",
+    "file": "src/screens/Dashboard/stocks/GlobalOnBoarding/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "globalOnboard"
+    ],
+    "namespace_call_counts": {
+      "globalOnboard": 5
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "GlobalTermsConditions",
+    "file": "src/screens/Dashboard/stocks/GlobalTermsConditions/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "globalOnboard"
+    ],
+    "namespace_call_counts": {
+      "globalOnboard": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "MarketSearch",
+    "file": "src/screens/Dashboard/marketSearch/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "Search"
+    ],
+    "namespace_call_counts": {
+      "Search": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EnterAmount",
+    "file": "src/screens/Dashboard/remittance/enterAmount/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "remittance",
+      "signUp",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "remittance": 21,
+      "signUp": 1,
+      "new": 1
+    },
+    "t_calls": 23,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Contacts",
+    "file": "src/screens/Dashboard/remittance/contacts/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "remittance"
+    ],
+    "namespace_call_counts": {
+      "remittance": 14
+    },
+    "t_calls": 14,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ContactsDetail",
+    "file": "src/screens/Dashboard/remittance/contactDetail/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "remittance",
+      "new",
+      "pin"
+    ],
+    "namespace_call_counts": {
+      "remittance": 31,
+      "new": 1,
+      "pin": 1
+    },
+    "t_calls": 33,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ReviewTransfer",
+    "file": "src/screens/Dashboard/remittance/reviewTransfer/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "remittance",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "remittance": 22,
+      "new": 1
+    },
+    "t_calls": 23,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "RemittanceTransactionDetail",
+    "file": "src/screens/Dashboard/remittance/remittanceTransactionDetail/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "remittance",
+      "voucher",
+      "new",
+      "cryptoWithDraw"
+    ],
+    "namespace_call_counts": {
+      "new": 1,
+      "voucher": 3,
+      "cryptoWithDraw": 1,
+      "remittance": 7
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "RemittanceHistory",
+    "file": "src/screens/Dashboard/remittance/allRemittanceHistory/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "checkOut"
+    ],
+    "namespace_call_counts": {
+      "new": 2,
+      "checkOut": 2
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "RemittanceInitiated",
+    "file": "src/screens/Dashboard/remittance/remittanceInitiated/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "remittance",
+      "Share"
+    ],
+    "namespace_call_counts": {
+      "Share": 1,
+      "remittance": 3
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Account_",
+    "file": "src/screens/Dashboard/account/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new",
+      "myFasset",
+      "tabBar",
+      "updated"
+    ],
+    "namespace_call_counts": {
+      "myFasset": 1,
+      "tabBar": 1,
+      "updated": 1,
+      "new": 9
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "settings_01_hub",
+      "logout_01",
+      "logout_02"
+    ]
+  },
+  {
+    "route": "EarnDashboard",
+    "file": "src/screens/Dashboard/earn/dashboard/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn",
+      "modals",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "earn": 16,
+      "modals": 2,
+      "new": 1
+    },
+    "t_calls": 19,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WelcomeEarn",
+    "file": "src/screens/Dashboard/earn/welcomeEarnSplash/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn",
+      "onBoarding",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "earn": 6,
+      "onBoarding": 1,
+      "portfolio": 1
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StableSavings",
+    "file": "src/screens/Dashboard/earn/stableSavings/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn",
+      "modals",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "earn": 16,
+      "modals": 2,
+      "portfolio": 1
+    },
+    "t_calls": 19,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "StableSavingsDetails",
+    "file": "src/screens/Dashboard/earn/stableSavings/stableSavingsDetails.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn",
+      "signUp",
+      "new",
+      "fassetPay",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "signUp": 1,
+      "earn": 13,
+      "new": 1,
+      "fassetPay": 1,
+      "portfolio": 1
+    },
+    "t_calls": 17,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PreviewProduct",
+    "file": "src/screens/Dashboard/earn/stableSavings/previewProduct.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn",
+      "new",
+      "staking"
+    ],
+    "namespace_call_counts": {
+      "earn": 14,
+      "new": 4,
+      "staking": 1
+    },
+    "t_calls": 19,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EarnHistory",
+    "file": "src/screens/Dashboard/earn/history/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn"
+    ],
+    "namespace_call_counts": {
+      "earn": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "TotalSubscription",
+    "file": "src/screens/Dashboard/earn/totalSubscription/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn"
+    ],
+    "namespace_call_counts": {
+      "earn": 6
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SubscriptionDetailFlexi",
+    "file": "src/screens/Dashboard/earn/subscriptionDetail/subscriptionDetailFlexi.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn",
+      "portfolio",
+      "new",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "earn": 20,
+      "portfolio": 1,
+      "new": 1,
+      "signUp": 1
+    },
+    "t_calls": 23,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SubscriptionDetailStable",
+    "file": "src/screens/Dashboard/earn/subscriptionDetail/subscriptionDetailStable.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn",
+      "new",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "earn": 23,
+      "new": 1,
+      "signUp": 1
+    },
+    "t_calls": 25,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "UnsubscribeEarnProduct",
+    "file": "src/screens/Dashboard/earn/unsubscribeEarnProduct/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EarnProfitHistory",
+    "file": "src/screens/Dashboard/earn/profitHistory/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "earn"
+    ],
+    "namespace_call_counts": {
+      "earn": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AboutFasset",
+    "file": "src/screens/Dashboard/account/options/AboutFasset.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "account"
+    ],
+    "namespace_call_counts": {
+      "account": 5
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "WelcomeRewards",
+    "file": "src/screens/Dashboard/rewards/welcome/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "RewardsCampaignDetail",
+    "file": "src/screens/Dashboard/rewards/campaign/detail/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Rewards",
+    "file": "src/screens/Dashboard/rewards/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "rewardsV4",
+      "updated"
+    ],
+    "namespace_call_counts": {
+      "updated": 1,
+      "rewardsV4": 4
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AboutOwn",
+    "file": "src/screens/Dashboard/rewards/about/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "rewardsV4"
+    ],
+    "namespace_call_counts": {
+      "rewardsV4": 13
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CampaignIntro",
+    "file": "src/screens/Dashboard/rewards/campaign-intro/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ReferFriend",
+    "file": "src/screens/Dashboard/referral/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": [],
+    "note": "feature flag referralV2: legacy component src/screens/Dashboard/account_v4/referral/index.js"
+  },
+  {
+    "route": "MyReferrals",
+    "file": "src/screens/Dashboard/referral/screens/MyReferrals.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": [],
+    "note": "feature flag referralV2: legacy component src/screens/Dashboard/account_v4/referral/history.js"
+  },
+  {
+    "route": "ReferralCustomerProgress",
+    "file": "src/screens/Dashboard/referral/screens/ReferralProgress/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "refer"
+    ],
+    "namespace_call_counts": {
+      "refer": 7
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ReferralCode",
+    "file": "src/screens/Authentication/referralCode/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Auth stack"
+    ],
+    "namespaces": [
+      "refer",
+      "new",
+      "modals"
+    ],
+    "namespace_call_counts": {
+      "refer": 11,
+      "new": 3,
+      "modals": 1
+    },
+    "t_calls": 15,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AllTransactionHistory",
+    "file": "src/screens/Dashboard/allTransactionHistory/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "accountsV4",
+      "buyV4",
+      "new",
+      "transactionStatus"
+    ],
+    "namespace_call_counts": {
+      "accountsV4": 6,
+      "new": 1,
+      "buyV4": 2,
+      "transactionStatus": 1
+    },
+    "t_calls": 10,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "history_02_list"
+    ]
+  },
+  {
+    "route": "PaymentHistory",
+    "file": "src/screens/Dashboard/payments/PaymentHistory.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "accountsV4",
+      "buyV4",
+      "transactionStatus"
+    ],
+    "namespace_call_counts": {
+      "accountsV4": 2,
+      "buyV4": 2,
+      "transactionStatus": 1
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 3,
+    "captured": true,
+    "capture_ids": [
+      "history_02_list"
+    ]
+  },
+  {
+    "route": "SendTransactionDetail",
+    "file": "src/screens/Dashboard/cryptoSend/SendTransactionDetail/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 6,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CheckingAccount",
+    "file": "src/screens/Dashboard/checking-account/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 6,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AccountV4",
+    "file": "src/screens/Dashboard/account_v4/index.js",
+    "navigator": [
+      "Dashboard stack (authenticated root)",
+      "Main bottom tabs (AppTabs)"
+    ],
+    "namespaces": [
+      "accountsV4",
+      "earn",
+      "financing",
+      "updated",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "accountsV4": 8,
+      "updated": 1,
+      "earn": 5,
+      "portfolio": 1,
+      "financing": 2
+    },
+    "t_calls": 17,
+    "hardcoded_literals_estimate": 12,
+    "captured": true,
+    "capture_ids": [
+      "settings_01_hub"
+    ]
+  },
+  {
+    "route": "PortfolioV4",
+    "file": "src/screens/Dashboard/portfolio_v4/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "accountsV4",
+      "earn",
+      "portfolio",
+      "buyV4",
+      "new",
+      "staking",
+      "financing",
+      "transactionStatus",
+      "tradeV4",
+      "fassetPay"
+    ],
+    "namespace_call_counts": {
+      "accountsV4": 15,
+      "financing": 1,
+      "buyV4": 2,
+      "transactionStatus": 1,
+      "new": 2,
+      "tradeV4": 1,
+      "earn": 6,
+      "portfolio": 3,
+      "staking": 2,
+      "fassetPay": 1
+    },
+    "t_calls": 34,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ActivateGlobalUSDAccountScreen",
+    "file": "src/screens/Dashboard/iban/screens/ActivateGlobalUSDAccountScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 21,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FinancialProfileScreen",
+    "file": "src/screens/Dashboard/iban/screens/FinancialProfileScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ConfirmIBANOrderScreen",
+    "file": "src/screens/Dashboard/iban/screens/ConfirmIBANOrderScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 19,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EarlyAccessOrderCompleted",
+    "file": "src/screens/Dashboard/iban/screens/EarlyAccessOrderCompleted.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EnterPINEarlyIBAN",
+    "file": "src/screens/Dashboard/iban/screens/EnterPINEarlyIBAN.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "pin",
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "pin": 10,
+      "voucher": 1
+    },
+    "t_calls": 11,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddPayeeScreen",
+    "file": "src/screens/Dashboard/iban/screens/AddPayeeScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ComingSoonScreen",
+    "file": "src/screens/Dashboard/iban/screens/ComingSoonScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AccountActivationRequirementScreen",
+    "file": "src/screens/Dashboard/iban/screens/AccountActivationRequirementScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 12,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANTransactionDetail",
+    "file": "src/screens/Dashboard/transactionDetail/IBANTransactionDetail.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 11,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddFassetTagScreen",
+    "file": "src/screens/Dashboard/iban/screens/AddFassetTagScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 4,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANTransactionDetailV2",
+    "file": "src/screens/Dashboard/transactionDetail/IBANTransactionDetailV2.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 11,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANTransactionDetailV2Internal",
+    "file": "src/screens/Dashboard/transactionDetail/IBANTransactionDetailV2Internal.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 8,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANAllTransactionScreenV2",
+    "file": "src/screens/Dashboard/iban/screens/IBANAllTransactionScreenV2.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANStatementScreenV2",
+    "file": "src/screens/Dashboard/iban/screens/IBANStatementScreenV2.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 7,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANSettings",
+    "file": "src/screens/Dashboard/iban/screens/IBANSettings.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANLimitsScreen",
+    "file": "src/screens/Dashboard/iban/screens/IBANLimitsScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AddPaymentMethodSelection",
+    "file": "src/screens/Dashboard/iban/screens/AddPaymentMethodSelection.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ReceiveAccountDetails",
+    "file": "src/screens/Dashboard/iban/screens/ReceiveAccountDetails.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "MoveMoneyIBANConfirmation",
+    "file": "src/screens/Dashboard/iban/screens/MoveMoneyIBANConfirmation.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 9,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "MoveMoneyIBAN",
+    "file": "src/screens/Dashboard/iban/screens/MoveMoneyIBAN.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 9,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "MoveMoneyCompleted",
+    "file": "src/screens/Dashboard/iban/screens/MoveMoneyCompleted.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendMoneyBankTransfer",
+    "file": "src/screens/Dashboard/iban/screens/SendMoneyBankTransfer.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendMoneyEnterAmount",
+    "file": "src/screens/Dashboard/iban/screens/SendMoneyEnterAmount.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendMoneyConfirmation",
+    "file": "src/screens/Dashboard/iban/screens/SendMoneyConfirmation.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "buyV4"
+    ],
+    "namespace_call_counts": {
+      "buyV4": 3
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "SendMoneyCompleted",
+    "file": "src/screens/Dashboard/iban/screens/SendMoneyCompleted.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANAllTransactionScreen",
+    "file": "src/screens/Dashboard/iban/screens/IBANAllTransactionScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 3,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "UpdateTransactionLimitScreen",
+    "file": "src/screens/Dashboard/iban/screens/UpdateTransactionLimitScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FeeDetailsScreen",
+    "file": "src/screens/Dashboard/iban/screens/FeeDetailsScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANStatementScreen",
+    "file": "src/screens/Dashboard/iban/screens/IBANStatementScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 7,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANAccountClosureScreen",
+    "file": "src/screens/Dashboard/iban/screens/IBANAccountClosureScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 19,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IBANOTPScreen",
+    "file": "src/screens/Dashboard/iban/screens/IBANOTPScreen.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 5,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ManualDetails",
+    "file": "src/screens/Authentication/ManualKYC/ManualDetails/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "manualKYC"
+    ],
+    "namespace_call_counts": {
+      "manualKYC": 13
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "IDScan",
+    "file": "src/screens/Authentication/ManualKYC/IDScan/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "manualKYC",
+      "signup_new",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "manualKYC": 21,
+      "signup_new": 3,
+      "new": 3
+    },
+    "t_calls": 27,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Selfie",
+    "file": "src/screens/Authentication/ManualKYC/Selfie/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "manualKYC",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 3,
+      "manualKYC": 16
+    },
+    "t_calls": 19,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Information",
+    "file": "src/screens/Authentication/ManualKYC/Information/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "manualKYC",
+      "myFasset",
+      "new_ob",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "manualKYC": 14,
+      "myFasset": 1,
+      "new_ob": 1,
+      "new": 1
+    },
+    "t_calls": 17,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Quit",
+    "file": "src/screens/Authentication/ManualKYC/Quit/index.js",
+    "navigator": "Dashboard stack (authenticated root)",
+    "namespaces": [
+      "manualKYC"
+    ],
+    "namespace_call_counts": {
+      "manualKYC": 15
+    },
+    "t_calls": 15,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "GuestTabs",
+    "file": "src/route/TabNavigators.ios.js",
+    "navigator": "Auth stack",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": [],
+    "note": "nested navigator: guest bottom tabs",
+    "container": true
+  },
+  {
+    "route": "Login",
+    "file": "src/screens/Authentication/login/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "logIn",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "signUp": 2,
+      "logIn": 7
+    },
+    "t_calls": 9,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "login_02_login_options"
+    ]
+  },
+  {
+    "route": "Signup",
+    "file": "src/screens/Authentication/signup/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "signup_new",
+      "signUp",
+      "new",
+      "restrict_ob"
+    ],
+    "namespace_call_counts": {
+      "new": 1,
+      "signup_new": 9,
+      "restrict_ob": 1,
+      "signUp": 2
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EmailSignup",
+    "file": "src/screens/Authentication/NonSocialSignup/EmailSignup/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "signUp",
+      "new",
+      "verifyDevice",
+      "onBoarding",
+      "newSignup",
+      "logIn"
+    ],
+    "namespace_call_counts": {
+      "verifyDevice": 1,
+      "signUp": 2,
+      "new": 2,
+      "onBoarding": 1,
+      "newSignup": 1,
+      "logIn": 1
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Password",
+    "file": "src/screens/Authentication/NonSocialSignup/Password/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "signup_new",
+      "ff_onboarding_3_copy_refresh",
+      "signUp",
+      "verifyDevice",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "ff_onboarding_3_copy_refresh": 3,
+      "signUp": 2,
+      "verifyDevice": 1,
+      "signup_new": 13,
+      "new": 1
+    },
+    "t_calls": 20,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "EmailVerify",
+    "file": "src/screens/Authentication/NonSocialSignup/EmailVerify/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "new",
+      "signup_new",
+      "verifyDevice",
+      "myFasset"
+    ],
+    "namespace_call_counts": {
+      "new": 7,
+      "signup_new": 3,
+      "myFasset": 1,
+      "verifyDevice": 3
+    },
+    "t_calls": 14,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "OTPMethodSelection",
+    "file": "src/screens/Authentication/selectOtpMethod/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "signUp",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "signUp": 3,
+      "new": 1
+    },
+    "t_calls": 4,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "verifySocialAcc",
+    "file": "src/screens/Authentication/verifySocialAcc/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "new",
+      "signUp"
+    ],
+    "namespace_call_counts": {
+      "signUp": 1,
+      "new": 2
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DeviceVerify",
+    "file": "src/screens/Authentication/deviceVerify/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "new",
+      "verifyDevice",
+      "signUp",
+      "myFasset"
+    ],
+    "namespace_call_counts": {
+      "new": 10,
+      "verifyDevice": 8,
+      "signUp": 4,
+      "myFasset": 1
+    },
+    "t_calls": 23,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "AccSetup3",
+    "file": "src/screens/Authentication/accSetup3/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 13
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ForgetPass",
+    "file": "src/screens/Authentication/forgetPass/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "signUp",
+      "logIn",
+      "verifyDevice",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "verifyDevice": 1,
+      "signUp": 2,
+      "logIn": 2,
+      "new": 1
+    },
+    "t_calls": 6,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ForgetPassOtp",
+    "file": "src/screens/Authentication/forgetPassOtp/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "new",
+      "myFasset",
+      "verifyDevice",
+      "signUp",
+      "nonSocial"
+    ],
+    "namespace_call_counts": {
+      "new": 9,
+      "signUp": 1,
+      "nonSocial": 1,
+      "myFasset": 2,
+      "verifyDevice": 2
+    },
+    "t_calls": 15,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "NewPassConfirm",
+    "file": "src/screens/Authentication/newPassConfirm/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "signUp",
+      "new",
+      "verifyDevice",
+      "nonSocial"
+    ],
+    "namespace_call_counts": {
+      "new": 5,
+      "signUp": 10,
+      "verifyDevice": 1,
+      "nonSocial": 1
+    },
+    "t_calls": 17,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "LoginForm",
+    "file": "src/screens/Authentication/login/loginForm.js",
+    "navigator": "Auth stack",
+    "namespaces": [
+      "signUp",
+      "onBoarding",
+      "logIn",
+      "ff_onboarding_3_copy_refresh",
+      "verifyDevice",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "ff_onboarding_3_copy_refresh": 1,
+      "signUp": 5,
+      "verifyDevice": 1,
+      "new": 1,
+      "onBoarding": 2,
+      "logIn": 2
+    },
+    "t_calls": 12,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "login_03_email_form"
+    ]
+  },
+  {
+    "route": "NewLoginForm",
+    "file": "src/screens/Authentication/NewLoginForm/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 14,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "VerificationPaused",
+    "file": "src/screens/Authentication/verificationPaused/index.js",
+    "navigator": "Auth stack",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 2,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "consentScreen",
+    "file": "src/screens/Authentication/consentScreen/index.js",
+    "navigator": [
+      "Auth stack",
+      "Root stack"
+    ],
+    "namespaces": [
+      "signUp",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 14,
+      "signUp": 37
+    },
+    "t_calls": 51,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CreatePIN",
+    "file": "src/screens/Authentication/PIN/Create/index.js",
+    "navigator": [
+      "Auth stack",
+      "Root stack"
+    ],
+    "namespaces": [
+      "pin"
+    ],
+    "namespace_call_counts": {
+      "pin": 5
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "ConfirmPIN",
+    "file": "src/screens/Authentication/PIN/Confirm/index.js",
+    "navigator": [
+      "Auth stack",
+      "Root stack"
+    ],
+    "namespaces": [
+      "pin",
+      "new",
+      "ff_onboarding_3_copy_refresh"
+    ],
+    "namespace_call_counts": {
+      "pin": 7,
+      "new": 6,
+      "ff_onboarding_3_copy_refresh": 2
+    },
+    "t_calls": 15,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "LBWelcome",
+    "file": "src/screens/Authentication/LBWelcome/index.js",
+    "navigator": [
+      "Auth stack",
+      "Root stack"
+    ],
+    "namespaces": [
+      "new_ob"
+    ],
+    "namespace_call_counts": {
+      "new_ob": 29
+    },
+    "t_calls": 29,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "kyc_lb_01",
+      "kyc_lb_02",
+      "kyc_lb_03"
+    ]
+  },
+  {
+    "route": "Splash",
+    "file": "src/index.js",
+    "navigator": "Root stack",
+    "namespaces": [
+      "onBoarding",
+      "sellFlow"
+    ],
+    "namespace_call_counts": {
+      "sellFlow": 1,
+      "onBoarding": 2
+    },
+    "t_calls": 3,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "onBoarding",
+    "file": "src/screens/welcome/index.js",
+    "navigator": "Root stack",
+    "namespaces": [
+      "onBoarding",
+      "logIn"
+    ],
+    "namespace_call_counts": {
+      "onBoarding": 12,
+      "logIn": 1
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "login_01_logged_out_home",
+      "logout_03"
+    ]
+  },
+  {
+    "route": "Auth",
+    "file": null,
+    "navigator": "Root stack",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": [],
+    "note": "nested navigator: AuthNavigator",
+    "container": true
+  },
+  {
+    "route": "Dashboard",
+    "file": null,
+    "navigator": "Root stack",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": [],
+    "note": "nested navigator: DashboardNavigator",
+    "container": true
+  },
+  {
+    "route": "EnterPIN",
+    "file": "src/screens/Authentication/PIN/Enter/index.js",
+    "navigator": "Root stack",
+    "namespaces": [
+      "pin",
+      "new",
+      "ff_onboarding_3_copy_refresh",
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "pin": 13,
+      "new": 6,
+      "voucher": 1,
+      "ff_onboarding_3_copy_refresh": 2
+    },
+    "t_calls": 22,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Deeplink",
+    "file": "src/screens/Deeplink/DeeplinkLayout.js",
+    "navigator": "Root stack",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 1
+    },
+    "t_calls": 1,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "DeeplinkCoinDetail",
+    "file": "src/screens/Dashboard/market/detail/index.js",
+    "navigator": "Root stack",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 1,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "P2P",
+    "file": "src/screens/Dashboard/p2p/index.js",
+    "navigator": "Home tab stack (PortfolioStack)",
+    "namespaces": [
+      "new"
+    ],
+    "namespace_call_counts": {
+      "new": 2
+    },
+    "t_calls": 2,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PortfolioHome",
+    "file": "src/screens/Dashboard/today/screens/TodayScreen.js",
+    "navigator": "Home tab stack (PortfolioStack)",
+    "namespaces": [
+      "updated",
+      "CardBanner",
+      "voucher"
+    ],
+    "namespace_call_counts": {
+      "updated": 6,
+      "CardBanner": 1,
+      "voucher": 1
+    },
+    "t_calls": 8,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "login_06_dashboard",
+      "dashboard_01_home"
+    ]
+  },
+  {
+    "route": "VerifyIdentity",
+    "file": "src/screens/Dashboard/portfolio/noKyc/index.js",
+    "navigator": "Home tab stack (PortfolioStack)",
+    "namespaces": [
+      "new",
+      "portfolio"
+    ],
+    "namespace_call_counts": {
+      "new": 6,
+      "portfolio": 1
+    },
+    "t_calls": 7,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "PortfolioHome",
+    "file": "src/route/stackNavigators.js",
+    "navigator": "Home tab stack, guest mode",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "login_06_dashboard",
+      "dashboard_01_home"
+    ],
+    "note": "guest wrapper around PortfolioStack (TodayScreen in guestMode)",
+    "container": true
+  },
+  {
+    "route": "PayResolver",
+    "file": "src/screens/Dashboard/FassetPay/screens/PayRouteResolver.js",
+    "navigator": "Pay tab stack",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "FassetPay",
+    "file": "src/screens/Dashboard/FassetPay/screens/HomeScreen.js",
+    "navigator": "Pay tab stack",
+    "namespaces": [
+      "fassetCard",
+      "new"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 54,
+      "new": 2
+    },
+    "t_calls": 56,
+    "hardcoded_literals_estimate": 24,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CardSelectionDetailScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardSelectionDetailScreen.js",
+    "navigator": "Pay tab stack",
+    "namespaces": [
+      "fassetCard",
+      "cardKyc"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 24,
+      "cardKyc": 1
+    },
+    "t_calls": 25,
+    "hardcoded_literals_estimate": 13,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "CardOnboardingScreen",
+    "file": "src/screens/Dashboard/FassetPay/screens/CardKYC/CardOnboardingScreen.js",
+    "navigator": "Pay tab stack",
+    "namespaces": [
+      "fassetCard"
+    ],
+    "namespace_call_counts": {
+      "fassetCard": 15
+    },
+    "t_calls": 15,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Home",
+    "file": "src/route/stackNavigators.js",
+    "navigator": [
+      "Main bottom tabs (AppTabs)",
+      "Main bottom tabs, guest mode"
+    ],
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "login_06_dashboard",
+      "dashboard_01_home",
+      "login_01_logged_out_home"
+    ],
+    "note": "nested navigator: PortfolioStack -> PortfolioHome (TodayScreen)",
+    "container": true
+  },
+  {
+    "route": "Pay",
+    "file": "src/route/stackNavigators.js",
+    "navigator": "Main bottom tabs (AppTabs)",
+    "namespaces": [],
+    "namespace_call_counts": {},
+    "t_calls": 0,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": [],
+    "note": "nested navigator: PayStackNavigator -> PayResolver/FassetPay",
+    "container": true
+  },
+  {
+    "route": "Markets",
+    "file": "src/screens/Dashboard/market_v4/screens/MarketScreen.js",
+    "navigator": [
+      "Main bottom tabs (AppTabs)",
+      "Main bottom tabs, guest mode"
+    ],
+    "namespaces": [
+      "market_v4"
+    ],
+    "namespace_call_counts": {
+      "market_v4": 5
+    },
+    "t_calls": 5,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "market_01_root"
+    ]
+  },
+  {
+    "route": "Transactions",
+    "file": "src/screens/Dashboard/payments/PaymentScreen.js",
+    "navigator": "Main bottom tabs (AppTabs)",
+    "namespaces": [
+      "fassetTag",
+      "market_v4"
+    ],
+    "namespace_call_counts": {
+      "fassetTag": 20,
+      "market_v4": 1
+    },
+    "t_calls": 21,
+    "hardcoded_literals_estimate": 0,
+    "captured": true,
+    "capture_ids": [
+      "history_01_recent"
+    ]
+  },
+  {
+    "route": "AccountV4",
+    "file": "src/screens/Authentication/signup/index.js",
+    "navigator": "Main bottom tabs, guest mode",
+    "namespaces": [
+      "signup_new",
+      "signUp",
+      "new",
+      "restrict_ob"
+    ],
+    "namespace_call_counts": {
+      "new": 1,
+      "signup_new": 9,
+      "restrict_ob": 1,
+      "signUp": 2
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  },
+  {
+    "route": "Transactions",
+    "file": "src/screens/Authentication/signup/index.js",
+    "navigator": "Main bottom tabs, guest mode",
+    "namespaces": [
+      "signup_new",
+      "signUp",
+      "new",
+      "restrict_ob"
+    ],
+    "namespace_call_counts": {
+      "new": 1,
+      "signup_new": 9,
+      "restrict_ob": 1,
+      "signUp": 2
+    },
+    "t_calls": 13,
+    "hardcoded_literals_estimate": 0,
+    "captured": false,
+    "capture_ids": []
+  }
+]

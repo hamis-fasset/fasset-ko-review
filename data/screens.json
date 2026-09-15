@@ -1,0 +1,680 @@
+{
+"screens": [
+{
+"id": "login_01_logged_out_home",
+"journey": "login",
+"journeyName": "Logging in",
+"name": "Welcome screen",
+"seq": 1,
+"img": "img/login_01_logged_out_home.jpg",
+"ns": [
+"logIn",
+"onBoarding",
+"onBoardingScreen",
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"verifyDevice",
+"pin",
+"restrict_ob"
+]
+},
+{
+"id": "login_02_login_options",
+"journey": "login",
+"journeyName": "Logging in",
+"name": "Log in options",
+"seq": 2,
+"img": "img/login_02_login_options.jpg",
+"ns": [
+"logIn",
+"onBoarding",
+"onBoardingScreen",
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"verifyDevice",
+"pin",
+"restrict_ob"
+]
+},
+{
+"id": "login_03_email_form",
+"journey": "login",
+"journeyName": "Logging in",
+"name": "Log in with email",
+"seq": 3,
+"img": "img/login_03_email_form.jpg",
+"ns": [
+"logIn",
+"onBoarding",
+"onBoardingScreen",
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"verifyDevice",
+"pin",
+"restrict_ob"
+]
+},
+{
+"id": "login_06_dashboard",
+"journey": "login",
+"journeyName": "Logging in",
+"name": "Home after logging in",
+"seq": 6,
+"img": "img/login_06_dashboard.jpg",
+"ns": [
+"accountsV4",
+"tabBar",
+"portfolio",
+"CardBanner",
+"updated",
+"tooltip",
+"market",
+"discoverCards"
+]
+},
+{
+"id": "dashboard_01_home",
+"journey": "dashboard",
+"journeyName": "Home",
+"name": "Home",
+"seq": 1,
+"img": "img/dashboard_01_home.jpg",
+"ns": [
+"accountsV4",
+"tabBar",
+"portfolio",
+"CardBanner",
+"updated",
+"tooltip",
+"market",
+"discoverCards"
+]
+},
+{
+"id": "market_01_root",
+"journey": "market",
+"journeyName": "Market",
+"name": "Market overview",
+"seq": 1,
+"img": "img/market_01_root.jpg",
+"ns": [
+"market_v4",
+"market",
+"bundles",
+"bundle",
+"stock",
+"stockMarketClosed",
+"tradeV4"
+]
+},
+{
+"id": "market_02_commodities",
+"journey": "market",
+"journeyName": "Market",
+"name": "Commodities",
+"seq": 2,
+"img": "img/market_02_commodities.jpg",
+"ns": [
+"market_v4",
+"market",
+"bundles",
+"bundle",
+"stock",
+"stockMarketClosed",
+"tradeV4"
+]
+},
+{
+"id": "market_03_funds",
+"journey": "market",
+"journeyName": "Market",
+"name": "Funds",
+"seq": 3,
+"img": "img/market_03_funds.jpg",
+"ns": [
+"market_v4",
+"market",
+"bundles",
+"bundle",
+"stock",
+"stockMarketClosed",
+"tradeV4"
+]
+},
+{
+"id": "market_04_bundles",
+"journey": "market",
+"journeyName": "Market",
+"name": "Bundles",
+"seq": 4,
+"img": "img/market_04_bundles.jpg",
+"ns": [
+"market_v4",
+"market",
+"bundles",
+"bundle",
+"stock",
+"stockMarketClosed",
+"tradeV4"
+]
+},
+{
+"id": "buy_01_trade_sheet",
+"journey": "buy",
+"journeyName": "Buying",
+"name": "Buy or sell sheet",
+"seq": 1,
+"img": "img/buy_01_trade_sheet.jpg",
+"ns": [
+"buyV4",
+"tradeV4",
+"depositCKO",
+"checkOut",
+"modals",
+"youDontHaveBankAccount"
+]
+},
+{
+"id": "buy_02_asset_list",
+"journey": "buy",
+"journeyName": "Buying",
+"name": "Choose an asset",
+"seq": 2,
+"img": "img/buy_02_asset_list.jpg",
+"ns": [
+"buyV4",
+"tradeV4",
+"depositCKO",
+"checkOut",
+"modals",
+"youDontHaveBankAccount"
+]
+},
+{
+"id": "buy_03_payment_method",
+"journey": "buy",
+"journeyName": "Buying",
+"name": "Choose how to pay",
+"seq": 3,
+"img": "img/buy_03_payment_method.jpg",
+"ns": [
+"buyV4",
+"tradeV4",
+"depositCKO",
+"checkOut",
+"modals",
+"youDontHaveBankAccount"
+]
+},
+{
+"id": "buy_04_amount_empty",
+"journey": "buy",
+"journeyName": "Buying",
+"name": "Enter amount",
+"seq": 4,
+"img": "img/buy_04_amount_empty.jpg",
+"ns": [
+"buyV4",
+"tradeV4",
+"depositCKO",
+"checkOut",
+"modals",
+"youDontHaveBankAccount"
+]
+},
+{
+"id": "buy_05_amount_filled",
+"journey": "buy",
+"journeyName": "Buying",
+"name": "Amount entered",
+"seq": 5,
+"img": "img/buy_05_amount_filled.jpg",
+"ns": [
+"buyV4",
+"tradeV4",
+"depositCKO",
+"checkOut",
+"modals",
+"youDontHaveBankAccount"
+]
+},
+{
+"id": "buy_06_confirmation",
+"journey": "buy",
+"journeyName": "Buying",
+"name": "Confirm purchase",
+"seq": 6,
+"img": "img/buy_06_confirmation.jpg",
+"ns": [
+"buyV4",
+"tradeV4",
+"depositCKO",
+"checkOut",
+"modals",
+"youDontHaveBankAccount"
+]
+},
+{
+"id": "buy_07_success",
+"journey": "buy",
+"journeyName": "Buying",
+"name": "Purchase complete",
+"seq": 7,
+"img": "img/buy_07_success.jpg",
+"ns": [
+"buyV4",
+"tradeV4",
+"depositCKO",
+"checkOut",
+"modals",
+"youDontHaveBankAccount"
+]
+},
+{
+"id": "sell_01_trade_sheet",
+"journey": "sell",
+"journeyName": "Selling",
+"name": "Buy or sell sheet",
+"seq": 1,
+"img": "img/sell_01_trade_sheet.jpg",
+"ns": [
+"sellFlow",
+"tradeV4",
+"cryptoWithDraw",
+"withdrawalModal"
+]
+},
+{
+"id": "sell_02_asset_list",
+"journey": "sell",
+"journeyName": "Selling",
+"name": "Choose an asset to sell",
+"seq": 2,
+"img": "img/sell_02_asset_list.jpg",
+"ns": [
+"sellFlow",
+"tradeV4",
+"cryptoWithDraw",
+"withdrawalModal"
+]
+},
+{
+"id": "sell_03_receive_method",
+"journey": "sell",
+"journeyName": "Selling",
+"name": "Choose where to receive money",
+"seq": 3,
+"img": "img/sell_03_receive_method.jpg",
+"ns": [
+"sellFlow",
+"tradeV4",
+"cryptoWithDraw",
+"withdrawalModal"
+]
+},
+{
+"id": "sell_04_amount_empty",
+"journey": "sell",
+"journeyName": "Selling",
+"name": "Enter amount",
+"seq": 4,
+"img": "img/sell_04_amount_empty.jpg",
+"ns": [
+"sellFlow",
+"tradeV4",
+"cryptoWithDraw",
+"withdrawalModal"
+]
+},
+{
+"id": "sell_05_amount_filled",
+"journey": "sell",
+"journeyName": "Selling",
+"name": "Amount entered",
+"seq": 5,
+"img": "img/sell_05_amount_filled.jpg",
+"ns": [
+"sellFlow",
+"tradeV4",
+"cryptoWithDraw",
+"withdrawalModal"
+]
+},
+{
+"id": "sell_06_confirmation",
+"journey": "sell",
+"journeyName": "Selling",
+"name": "Confirm sale",
+"seq": 6,
+"img": "img/sell_06_confirmation.jpg",
+"ns": [
+"sellFlow",
+"tradeV4",
+"cryptoWithDraw",
+"withdrawalModal"
+]
+},
+{
+"id": "sell_07_success",
+"journey": "sell",
+"journeyName": "Selling",
+"name": "Sale complete",
+"seq": 7,
+"img": "img/sell_07_success.jpg",
+"ns": [
+"sellFlow",
+"tradeV4",
+"cryptoWithDraw",
+"withdrawalModal"
+]
+},
+{
+"id": "history_01_recent",
+"journey": "history",
+"journeyName": "History",
+"name": "Recent transactions",
+"seq": 1,
+"img": "img/history_01_recent.jpg",
+"ns": [
+"accountsV4",
+"voucher",
+"vouchers",
+"p2pTabs"
+]
+},
+{
+"id": "history_02_list",
+"journey": "history",
+"journeyName": "History",
+"name": "All transactions",
+"seq": 2,
+"img": "img/history_02_list.jpg",
+"ns": [
+"accountsV4",
+"voucher",
+"vouchers",
+"p2pTabs"
+]
+},
+{
+"id": "history_03_detail",
+"journey": "history",
+"journeyName": "History",
+"name": "Transaction details",
+"seq": 3,
+"img": "img/history_03_detail.jpg",
+"ns": [
+"accountsV4",
+"voucher",
+"vouchers",
+"p2pTabs"
+]
+},
+{
+"id": "settings_01_hub",
+"journey": "settings",
+"journeyName": "Settings",
+"name": "Account menu",
+"seq": 1,
+"img": "img/settings_01_hub.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals"
+]
+},
+{
+"id": "settings_02_language",
+"journey": "settings",
+"journeyName": "Settings",
+"name": "Language",
+"seq": 2,
+"img": "img/settings_02_language.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals"
+]
+},
+{
+"id": "settings_03_currency",
+"journey": "settings",
+"journeyName": "Settings",
+"name": "Currency",
+"seq": 3,
+"img": "img/settings_03_currency.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals"
+]
+},
+{
+"id": "logout_01_account_menu",
+"journey": "logout",
+"journeyName": "Logging out",
+"name": "Account menu",
+"seq": 1,
+"img": "img/logout_01_account_menu.jpg",
+"ns": [
+"account",
+"modals"
+]
+},
+{
+"id": "logout_02_confirm_dialog",
+"journey": "logout",
+"journeyName": "Logging out",
+"name": "Confirm log out",
+"seq": 2,
+"img": "img/logout_02_confirm_dialog.jpg",
+"ns": [
+"account",
+"modals"
+]
+},
+{
+"id": "logout_03_logged_out",
+"journey": "logout",
+"journeyName": "Logging out",
+"name": "Logged out",
+"seq": 3,
+"img": "img/logout_03_logged_out.jpg",
+"ns": [
+"account",
+"modals"
+]
+},
+{
+"id": "kyc_ae_01_financial_profile",
+"journey": "kyc_ae",
+"journeyName": "Identity check (UAE)",
+"name": "Financial profile",
+"seq": 1,
+"img": "img/kyc_ae_01_financial_profile.jpg",
+"ns": [
+"kyc",
+"kycQuest",
+"kycValidate",
+"manualKYC",
+"newKYCQuestion",
+"poa",
+"pep",
+"lean",
+"cardKyc"
+]
+},
+{
+"id": "kyc_ae_02_proof_of_address",
+"journey": "kyc_ae",
+"journeyName": "Identity check (UAE)",
+"name": "Proof of address",
+"seq": 2,
+"img": "img/kyc_ae_02_proof_of_address.jpg",
+"ns": [
+"kyc",
+"kycQuest",
+"kycValidate",
+"manualKYC",
+"newKYCQuestion",
+"poa",
+"pep",
+"lean",
+"cardKyc"
+]
+},
+{
+"id": "kyc_ae_03_money_questions",
+"journey": "kyc_ae",
+"journeyName": "Identity check (UAE)",
+"name": "Questions about your money",
+"seq": 3,
+"img": "img/kyc_ae_03_money_questions.jpg",
+"ns": [
+"kyc",
+"kycQuest",
+"kycValidate",
+"manualKYC",
+"newKYCQuestion",
+"poa",
+"pep",
+"lean",
+"cardKyc"
+]
+},
+{
+"id": "kyc_ae_04_link_bank",
+"journey": "kyc_ae",
+"journeyName": "Identity check (UAE)",
+"name": "Link your bank",
+"seq": 4,
+"img": "img/kyc_ae_04_link_bank.jpg",
+"ns": [
+"kyc",
+"kycQuest",
+"kycValidate",
+"manualKYC",
+"newKYCQuestion",
+"poa",
+"pep",
+"lean",
+"cardKyc"
+]
+},
+{
+"id": "kyc_lb_01_financial_profile",
+"journey": "kyc_lb",
+"journeyName": "Identity check (Lebanon)",
+"name": "Financial profile",
+"seq": 1,
+"img": "img/kyc_lb_01_financial_profile.jpg",
+"ns": [
+"kyc",
+"kycQuest",
+"kycValidate",
+"manualKYC",
+"newKYCQuestion",
+"poa",
+"pep",
+"cardKyc"
+]
+},
+{
+"id": "kyc_lb_02_money_questions",
+"journey": "kyc_lb",
+"journeyName": "Identity check (Lebanon)",
+"name": "Questions about your money",
+"seq": 2,
+"img": "img/kyc_lb_02_money_questions.jpg",
+"ns": [
+"kyc",
+"kycQuest",
+"kycValidate",
+"manualKYC",
+"newKYCQuestion",
+"poa",
+"pep",
+"cardKyc"
+]
+},
+{
+"id": "kyc_lb_03_money_questions_filled",
+"journey": "kyc_lb",
+"journeyName": "Identity check (Lebanon)",
+"name": "Questions answered",
+"seq": 3,
+"img": "img/kyc_lb_03_money_questions_filled.jpg",
+"ns": [
+"kyc",
+"kycQuest",
+"kycValidate",
+"manualKYC",
+"newKYCQuestion",
+"poa",
+"pep",
+"cardKyc"
+]
+}
+],
+"journeys": [
+{
+"id": "login",
+"name": "Logging in"
+},
+{
+"id": "dashboard",
+"name": "Home"
+},
+{
+"id": "market",
+"name": "Market"
+},
+{
+"id": "buy",
+"name": "Buying"
+},
+{
+"id": "sell",
+"name": "Selling"
+},
+{
+"id": "history",
+"name": "History"
+},
+{
+"id": "settings",
+"name": "Settings"
+},
+{
+"id": "logout",
+"name": "Logging out"
+},
+{
+"id": "kyc_ae",
+"name": "Identity check (UAE)"
+},
+{
+"id": "kyc_lb",
+"name": "Identity check (Lebanon)"
+}
+],
+"captured": "Android 13 emulator · app 6.11 build 552 · captured 14–15 Sep 2026"
+}
