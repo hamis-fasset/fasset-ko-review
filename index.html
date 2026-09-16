@@ -247,7 +247,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
   function persist(){try{localStorage.setItem(LS,JSON.stringify(S));savedAt=new Date();tickSaved();}catch(e){$('#t-saved').textContent='Could not save in this browser';}}
   function tickSaved(){ if(!savedAt) return; const m=Math.round((Date.now()-savedAt)/60000); $('#t-saved').textContent='Saved in this browser · '+(m<1?'just now':m+' min ago'); }
   setInterval(tickSaved,30000);
-  const koOf=k=>S.edits[k]??byKey[k].ko;
+  const koOf=k=>S.edits[k]??(byKey[k]?byKey[k].ko:'');
   function visualText(k,m){
     let value=koOf(k);
     if(m&&m.stripLeadingBullet) value=value.replace(/^\s*•\s*/, '');
@@ -260,7 +260,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     return value;
   }
   function sourceVisualText(k,m){
-    let value=byKey[k].en;
+    let value=byKey[k]?byKey[k].en:'';
     if(m&&m.stripLeadingBullet) value=value.replace(/^\s*•\s*/, '');
     if(m&&m.segment==='beforePdf') value=(value.match(/^.*?\(PDF\)/i)||[value])[0].trim();
     if(m&&m.segment==='afterPdf') value=value.replace(/^.*?\(PDF\)\s*/i,'').trim();
@@ -270,7 +270,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     if(m&&m.segment==='addressExample') value=(value.match(/E\.g\.,\s*.*$/i)||[''])[0].trim();
     return value;
   }
-  const shouldPaint=(k,m)=>m.visualSafe!==false&&visualText(k,m)!==sourceVisualText(k,m);
+  const shouldPaint=(k,m)=>!!byKey[k]&&m.visualSafe!==false&&visualText(k,m)!==sourceVisualText(k,m);
 
   /* ---- fit measurement ---- */
   const mctx=document.createElement('canvas').getContext('2d');
