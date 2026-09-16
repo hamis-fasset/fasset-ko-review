@@ -392,7 +392,7 @@
  "hc.047": {
   "en": "Log in with Google G",
   "norm": "log in with google g",
-  "ko": null,
+  "ko": "Google로 로그인",
   "kind": "fragment",
   "screens": [
    "login_02_login_options"
@@ -401,7 +401,7 @@
  "hc.048": {
   "en": "Select a method",
   "norm": "select a method",
-  "ko": null,
+  "ko": "결제 수단 선택",
   "kind": "text",
   "screens": [
    "deposit_full_01_methods_approved",
@@ -413,7 +413,7 @@
  "hc.049": {
   "en": "Bank Linked Transfer Up to 8 business hours • No fee",
   "norm": "bank linked transfer up to 8 business hours no fee",
-  "ko": null,
+  "ko": "계좌 연동 이체 최대 8영업시간 이내 • 수수료 없음",
   "kind": "text",
   "screens": [
    "deposit_full_01_methods_approved",
@@ -425,7 +425,7 @@
  "hc.050": {
   "en": "Pay By Bank",
   "norm": "pay by bank",
-  "ko": null,
+  "ko": "Pay By Bank",
   "kind": "text",
   "screens": [
    "deposit_full_01_methods_approved",
@@ -437,7 +437,7 @@
  "hc.051": {
   "en": "Google Pay",
   "norm": "google pay",
-  "ko": null,
+  "ko": "Google Pay",
   "kind": "text",
   "screens": [
    "deposit_full_01_methods_approved",
@@ -449,7 +449,7 @@
  "hc.052": {
   "en": "Instant • 1.5% fee",
   "norm": "instant 1 5 fee",
-  "ko": null,
+  "ko": "즉시 • 수수료 1.5%",
   "kind": "text",
   "screens": [
    "deposit_full_01_methods_approved",
@@ -461,7 +461,7 @@
  "hc.053": {
   "en": "Instant to 72 hours max • 3.25% fee",
   "norm": "instant to 72 hours max 3 25 fee",
-  "ko": null,
+  "ko": "즉시~최대 72시간 • 수수료 3.25%",
   "kind": "text",
   "screens": [
    "deposit_full_01_methods_approved",
@@ -474,7 +474,7 @@
  "hc.054": {
   "en": "Bank Transfer via IBAN",
   "norm": "bank transfer via iban",
-  "ko": null,
+  "ko": "IBAN 계좌 이체",
   "kind": "text",
   "screens": [
    "deposit_full_01_methods_approved",
@@ -484,7 +484,7 @@
  "hc.055": {
   "en": "Please use internationally issued cards only. We recommend using a debit card, as some banks may charge extra fees on credit card transactions.",
   "norm": "please use internationally issued cards only we recommend using a debit card as some banks may charge extra fees on credit card transactions",
-  "ko": null,
+  "ko": "해외에서 발급된 카드만 사용해 주세요. 일부 은행은 신용카드 거래에 추가 수수료를 부과할 수 있어 체크카드 사용을 추천해요.",
   "kind": "text",
   "screens": [
    "deposit_full_02_card_amount_form"
@@ -493,7 +493,7 @@
  "hc.056": {
   "en": "Maximum deposit: 3673 AED",
   "norm": "maximum deposit 3673 aed",
-  "ko": null,
+  "ko": "최대 입금 금액: 3673 AED",
   "kind": "text",
   "screens": [
    "deposit_full_02_card_amount_form"
@@ -502,7 +502,7 @@
  "hc.057": {
   "en": "Al Khaliji (France) S.A.",
   "norm": "al khaliji france s a",
-  "ko": null,
+  "ko": "Al Khaliji (France) S.A.",
   "kind": "text",
   "screens": [
    "deposit_full_04_wire_bank_sheet"
@@ -511,7 +511,7 @@
  "hc.058": {
   "en": "+ Link new",
   "norm": "link new",
-  "ko": null,
+  "ko": "+ 계좌 추가",
   "kind": "text",
   "screens": [
    "deposit_full_04_wire_bank_sheet"
@@ -520,7 +520,7 @@
  "hc.059": {
   "en": "Al Khaliji (France) S.A. **7349",
   "norm": "al khaliji france s a 7349",
-  "ko": null,
+  "ko": "Al Khaliji (France) S.A. **7349",
   "kind": "text",
   "screens": [
    "deposit_full_05_wire_amount_form"
@@ -529,7 +529,7 @@
  "hc.060": {
   "en": "Daily limit left: 36,729.2 AED",
   "norm": "daily limit left 36 729 2 aed",
-  "ko": null,
+  "ko": "남은 일일 한도: 36,729.2 AED",
   "kind": "text",
   "screens": [
    "deposit_full_05_wire_amount_form"
@@ -538,7 +538,7 @@
  "hc.061": {
   "en": "Maximum deposit: 3,672.92 AED",
   "norm": "maximum deposit 3 672 92 aed",
-  "ko": null,
+  "ko": "최대 입금 금액: 3,672.92 AED",
   "kind": "text",
   "screens": [
    "deposit_full_05_wire_amount_form"
@@ -547,7 +547,7 @@
  "hc.062": {
   "en": "Make the transfer from your bank and provide a screenshot as proof of transaction.",
   "norm": "make the transfer from your bank and provide a screenshot as proof of transaction",
-  "ko": null,
+  "ko": "은행에서 이체한 후 거래 증빙으로 스크린샷을 제출해 주세요.",
   "kind": "text",
   "screens": [
    "deposit_full_06_wire_instructions",
@@ -557,7 +557,7 @@
  "hc.063": {
   "en": "FASSET FZE Client Money Account",
   "norm": "fasset fze client money account",
-  "ko": null,
+  "ko": "FASSET FZE Client Money Account",
   "kind": "text",
   "screens": [
    "deposit_full_06_wire_instructions",
@@ -567,7 +567,7 @@
  "hc.064": {
   "en": "Emaar Square Dubai",
   "norm": "emaar square dubai",
-  "ko": null,
+  "ko": "Emaar Square Dubai",
   "kind": "text",
   "screens": [
    "deposit_full_06_wire_instructions",
@@ -577,7 +577,7 @@
  "hc.065": {
   "en": "Upload proof of transaction.",
   "norm": "upload proof of transaction",
-  "ko": null,
+  "ko": "거래 증빙을 업로드해 주세요.",
   "kind": "text",
   "screens": [
    "deposit_full_06_wire_instructions",
@@ -587,7 +587,7 @@
  "hc.066": {
   "en": "Upload a file less than 2MB",
   "norm": "upload a file less than 2mb",
-  "ko": null,
+  "ko": "2MB 이하 파일 업로드",
   "kind": "text",
   "screens": [
    "deposit_full_06_wire_instructions",
@@ -597,7 +597,7 @@
  "hc.067": {
   "en": "You can only transfer from a bank account in your name (Tester).",
   "norm": "you can only transfer from a bank account in your name tester",
-  "ko": null,
+  "ko": "본인 이름(Tester)으로 된 계좌에서만 이체할 수 있어요.",
   "kind": "text",
   "screens": [
    "deposit_full_07_wire_instructions_scrolled"
@@ -606,7 +606,7 @@
  "hc.068": {
   "en": "Bitcoins",
   "norm": "bitcoins",
-  "ko": null,
+  "ko": "비트코인",
   "kind": "text",
   "screens": [
    "deposit_full_09_crypto_search"
@@ -615,7 +615,7 @@
  "hc.069": {
   "en": "Camina cann",
   "norm": "camina cann",
-  "ko": null,
+  "ko": "Camina cann",
   "kind": "text",
   "screens": [
    "deposit_full_12_card_kyc_gate"
@@ -624,7 +624,7 @@
  "hc.070": {
   "en": "Take e",
   "norm": "take e",
-  "ko": null,
+  "ko": "Take e",
   "kind": "text",
   "screens": [
    "deposit_full_13_profile_verification"
@@ -633,7 +633,7 @@
  "hc.071": {
   "en": "Total Staked Assets",
   "norm": "total staked assets",
-  "ko": null,
+  "ko": "총 스테이킹 자산",
   "kind": "text",
   "screens": [
    "earn_full_02_staking"
@@ -642,7 +642,7 @@
  "hc.072": {
   "en": "Rewards (all time)",
   "norm": "rewards all time",
-  "ko": null,
+  "ko": "누적 보상",
   "kind": "text",
   "screens": [
    "earn_full_02_staking"
@@ -651,7 +651,7 @@
  "hc.073": {
   "en": "Available Assets",
   "norm": "available assets",
-  "ko": null,
+  "ko": "사용 가능 자산",
   "kind": "text",
   "screens": [
    "earn_full_02_staking"
@@ -660,7 +660,7 @@
  "hc.074": {
   "en": "Staked Assets",
   "norm": "staked assets",
-  "ko": null,
+  "ko": "스테이킹 자산",
   "kind": "text",
   "screens": [
    "earn_full_02_staking"
@@ -669,7 +669,7 @@
  "hc.075": {
   "en": "est.APR",
   "norm": "est apr",
-  "ko": null,
+  "ko": "예상 APR",
   "kind": "text",
   "screens": [
    "earn_full_02_staking"
@@ -678,7 +678,7 @@
  "hc.076": {
   "en": "USDT Flex Saver",
   "norm": "usdt flex saver",
-  "ko": null,
+  "ko": "USDT Flex Saver",
   "kind": "text",
   "screens": [
    "earn_full_03_savings",
@@ -688,7 +688,7 @@
  "hc.077": {
   "en": "USDT Stable Saver",
   "norm": "usdt stable saver",
-  "ko": null,
+  "ko": "USDT Stable Saver",
   "kind": "text",
   "screens": [
    "earn_full_03_savings",
@@ -698,7 +698,7 @@
  "hc.078": {
   "en": "Available: 0 | MAX",
   "norm": "available 0 max",
-  "ko": null,
+  "ko": "사용 가능: 0 | MAX",
   "kind": "text",
   "screens": [
    "earn_full_04_flex_saver_detail"
@@ -707,7 +707,7 @@
  "hc.079": {
   "en": "Minimum investment 40 USDT Maximum investment 100,000 USDT",
   "norm": "minimum investment 40 usdt maximum investment 100 000 usdt",
-  "ko": null,
+  "ko": "최소 투자 금액 40 USDT 최대 투자 금액 100,000 USDT",
   "kind": "text",
   "screens": [
    "earn_full_04_flex_saver_detail"
@@ -716,7 +716,7 @@
  "hc.080": {
   "en": "I have read and agree to Fasset User /",
   "norm": "i have read and agree to fasset user",
-  "ko": null,
+  "ko": "Fasset 이용약관에 동의합니다 /",
   "kind": "text",
   "screens": [
    "earn_full_04_flex_saver_detail",
@@ -726,7 +726,7 @@
  "hc.081": {
   "en": "Available: O| MAX",
   "norm": "available o max",
-  "ko": null,
+  "ko": "사용 가능: 0 | MAX",
   "kind": "text",
   "screens": [
    "earn_full_05_stable_saver_detail"
@@ -735,7 +735,7 @@
  "hc.082": {
   "en": "Minimum investment 60 USDT Maximum investment 100,000 USDT",
   "norm": "minimum investment 60 usdt maximum investment 100 000 usdt",
-  "ko": null,
+  "ko": "최소 투자 금액 60 USDT 최대 투자 금액 100,000 USDT",
   "kind": "text",
   "screens": [
    "earn_full_05_stable_saver_detail"
@@ -744,7 +744,7 @@
  "hc.084": {
   "en": "10 OWN Points",
   "norm": "10 own points",
-  "ko": null,
+  "ko": "OWN 포인트 10점",
   "kind": "text",
   "screens": [
    "rewards_04_overview"
@@ -753,7 +753,7 @@
  "hc.085": {
   "en": "60 in 60 Camapign",
   "norm": "60 in 60 camapign",
-  "ko": null,
+  "ko": "60 in 60 캠페인",
   "kind": "text",
   "screens": [
    "rewards_04_overview"
@@ -762,7 +762,7 @@
  "hc.086": {
   "en": "OWN left to the next reward",
   "norm": "own left to the next reward",
-  "ko": null,
+  "ko": "다음 리워드까지 남은 OWN",
   "kind": "text",
   "screens": [
    "rewards_04_overview"
@@ -771,7 +771,7 @@
  "hc.087": {
   "en": "Al & Data Dominator",
   "norm": "al data dominator",
-  "ko": null,
+  "ko": "AI & Data Dominator",
   "kind": "text",
   "screens": [
    "rewards_04_overview"
@@ -780,7 +780,7 @@
  "hc.088": {
   "en": "Trade Bitcoin, Ethereum, or SOL",
   "norm": "trade bitcoin ethereum or sol",
-  "ko": null,
+  "ko": "비트코인, 이더리움, SOL 거래하기",
   "kind": "text",
   "screens": [
    "rewards_04_overview",
@@ -790,7 +790,7 @@
  "hc.089": {
   "en": "SOWN is the utility token powering the Own blockchain a full-stack RWA chain. It enables users to access, trade, and earn from real-world assets, 24/7, globally.",
   "norm": "sown is the utility token powering the own blockchain a full stack rwa chain it enables users to access trade and earn from real world assets 24 7 globally",
-  "ko": null,
+  "ko": "OWN은 풀스택 RWA 체인인 Own 블록체인을 구동하는 유틸리티 토큰이에요. 사용자는 전 세계 어디서나 하루 24시간 실물 자산에 접근해 거래하고 수익을 얻을 수 있어요.",
   "kind": "text",
   "screens": [
    "rewards_05_own_token"
@@ -799,7 +799,7 @@
  "hc.090": {
   "en": "• As the Fasset user base grows, SOWN demand grows.",
   "norm": "as the fasset user base grows sown demand grows",
-  "ko": null,
+  "ko": "• Fasset 사용자가 늘어날수록 OWN 수요도 늘어나요.",
   "kind": "text",
   "screens": [
    "rewards_05_own_token"
@@ -808,7 +808,7 @@
  "hc.091": {
   "en": "Meet Fasset",
   "norm": "meet fasset",
-  "ko": null,
+  "ko": "Fasset 알아보기",
   "kind": "text",
   "screens": [
    "rewards_06_tasks"
@@ -817,7 +817,7 @@
  "hc.092": {
   "en": "Perform KYC and get verified",
   "norm": "perform kyc and get verified",
-  "ko": null,
+  "ko": "본인인증 완료하기",
   "kind": "text",
   "screens": [
    "rewards_06_tasks",
@@ -827,7 +827,7 @@
  "hc.093": {
   "en": "Five Days Login Streak",
   "norm": "five days login streak",
-  "ko": null,
+  "ko": "5일 연속 로그인",
   "kind": "text",
   "screens": [
    "rewards_06_tasks"
@@ -836,7 +836,7 @@
  "hc.094": {
   "en": "Basic Tasks",
   "norm": "basic tasks",
-  "ko": null,
+  "ko": "기본 미션",
   "kind": "text",
   "screens": [
    "rewards_06_tasks"
@@ -845,7 +845,7 @@
  "hc.095": {
   "en": "Make your first deposit",
   "norm": "make your first deposit",
-  "ko": null,
+  "ko": "첫 입금하기",
   "kind": "text",
   "screens": [
    "rewards_06_tasks"
@@ -854,7 +854,7 @@
  "hc.096": {
   "en": "Make your first trade",
   "norm": "make your first trade",
-  "ko": null,
+  "ko": "첫 거래하기",
   "kind": "text",
   "screens": [
    "rewards_06_tasks"
@@ -863,7 +863,7 @@
  "hc.097": {
   "en": "Complete 3 crypto trades",
   "norm": "complete 3 crypto trades",
-  "ko": null,
+  "ko": "디지털 자산 거래 3건 완료하기",
   "kind": "text",
   "screens": [
    "rewards_06_tasks"
@@ -872,7 +872,7 @@
  "hc.098": {
   "en": "Damarala",
   "norm": "damarala",
-  "ko": null,
+  "ko": "Damarala",
   "kind": "text",
   "screens": [
    "rewards_07_kyc_task"
@@ -881,7 +881,7 @@
  "hc.099": {
   "en": "Complete KYC, get verified, and claim your reward today!",
   "norm": "complete kyc get verified and claim your reward today",
-  "ko": null,
+  "ko": "오늘 본인인증을 완료하고 인증받아 리워드를 받아보세요.",
   "kind": "text",
   "screens": [
    "rewards_07_kyc_task"
@@ -890,7 +890,7 @@
  "hc.100": {
   "en": "How to Own",
   "norm": "how to own",
-  "ko": null,
+  "ko": "OWN 받는 방법",
   "kind": "text",
   "screens": [
    "rewards_07_kyc_task"
@@ -899,7 +899,7 @@
  "hc.101": {
   "en": "To unlock your reward, just complete the KYC process within the Fasset app. After getting verified, your reward is automatically credited. Enjoy the benefits of secure, verified",
   "norm": "to unlock your reward just complete the kyc process within the fasset app after getting verified your reward is automatically credited enjoy the benefits of secure verified",
-  "ko": null,
+  "ko": "리워드를 받으려면 Fasset 앱에서 본인인증만 완료하면 돼요. 인증이 끝나면 리워드가 자동으로 지급돼요. 안전하게 인증된",
   "kind": "text",
   "screens": [
    "rewards_07_kyc_task"
@@ -908,7 +908,7 @@
  "hc.102": {
   "en": "access to Fasset!",
   "norm": "access to fasset",
-  "ko": null,
+  "ko": "Fasset 이용 혜택을 누려보세요.",
   "kind": "text",
   "screens": [
    "rewards_07_kyc_task"
@@ -917,7 +917,7 @@
  "hc.103": {
   "en": "Task in progress",
   "norm": "task in progress",
-  "ko": null,
+  "ko": "미션 진행 중",
   "kind": "text",
   "screens": [
    "rewards_07_kyc_task"
@@ -926,7 +926,7 @@
  "hc.106": {
   "en": "email.",
   "norm": "email",
-  "ko": null,
+  "ko": "email.",
   "kind": "text",
   "screens": [
    "signup_06_email_otp"
@@ -935,7 +935,7 @@
  "hc.107": {
   "en": "United States of America",
   "norm": "united states of america",
-  "ko": null,
+  "ko": "미국",
   "kind": "text",
   "screens": [
    "signup_07_personal_info_empty",
@@ -945,7 +945,7 @@
  "hc.108": {
   "en": "By continuing you agree with our Terms of Service",
   "norm": "by continuing you agree with our terms of service",
-  "ko": null,
+  "ko": "계속 진행하면 이용약관에 동의하게 됩니다.",
   "kind": "text",
   "screens": [
    "signup_07_personal_info_empty"
@@ -954,7 +954,7 @@
  "hc.109": {
   "en": "- Åland Islands",
   "norm": "land islands",
-  "ko": null,
+  "ko": "- 올란드 제도",
   "kind": "text",
   "screens": [
    "signup_08_country_picker"
@@ -963,7 +963,7 @@
  "hc.110": {
   "en": "Reducing investment risk with USDC, a stablecoin linked to the US",
   "norm": "reducing investment risk with usdc a stablecoin linked to the us",
-  "ko": null,
+  "ko": "Reducing investment risk with USDC, a stablecoin linked to the US",
   "kind": "text",
   "screens": [
    "market_04_bundles"
