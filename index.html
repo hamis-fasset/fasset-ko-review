@@ -207,6 +207,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
   const withSample=(s,vals)=>s.replace(PH_RE,(m,n)=>{const v=vals&&vals[n]; if(v) return (/^[a-z]{2,5}$/.test(v)?v.toUpperCase():v); return SAMPLE[n]??n;});
 
   const [copyRows,scr,ocr]=await Promise.all(['data/copy.json','data/screens.json','data/ocr.json'].map(u=>fetch(u).then(r=>r.json())));
+  fetch('data/review-meta.json').then(r=>r.ok?r.json():null).then(m=>{ if(!m) return; const el=document.createElement('span'); el.className='pill'; el.style.background='var(--ok-soft)'; el.style.color='var(--ok)'; el.textContent=`Reviewed copy applied ${new Date(m.applied_at).toLocaleDateString('en-GB',{day:'numeric',month:'short'})} · ${m.changes} changes`; document.querySelector('.top .where').after(el); }).catch(()=>{});
   const byKey=Object.fromEntries(copyRows.map(r=>[r.k,r]));
   const screens=scr.screens.slice();
   screens.push({id:'__rest',journey:'rest',journeyName:'Not yet captured',name:'All other strings',seq:1,img:null,ns:[]});
