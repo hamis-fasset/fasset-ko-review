@@ -56,6 +56,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
 .box.sel{outline:2px solid var(--accent);outline-offset:1px;background:rgba(34,71,192,.08)}
 .box.fixed{cursor:default}
 .box.fixed:hover{background:transparent;outline:1.5px dashed var(--line-strong)}
+.box.weak{outline:1.5px dashed rgba(34,71,192,.45)}
 .patch{position:absolute;display:flex;overflow:visible;pointer-events:none;white-space:pre-wrap}
 .patch span{display:block;white-space:nowrap}
 .patch.multi span{white-space:normal}
@@ -203,7 +204,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
   const PH_RE=/\{\{\s*(\w+)\s*\}\}/g;
   const SAMPLE={amount:'1,250.00',currency:'USD',name:'지민',count:'3',coin:'BTC',percent:'1.00',time:'30',days:'7',balance:'6,800.60',limit:'2,500',code:'AB12CD',value:'jimin@email.com',otpType:'SMS',spend:'BTC',receive:'USDT',from:'BTC',to:'USDT',min:'10',max:'5,000',type:'USDT',symbol:'BTC',timer:'10',suffix:'···4821',channelName:'GoPay',current:'2',total:'5',deviceName:'iPhone 15',transactionType:'P2P',dynamicLink:'fasset.link/abc',appLink:'fasset.com/app'};
   const fmtPh=s=>esc(s).replace(PH_RE,(m,n)=>`<span class="ph">{{${n}}}</span>`);
-  const withSample=s=>s.replace(PH_RE,(m,n)=>SAMPLE[n]??n);
+  const withSample=(s,vals)=>s.replace(PH_RE,(m,n)=>{const v=vals&&vals[n]; if(v) return (/^[a-z]{2,5}$/.test(v)?v.toUpperCase():v); return SAMPLE[n]??n;});
 
   const [copyRows,scr,ocr]=await Promise.all(['data/copy.json','data/screens.json','data/ocr.json'].map(u=>fetch(u).then(r=>r.json())));
   const byKey=Object.fromEntries(copyRows.map(r=>[r.k,r]));
@@ -224,11 +225,12 @@ button{cursor:pointer;background:none;border:0;padding:0}
   /* ---- fit measurement ---- */
   const mctx=document.createElement('canvas').getContext('2d');
   function fitRatio(k,m){ // m = ocr match box (image px)
-    const fs=m.lh*0.9; mctx.font=`500 ${fs}px "Noto Sans KR", sans-serif`;
-    const txt=withSample(koOf(k)); const lines=m.lines||1;
+    const fs=fontPx(m); mctx.font=`500 ${fs}px "Noto Sans KR", sans-serif`;
+    const txt=withSample(koOf(k),m.vals); const lines=m.lines||1;
     const wKo=mctx.measureText(txt).width; const avail=m.w*lines; return wKo/Math.max(avail,1);
   }
   function fitLevel(r){return r>1.15?'bad':r>1?'warn':''}
+  function fontPx(m){ return (m.lines||1)===1 ? Math.min(m.lh*0.9, 2.1*m.w/Math.max((m.text||'xxxx').length,4)) : m.lh*0.9; }
 
   /* ---- per screen model ---- */
   let idx=Math.max(0,screens.findIndex(s=>s.id===(localStorage.getItem(LS+':screen')||''))); if(idx<0) idx=0;
@@ -272,9 +274,10 @@ button{cursor:pointer;background:none;border:0;padding:0}
     // bg = median of border pixels; fg = pixel most distant from bg
     const border=[]; const step=Math.max(1,Math.floor((w+h)/80));
     for(let x=0;x<w;x+=step){border.push((0*w+x)*4);border.push(((h-1)*w+x)*4);} for(let y=0;y<h;y+=step){border.push((y*w+0)*4);border.push((y*w+w-1)*4);}
-    const rs=[],gs=[],bs=[]; border.forEach(i=>{rs.push(d[i]);gs.push(d[i+1]);bs.push(d[i+2]);});
-    const med=a=>{a.sort((p,q)=>p-q);return a[a.length>>1]};
-    const bg=[med(rs),med(gs),med(bs)];
+    const buckets={}; border.forEach(i=>{const key=(d[i]>>3)+','+(d[i+1]>>3)+','+(d[i+2]>>3); (buckets[key]=buckets[key]||[]).push(i);});
+    const top=Object.values(buckets).sort((a,b)=>b.length-a.length)[0]||[];
+    const avg=c=>Math.round(top.reduce((s,i)=>s+d[i+c],0)/Math.max(top.length,1));
+    const bg=top.length?[avg(0),avg(1),avg(2)]:[255,255,255];
     let best=0,fg=[0,0,0];
     for(let i=0;i<d.length;i+=16){const dist=Math.abs(d[i]-bg[0])+Math.abs(d[i+1]-bg[1])+Math.abs(d[i+2]-bg[2]); if(dist>best){best=dist;fg=[d[i],d[i+1],d[i+2]];}}
     if(best<60) fg=[20,20,20];
@@ -292,17 +295,17 @@ button{cursor:pointer;background:none;border:0;padding:0}
         const cls=`box ${sel===v.k?'sel':''}`;
         en+=`<div class="${cls}" data-k="${esc(v.k)}" style="${st}" title="${esc(byKey[v.k].en)}"></div>`;
         const ck=s.id+'|'+m.x+'|'+m.y; const c=colorCache[ck]||(colorCache[ck]=sampleColors(m));
-        const fs=m.lh*0.9*scale; const cx=m.x+m.w/2; const align= Math.abs(cx-imgW/2)<40?'center':(m.x>imgW*0.55?'right':'left');
+        const fs=fontPx(m)*scale; const cx=m.x+m.w/2; const align= Math.abs(cx-imgW/2)<40?'center':(m.x>imgW*0.55?'right':'left');
         const r=fitRatio(v.k,m); const lvl=fitLevel(r);
-        const txt=withSample(koOf(v.k)); const multi=(m.lines||1)>1;
+        const txt=withSample(koOf(v.k),m.vals); const multi=(m.lines||1)>1;
         const pad=4*scale;
         ko+=`<div class="patch ${multi?'multi':''} ${lvl==='warn'?'over':lvl==='bad'?'over over2':''}" style="left:${(m.x-pad)*scale}px;top:${(m.y-2)*scale}px;width:${(m.w+2*pad)*scale}px;min-height:${m.h*scale}px;background:${c.bg};color:${c.fg};font-size:${fs}px;line-height:${(m.lh*1.15)*scale}px;justify-content:${align==='center'?'center':align==='right'?'flex-end':'flex-start'};text-align:${align};padding:0 ${pad}px;align-items:${multi?'flex-start':'center'}" lang="ko"><span>${esc(txt)}</span></div>`;
-        ko+=`<div class="${cls}" data-k="${esc(v.k)}" style="${st}"></div>`;
+        ko+=`<div class="${cls} ${m.weak?'weak':''}" data-k="${esc(v.k)}" style="${st}"></div>`;
       }
     }
     for(const u of M.unmatched){
       const st=`left:${u.x*scale}px;top:${u.y*scale}px;width:${u.w*scale}px;height:${u.h*scale}px`;
-      en+=`<div class="box fixed" data-fixed="1" style="${st}"></div>`; ko+=`<div class="box fixed" data-fixed="1" style="${st}"></div>`;
+      const kind=u.kind||'text'; en+=`<div class="box fixed" data-fixed="${kind}" style="${st}"></div>`; ko+=`<div class="box fixed" data-fixed="${kind}" style="${st}"></div>`;
     }
     ovEn.innerHTML=en; ovKo.innerHTML=ko;
   }
@@ -310,7 +313,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     let tip=null;
     ov.addEventListener('click',e=>{const b=e.target.closest('.box'); if(!b||b.dataset.fixed) return; select(b.dataset.k,true);});
     ov.addEventListener('mouseover',e=>{const b=e.target.closest('.box'); if(!b) return;
-      if(b.dataset.fixed){ tip=document.createElement('div'); tip.className='tip'; tip.textContent='This text is fixed in the app for now. You do not need to check it.'; tip.style.left=b.style.left; tip.style.top=b.style.top; ov.appendChild(tip); return; }
+      if(b.dataset.fixed){ tip=document.createElement('div'); tip.className='tip'; tip.textContent=({fragment:'This sentence is assembled from pieces in the app, so it stays in English for now.',truncated:'This English text is already cut off in the app. Engineering will look at it.',data:'Live data, not copy.'})[b.dataset.fixed]||'This text is fixed in the app for now. You do not need to check it.'; tip.style.left=b.style.left; tip.style.top=b.style.top; ov.appendChild(tip); return; }
       document.querySelectorAll(`.box[data-k="${CSS.escape(b.dataset.k)}"]`).forEach(x=>x.classList.add('hover'));
       const card=document.querySelector(`.card[data-k="${CSS.escape(b.dataset.k)}"]`); if(card) card.classList.add('hover');
     });
@@ -326,6 +329,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     const missing=enPh.filter(p=>!koPh.includes(p));
     let fitHTML=''; if(m){const l=fitLevel(fitRatio(k,m)); if(l==='warn') fitHTML=`<div class="fit warn"><i></i>A bit long. It may wrap or get cut off in the app.</div>`; if(l==='bad') fitHTML=`<div class="fit bad"><i></i>Too long for this space. Please shorten.</div>`;}
     let noteHTML=''; const f=r.flag;
+    if(m&&m.weak) noteHTML+=`<div class="note" style="background:var(--accent-soft)"><b style="color:var(--accent)">Check the meaning here</b><span>The same English is used elsewhere in the app for a different thing. Make sure this Korean fits this screen.</span></div>`;
     if(f&&f.type==='needs_context'&&f.cells[3]) noteHTML=`<div class="note"><b>Translator's note</b><span>${esc(f.cells[3])}</span>${f.cells[4]?`<span class="alt">${esc(f.cells[4])}</span><span><button class="link" data-alt="${esc(f.cells[4].split(/\s(?:if|when|\()/)[0].replace(/^`|`$/g,''))}">Use this instead</button></span>`:''}</div>`;
     else if(f&&f.type==='length_flags') noteHTML=`<div class="note"><b>Translator's note</b><span>The Korean here is longer than the English. ${esc(f.cells.slice(1).join(' '))}</span></div>`;
     return `<article class="card ${edited?'edited':''} ${ok?'ok':''} ${sel===k?'sel':''}" data-k="${esc(k)}">
