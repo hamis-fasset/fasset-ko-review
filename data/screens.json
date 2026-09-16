@@ -88,6 +88,208 @@
 ]
 },
 {
+"id": "signup_01_welcome",
+"journey": "signup",
+"journeyName": "Signing up",
+"name": "Welcome",
+"seq": 1,
+"img": "img/signup_01_welcome.jpg",
+"ns": [
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"onBoarding",
+"onBoardingScreen",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"pin",
+"verifyDevice",
+"restrict_ob"
+]
+},
+{
+"id": "signup_02_email_form_empty",
+"journey": "signup",
+"journeyName": "Signing up",
+"name": "Sign up with email",
+"seq": 2,
+"img": "img/signup_02_email_form_empty.jpg",
+"ns": [
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"onBoarding",
+"onBoardingScreen",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"pin",
+"verifyDevice",
+"restrict_ob"
+]
+},
+{
+"id": "signup_03_email_form_password_rules",
+"journey": "signup",
+"journeyName": "Signing up",
+"name": "Sign up · password rules",
+"seq": 3,
+"img": "img/signup_03_email_form_password_rules.jpg",
+"ns": [
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"onBoarding",
+"onBoardingScreen",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"pin",
+"verifyDevice",
+"restrict_ob"
+]
+},
+{
+"id": "signup_04_email_form_filled",
+"journey": "signup",
+"journeyName": "Signing up",
+"name": "Sign up · details entered",
+"seq": 4,
+"img": "img/signup_04_email_form_filled.jpg",
+"ns": [
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"onBoarding",
+"onBoardingScreen",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"pin",
+"verifyDevice",
+"restrict_ob"
+]
+},
+{
+"id": "signup_05_email_confirm_sheet",
+"journey": "signup",
+"journeyName": "Signing up",
+"name": "Sign up · confirm email",
+"seq": 5,
+"img": "img/signup_05_email_confirm_sheet.jpg",
+"ns": [
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"onBoarding",
+"onBoardingScreen",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"pin",
+"verifyDevice",
+"restrict_ob"
+]
+},
+{
+"id": "signup_06_email_otp",
+"journey": "signup",
+"journeyName": "Signing up",
+"name": "Sign up · email code",
+"seq": 6,
+"img": "img/signup_06_email_otp.jpg",
+"ns": [
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"onBoarding",
+"onBoardingScreen",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"pin",
+"verifyDevice",
+"restrict_ob"
+]
+},
+{
+"id": "signup_07_personal_info_empty",
+"journey": "signup",
+"journeyName": "Signing up",
+"name": "Sign up · personal details",
+"seq": 7,
+"img": "img/signup_07_personal_info_empty.jpg",
+"ns": [
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"onBoarding",
+"onBoardingScreen",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"pin",
+"verifyDevice",
+"restrict_ob"
+]
+},
+{
+"id": "signup_08_country_picker",
+"journey": "signup",
+"journeyName": "Signing up",
+"name": "Sign up · choose country",
+"seq": 8,
+"img": "img/signup_08_country_picker.jpg",
+"ns": [
+"signUp",
+"signup_new",
+"newSignup",
+"nonSocial",
+"onBoarding",
+"onBoardingScreen",
+"globalOnboard",
+"ff_onboarding_3_copy_refresh",
+"new_ob",
+"pin",
+"verifyDevice",
+"restrict_ob"
+]
+},
+{
+"id": "forgot_password_01_request_form",
+"journey": "forgot_password",
+"journeyName": "Forgot password",
+"name": "Forgot password",
+"seq": 1,
+"img": "img/forgot_password_01_request_form.jpg",
+"ns": [
+"logIn",
+"signUp",
+"new"
+]
+},
+{
+"id": "forgot_password_02_request_form_filled",
+"journey": "forgot_password",
+"journeyName": "Forgot password",
+"name": "Forgot password · email entered",
+"seq": 2,
+"img": "img/forgot_password_02_request_form_filled.jpg",
+"ns": [
+"logIn",
+"signUp",
+"new"
+]
+},
+{
 "id": "dashboard_01_home",
 "journey": "dashboard",
 "journeyName": "Home",
@@ -384,6 +586,412 @@
 ]
 },
 {
+"id": "deposit_full_01_methods_approved",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Deposit methods",
+"seq": 1,
+"img": "img/deposit_full_01_methods_approved.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_02_card_amount_form",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Card deposit · amount",
+"seq": 2,
+"img": "img/deposit_full_02_card_amount_form.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_03_card_preview",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Card deposit · confirm",
+"seq": 3,
+"img": "img/deposit_full_03_card_preview.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_04_wire_bank_sheet",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Bank transfer · choose bank",
+"seq": 4,
+"img": "img/deposit_full_04_wire_bank_sheet.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_05_wire_amount_form",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Bank transfer · amount",
+"seq": 5,
+"img": "img/deposit_full_05_wire_amount_form.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_06_wire_instructions",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Bank transfer · instructions",
+"seq": 6,
+"img": "img/deposit_full_06_wire_instructions.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_07_wire_instructions_scrolled",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Bank transfer · instructions (continued)",
+"seq": 7,
+"img": "img/deposit_full_07_wire_instructions_scrolled.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_08_crypto_asset_list",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Receive crypto · choose asset",
+"seq": 8,
+"img": "img/deposit_full_08_crypto_asset_list.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_09_crypto_search",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Receive crypto · search",
+"seq": 9,
+"img": "img/deposit_full_09_crypto_search.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_10_crypto_receive_address",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Receive crypto · address",
+"seq": 10,
+"img": "img/deposit_full_10_crypto_receive_address.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_11_methods_unverified",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Deposit methods · not yet verified",
+"seq": 11,
+"img": "img/deposit_full_11_methods_unverified.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_12_card_kyc_gate",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Card deposit · verification needed",
+"seq": 12,
+"img": "img/deposit_full_12_card_kyc_gate.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "deposit_full_13_profile_verification",
+"journey": "deposit_full",
+"journeyName": "Deposit",
+"name": "Profile verification",
+"seq": 13,
+"img": "img/deposit_full_13_profile_verification.jpg",
+"ns": [
+"depositV4",
+"depositCKO",
+"depositeScreen",
+"indoDepositPayList",
+"cryptoWithDraw",
+"lean",
+"youDontHaveBankAccount",
+"new"
+]
+},
+{
+"id": "earn_full_01_overview",
+"journey": "earn_full",
+"journeyName": "Earn",
+"name": "Earn overview",
+"seq": 1,
+"img": "img/earn_full_01_overview.jpg",
+"ns": [
+"earn",
+"staking"
+]
+},
+{
+"id": "earn_full_02_staking",
+"journey": "earn_full",
+"journeyName": "Earn",
+"name": "Staking",
+"seq": 2,
+"img": "img/earn_full_02_staking.jpg",
+"ns": [
+"earn",
+"staking"
+]
+},
+{
+"id": "earn_full_03_savings",
+"journey": "earn_full",
+"journeyName": "Earn",
+"name": "Savings plans",
+"seq": 3,
+"img": "img/earn_full_03_savings.jpg",
+"ns": [
+"earn",
+"staking"
+]
+},
+{
+"id": "earn_full_04_flex_saver_detail",
+"journey": "earn_full",
+"journeyName": "Earn",
+"name": "Flex Saver",
+"seq": 4,
+"img": "img/earn_full_04_flex_saver_detail.jpg",
+"ns": [
+"earn",
+"staking"
+]
+},
+{
+"id": "earn_full_05_stable_saver_detail",
+"journey": "earn_full",
+"journeyName": "Earn",
+"name": "Stable Saver",
+"seq": 5,
+"img": "img/earn_full_05_stable_saver_detail.jpg",
+"ns": [
+"earn",
+"staking"
+]
+},
+{
+"id": "rewards_01_onboarding_earn",
+"journey": "rewards",
+"journeyName": "Rewards",
+"name": "Rewards intro · earn",
+"seq": 1,
+"img": "img/rewards_01_onboarding_earn.jpg",
+"ns": [
+"rewardsV4",
+"refer",
+"referralProgram",
+"referralProgress",
+"voucher",
+"vouchers"
+]
+},
+{
+"id": "rewards_02_onboarding_multiply",
+"journey": "rewards",
+"journeyName": "Rewards",
+"name": "Rewards intro · multiply",
+"seq": 2,
+"img": "img/rewards_02_onboarding_multiply.jpg",
+"ns": [
+"rewardsV4",
+"refer",
+"referralProgram",
+"referralProgress",
+"voucher",
+"vouchers"
+]
+},
+{
+"id": "rewards_03_onboarding_levelup",
+"journey": "rewards",
+"journeyName": "Rewards",
+"name": "Rewards intro · level up",
+"seq": 3,
+"img": "img/rewards_03_onboarding_levelup.jpg",
+"ns": [
+"rewardsV4",
+"refer",
+"referralProgram",
+"referralProgress",
+"voucher",
+"vouchers"
+]
+},
+{
+"id": "rewards_04_overview",
+"journey": "rewards",
+"journeyName": "Rewards",
+"name": "Rewards overview",
+"seq": 4,
+"img": "img/rewards_04_overview.jpg",
+"ns": [
+"rewardsV4",
+"refer",
+"referralProgram",
+"referralProgress",
+"voucher",
+"vouchers"
+]
+},
+{
+"id": "rewards_05_own_token",
+"journey": "rewards",
+"journeyName": "Rewards",
+"name": "OWN token",
+"seq": 5,
+"img": "img/rewards_05_own_token.jpg",
+"ns": [
+"rewardsV4",
+"refer",
+"referralProgram",
+"referralProgress",
+"voucher",
+"vouchers"
+]
+},
+{
+"id": "rewards_06_tasks",
+"journey": "rewards",
+"journeyName": "Rewards",
+"name": "Reward tasks",
+"seq": 6,
+"img": "img/rewards_06_tasks.jpg",
+"ns": [
+"rewardsV4",
+"refer",
+"referralProgram",
+"referralProgress",
+"voucher",
+"vouchers"
+]
+},
+{
+"id": "rewards_07_kyc_task",
+"journey": "rewards",
+"journeyName": "Rewards",
+"name": "Reward task · verify identity",
+"seq": 7,
+"img": "img/rewards_07_kyc_task.jpg",
+"ns": [
+"rewardsV4",
+"refer",
+"referralProgram",
+"referralProgress",
+"voucher",
+"vouchers"
+]
+},
+{
 "id": "history_01_recent",
 "journey": "history",
 "journeyName": "History",
@@ -640,6 +1248,14 @@
 "name": "Logging in"
 },
 {
+"id": "signup",
+"name": "Signing up"
+},
+{
+"id": "forgot_password",
+"name": "Forgot password"
+},
+{
 "id": "dashboard",
 "name": "Home"
 },
@@ -654,6 +1270,18 @@
 {
 "id": "sell",
 "name": "Selling"
+},
+{
+"id": "deposit_full",
+"name": "Deposit"
+},
+{
+"id": "earn_full",
+"name": "Earn"
+},
+{
+"id": "rewards",
+"name": "Rewards"
 },
 {
 "id": "history",
