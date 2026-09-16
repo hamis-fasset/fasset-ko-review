@@ -29,15 +29,6 @@
    "history_01_recent"
   ]
  },
- "hc.005": {
-  "en": "Reducing investment risk with USDC, a stablecoin linked to the US dollar.",
-  "norm": "reducing investment risk with usdc a stablecoin linked to the us dollar",
-  "ko": "미국 달러에 연동된 스테이블코인 USDC로 투자 위험을 낮춰요.",
-  "kind": "text",
-  "screens": [
-   "market_04_bundles"
-  ]
- },
  "hc.006": {
   "en": "Secure and flexible asset investments for lasting stability.",
   "norm": "secure and flexible asset investments for lasting stability",
@@ -750,15 +741,6 @@
    "earn_full_05_stable_saver_detail"
   ]
  },
- "hc.083": {
-  "en": "asdfghikl",
-  "norm": "asdfghikl",
-  "ko": null,
-  "kind": "text",
-  "screens": [
-   "forgot_password_02_request_form_filled"
-  ]
- },
  "hc.084": {
   "en": "10 OWN Points",
   "norm": "10 own points",
@@ -941,28 +923,6 @@
    "rewards_07_kyc_task"
   ]
  },
- "hc.104": {
-  "en": "awertyuiop",
-  "norm": "awertyuiop",
-  "ko": null,
-  "kind": "text",
-  "screens": [
-   "signup_03_email_form_password_rules",
-   "signup_04_email_form_filled",
-   "signup_05_email_confirm_sheet"
-  ]
- },
- "hc.105": {
-  "en": "asdfghik!",
-  "norm": "asdfghik",
-  "ko": null,
-  "kind": "text",
-  "screens": [
-   "signup_03_email_form_password_rules",
-   "signup_04_email_form_filled",
-   "signup_05_email_confirm_sheet"
-  ]
- },
  "hc.106": {
   "en": "email.",
   "norm": "email",
@@ -998,6 +958,15 @@
   "kind": "text",
   "screens": [
    "signup_08_country_picker"
+  ]
+ },
+ "hc.110": {
+  "en": "Reducing investment risk with USDC, a stablecoin linked to the US",
+  "norm": "reducing investment risk with usdc a stablecoin linked to the us",
+  "ko": null,
+  "kind": "text",
+  "screens": [
+   "market_04_bundles"
   ]
  }
 }
