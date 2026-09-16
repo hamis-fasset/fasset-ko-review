@@ -210,7 +210,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
 (async function(){
   const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const PH_RE=/\{\{\s*(\w+)\s*\}\}/g;
-  const SAMPLE={amount:'1,250.00',currency:'USD',name:'지민',count:'3',coin:'BTC',percent:'1.00',time:'30',days:'7',balance:'6,800.60',limit:'2,500',code:'AB12CD',value:'jimin@email.com',otpType:'SMS',spend:'BTC',receive:'USDT',from:'BTC',to:'USDT',min:'10',max:'5,000',type:'USDT',symbol:'BTC',timer:'10',suffix:'···4821',channelName:'GoPay',current:'2',total:'5',deviceName:'iPhone 15',transactionType:'P2P',dynamicLink:'fasset.link/abc',appLink:'fasset.com/app'};
+  const SAMPLE={amount:'1,250.00',currency:'USD',name:'지민',count:'3',coin:'BTC',percent:'1.00',time:'30',days:'7',balance:'6,800.60',limit:'2,500',code:'AB12CD',value:'jimin@email.com',otpType:'SMS',spend:'BTC',receive:'USDT',from:'BTC',to:'USDT',min:'10',max:'5,000',type:'USDT',symbol:'BTC',timer:'10',suffix:'···4821',channelName:'GoPay',current:'2',total:'5',deviceName:'iPhone 15',transactionType:'P2P',dynamicLink:'fasset.link/abc',appLink:'fasset.com/app',value1:'45',value2:'AED',value3:'USD',asset:'BTC'};
   const fmtPh=s=>esc(s).replace(PH_RE,(m,n)=>`<span class="ph">{{${n}}}</span>`);
   const withSample=(s,vals)=>s.replace(PH_RE,(m,n)=>{const v=vals&&vals[n]; if(v) return (/^[a-z]{2,5}$/.test(v)?v.toUpperCase():v); return SAMPLE[n]??n;});
 
