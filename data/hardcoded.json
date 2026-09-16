@@ -1,0 +1,409 @@
+{
+ "hc.001": {
+  "en": "Sign up with Google",
+  "norm": "sign up with google",
+  "ko": "Google로 가입하기",
+  "kind": "fragment",
+  "screens": [
+   "login_01_logged_out_home"
+  ]
+ },
+ "hc.002": {
+  "en": "Log in with Google G",
+  "norm": "log in with google g",
+  "ko": "Google로 로그인",
+  "kind": "fragment",
+  "screens": [
+   "login_02_login_options"
+  ]
+ },
+ "hc.003": {
+  "en": "Log in with Facebook",
+  "norm": "log in with facebook",
+  "ko": "Facebook으로 로그인",
+  "kind": "fragment",
+  "screens": [
+   "login_02_login_options"
+  ]
+ },
+ "hc.004": {
+  "en": "Pay friends. No bank details needed. Send and request money instantly to friends using your Fasset tag",
+  "norm": "pay friends no bank details needed send and request money instantly to friends using your fasset tag",
+  "ko": "친구에게 송금해요. 계좌 정보는 필요 없어요. Fasset Tag만으로 친구에게 바로 돈을 보내고 요청할 수 있어요.",
+  "kind": "text",
+  "screens": [
+   "login_06_dashboard",
+   "dashboard_01_home",
+   "history_01_recent"
+  ]
+ },
+ "hc.005": {
+  "en": "Reducing investment risk with USDC, a stablecoin linked to the US dollar.",
+  "norm": "reducing investment risk with usdc a stablecoin linked to the us dollar",
+  "ko": "미국 달러에 연동된 스테이블코인 USDC로 투자 위험을 낮춰요.",
+  "kind": "text",
+  "screens": [
+   "market_04_bundles"
+  ]
+ },
+ "hc.006": {
+  "en": "Secure and flexible asset investments for lasting stability.",
+  "norm": "secure and flexible asset investments for lasting stability",
+  "ko": "안전하고 유연한 자산 투자로 지속적인 안정을 추구해요.",
+  "kind": "text",
+  "screens": [
+   "market_04_bundles"
+  ]
+ },
+ "hc.008": {
+  "en": "Cash - USD",
+  "norm": "cash usd",
+  "ko": "현금 - USD",
+  "kind": "text",
+  "screens": [
+   "buy_03_payment_method",
+   "sell_03_receive_method"
+  ]
+ },
+ "hc.009": {
+  "en": "Card - USD",
+  "norm": "card usd",
+  "ko": "카드 - USD",
+  "kind": "text",
+  "screens": [
+   "buy_03_payment_method"
+  ]
+ },
+ "hc.010": {
+  "en": "We recommend using a debit card, banks may charge extra fees on credit card transactions",
+  "norm": "we recommend using a debit card banks may charge extra fees on credit card transactions",
+  "ko": "체크카드 사용을 권장해요. 신용카드 결제는 은행에서 추가 수수료를 부과할 수 있어요.",
+  "kind": "text",
+  "screens": [
+   "buy_03_payment_method"
+  ]
+ },
+ "hc.011": {
+  "en": "Min",
+  "norm": "min",
+  "ko": "최소",
+  "kind": "text",
+  "screens": [
+   "buy_04_amount_empty",
+   "sell_04_amount_empty"
+  ]
+ },
+ "hc.012": {
+  "en": "The quoted price includes applicable fees and potential slippage, and may change based on market conditions. Trading assets involves significant risk due to their volatility and unpredictability. Please invest responsibly and refer to our Risk Disclosure for more information.",
+  "norm": "the quoted price includes applicable fees and potential slippage and may change based on market conditions trading assets involves significant risk due to their volatility and unpredictability please invest responsibly and refer to our risk disclosure for more information",
+  "ko": "표시된 가격에는 해당 수수료와 예상 슬리피지가 포함되어 있으며, 시장 상황에 따라 변동될 수 있습니다. 자산 거래는 높은 변동성과 예측 불가능성으로 인해 상당한 위험을 수반합니다. 책임감 있게 투자하시고, 자세한 내용은 위험 고지를 참고하십시오.",
+  "kind": "text",
+  "screens": [
+   "buy_06_confirmation",
+   "sell_06_confirmation"
+  ]
+ },
+ "hc.013": {
+  "en": "By proceeding, you agree with our Terms of Service",
+  "norm": "by proceeding you agree with our terms of service",
+  "ko": "계속 진행하면 이용약관에 동의하는 것으로 간주됩니다.",
+  "kind": "text",
+  "screens": [
+   "buy_06_confirmation",
+   "sell_06_confirmation"
+  ]
+ },
+ "hc.015": {
+  "en": "Sold {{asset}}",
+  "norm": "sold {{asset}}",
+  "ko": "{{asset}} 판매",
+  "kind": "text",
+  "screens": [
+   "history_02_list"
+  ]
+ },
+ "hc.016": {
+  "en": "Bought {{asset}}",
+  "norm": "bought {{asset}}",
+  "ko": "{{asset}} 구매",
+  "kind": "text",
+  "screens": [
+   "history_02_list"
+  ]
+ },
+ "hc.017": {
+  "en": "Awaiting a",
+  "norm": "awaiting a",
+  "ko": "활성화 대기 중",
+  "kind": "truncated",
+  "screens": [
+   "logout_03_logged_out"
+  ]
+ },
+ "hc.018": {
+  "en": "Nationality",
+  "norm": "nationality",
+  "ko": "국적",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_01_financial_profile",
+   "kyc_lb_01_financial_profile"
+  ]
+ },
+ "hc.019": {
+  "en": "Enter the country you were born in",
+  "norm": "enter the country you were born in",
+  "ko": "출생 국가를 입력하십시오",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_01_financial_profile"
+  ]
+ },
+ "hc.020": {
+  "en": "Residential Address",
+  "norm": "residential address",
+  "ko": "거주지 주소",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_01_financial_profile",
+   "kyc_lb_01_financial_profile"
+  ]
+ },
+ "hc.021": {
+  "en": "Input complete address E.g., Crescentcreek 2 Building - Portsaeed 20 B",
+  "norm": "input complete address e g crescentcreek 2 building portsaeed 20 b",
+  "ko": "전체 주소를 입력하십시오. 예: Crescentcreek 2 Building - Portsaeed 20 B",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_01_financial_profile",
+   "kyc_lb_01_financial_profile"
+  ]
+ },
+ "hc.022": {
+  "en": "Select your employment status",
+  "norm": "select your employment status",
+  "ko": "직업 상태를 선택하십시오",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_01_financial_profile",
+   "kyc_lb_01_financial_profile"
+  ]
+ },
+ "hc.023": {
+  "en": "Company",
+  "norm": "company",
+  "ko": "회사",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_01_financial_profile",
+   "kyc_lb_01_financial_profile"
+  ]
+ },
+ "hc.024": {
+  "en": "Company name",
+  "norm": "company name",
+  "ko": "회사명",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_01_financial_profile"
+  ]
+ },
+ "hc.025": {
+  "en": "Upload Proof of Address",
+  "norm": "upload proof of address",
+  "ko": "주소 증명 서류 업로드",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_02_proof_of_address"
+  ]
+ },
+ "hc.026": {
+  "en": "Upload a photo or document less than 20MB",
+  "norm": "upload a photo or document less than 20mb",
+  "ko": "20MB 미만의 사진 또는 문서를 업로드하십시오",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_02_proof_of_address"
+  ]
+ },
+ "hc.027": {
+  "en": "• Bank or credit card statement (1st page only)",
+  "norm": "bank or credit card statement 1st page only",
+  "ko": "• 은행 거래내역서 또는 신용카드 명세서(첫 페이지만)",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_02_proof_of_address"
+  ]
+ },
+ "hc.028": {
+  "en": "• Utility bill (gas, water, phone, internet, electricity)",
+  "norm": "utility bill gas water phone internet electricity",
+  "ko": "• 공과금 고지서(가스, 수도, 전화, 인터넷, 전기)",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_02_proof_of_address"
+  ]
+ },
+ "hc.029": {
+  "en": "• Tenancy contract or rent agreement",
+  "norm": "tenancy contract or rent agreement",
+  "ko": "• 임대차 계약서",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_02_proof_of_address"
+  ]
+ },
+ "hc.030": {
+  "en": "• Is in English",
+  "norm": "is in english",
+  "ko": "• 영어로 작성된 서류",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_02_proof_of_address"
+  ]
+ },
+ "hc.031": {
+  "en": "• Shows your full name and address",
+  "norm": "shows your full name and address",
+  "ko": "• 성명과 주소가 모두 표시된 서류",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_02_proof_of_address"
+  ]
+ },
+ "hc.032": {
+  "en": "• Clearly legible with no crops or blur",
+  "norm": "clearly legible with no crops or blur",
+  "ko": "• 잘리거나 흐린 부분 없이 선명한 서류",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_02_proof_of_address"
+  ]
+ },
+ "hc.033": {
+  "en": "• Dated within 3 months",
+  "norm": "dated within 3 months",
+  "ko": "• 최근 3개월 이내에 발급된 서류",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_02_proof_of_address"
+  ]
+ },
+ "hc.034": {
+  "en": "2. Purpose Of Account Creation",
+  "norm": "2 purpose of account creation",
+  "ko": "2. 계정 개설 목적",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_03_money_questions"
+  ]
+ },
+ "hc.035": {
+  "en": "Long-term investment",
+  "norm": "long term investment",
+  "ko": "장기 투자",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_03_money_questions"
+  ]
+ },
+ "hc.036": {
+  "en": "3. Annual Income",
+  "norm": "3 annual income",
+  "ko": "3. 연간 소득",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_03_money_questions"
+  ]
+ },
+ "hc.037": {
+  "en": "3-Month Bank Statement(PDF) Must cover the last three full months, show your name and be an official bank document, not a screenshot.",
+  "norm": "3 month bank statement pdf must cover the last three full months show your name and be an official bank document not a screenshot",
+  "ko": "3개월 은행 거래내역서(PDF) 최근 3개월 전체 기간을 포함하고 성명이 표시된 은행 공식 문서여야 하며, 스크린샷은 인정되지 않습니다.",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_04_link_bank"
+  ]
+ },
+ "hc.038": {
+  "en": "Document Password (If Any)",
+  "norm": "document password if any",
+  "ko": "문서 비밀번호(있는 경우)",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_04_link_bank"
+  ]
+ },
+ "hc.039": {
+  "en": "Please type here",
+  "norm": "please type here",
+  "ko": "여기에 입력하십시오",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_04_link_bank"
+  ]
+ },
+ "hc.040": {
+  "en": "Occupation",
+  "norm": "occupation",
+  "ko": "직업",
+  "kind": "text",
+  "screens": [
+   "kyc_lb_01_financial_profile"
+  ]
+ },
+ "hc.041": {
+  "en": "Select your occupation",
+  "norm": "select your occupation",
+  "ko": "직업을 선택하십시오",
+  "kind": "text",
+  "screens": [
+   "kyc_lb_01_financial_profile"
+  ]
+ },
+ "hc.042": {
+  "en": "Input name of your employer",
+  "norm": "input name of your employer",
+  "ko": "고용주명을 입력하십시오",
+  "kind": "text",
+  "screens": [
+   "kyc_lb_01_financial_profile"
+  ]
+ },
+ "hc.043": {
+  "en": "Long term investing",
+  "norm": "long term investing",
+  "ko": "장기 투자",
+  "kind": "text",
+  "screens": [
+   "kyc_lb_03_money_questions_filled"
+  ]
+ },
+ "hc.044": {
+  "en": "Your order has been completed. Successfully",
+  "norm": "your order has been completed successfully",
+  "ko": "주문이 완료됐어요.",
+  "kind": "text",
+  "screens": [
+   "sell_07_success"
+  ]
+ },
+ "hc.045": {
+  "en": "Input complete address",
+  "norm": "input complete address",
+  "ko": "전체 주소를 입력하십시오",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_01_financial_profile"
+  ]
+ },
+ "hc.046": {
+  "en": "E.g., Crescentcreek 2 Building - Portsaeed 20 B",
+  "norm": "e g crescentcreek 2 building portsaeed 20 b",
+  "ko": "예: Crescentcreek 2 Building - Portsaeed 20 B",
+  "kind": "text",
+  "screens": [
+   "kyc_ae_01_financial_profile"
+  ]
+ }
+}

@@ -240,7 +240,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     if(s.id===REST_ID){
       const onScreen=new Set(); for(const sid in ocr) ocr[sid].matches.forEach(m=>onScreen.add(m.k));
       const covered=new Set(); scr.screens.forEach(x=>x.ns.forEach(n=>covered.add(n)));
-      let hidden=copyRows.filter(r=>r.canon===r.k&&!r.keep&&!onScreen.has(r.k)&&!covered.has(r.ns));
+      let hidden=copyRows.filter(r=>r.canon===r.k&&!r.keep&&!r.hc&&!onScreen.has(r.k)&&!covered.has(r.ns));
       if(restQ){const q=restQ.toLowerCase(); hidden=hidden.filter(r=>r.en.toLowerCase().includes(q)||r.ko.toLowerCase().includes(q));}
       hidden.sort((a,b)=>a.ns.localeCompare(b.ns)||a.k.localeCompare(b.k));
       return {visible:[],hidden,unmatched:[],rest:true};
@@ -313,7 +313,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     let tip=null;
     ov.addEventListener('click',e=>{const b=e.target.closest('.box'); if(!b||b.dataset.fixed) return; select(b.dataset.k,true);});
     ov.addEventListener('mouseover',e=>{const b=e.target.closest('.box'); if(!b) return;
-      if(b.dataset.fixed){ tip=document.createElement('div'); tip.className='tip'; tip.textContent=({fragment:'This sentence is assembled from pieces in the app, so it stays in English for now.',truncated:'This English text is already cut off in the app. Engineering will look at it.',data:'Live data, not copy.'})[b.dataset.fixed]||'This text is fixed in the app for now. You do not need to check it.'; tip.style.left=b.style.left; tip.style.top=b.style.top; ov.appendChild(tip); return; }
+      if(b.dataset.fixed){ tip=document.createElement('div'); tip.className='tip'; tip.textContent='Live data (asset name, amount, account details), not copy.'; tip.style.left=b.style.left; tip.style.top=b.style.top; ov.appendChild(tip); return; }
       document.querySelectorAll(`.box[data-k="${CSS.escape(b.dataset.k)}"]`).forEach(x=>x.classList.add('hover'));
       const card=document.querySelector(`.card[data-k="${CSS.escape(b.dataset.k)}"]`); if(card) card.classList.add('hover');
     });
@@ -329,6 +329,8 @@ button{cursor:pointer;background:none;border:0;padding:0}
     const missing=enPh.filter(p=>!koPh.includes(p));
     let fitHTML=''; if(m){const l=fitLevel(fitRatio(k,m)); if(l==='warn') fitHTML=`<div class="fit warn"><i></i>A bit long. It may wrap or get cut off in the app.</div>`; if(l==='bad') fitHTML=`<div class="fit bad"><i></i>Too long for this space. Please shorten.</div>`;}
     let noteHTML=''; const f=r.flag;
+    if(r.hc) noteHTML+=`<div class="note" style="background:var(--surface-2)"><b style="color:var(--ink-2)">Not wired up yet</b><span>This text is typed straight into the screen in the app, not in the copy file. Translate it anyway. Engineering will connect it.</span></div>`;
+    if(m&&m.truncated) noteHTML+=`<div class="note"><b>Cut off in English</b><span>The English is already truncated on this screen, so the Korean will be too. Keep it as short as you can.</span></div>`;
     if(m&&m.weak) noteHTML+=`<div class="note" style="background:var(--accent-soft)"><b style="color:var(--accent)">Check the meaning here</b><span>The same English is used elsewhere in the app for a different thing. Make sure this Korean fits this screen.</span></div>`;
     if(f&&f.type==='needs_context'&&f.cells[3]) noteHTML=`<div class="note"><b>Translator's note</b><span>${esc(f.cells[3])}</span>${f.cells[4]?`<span class="alt">${esc(f.cells[4])}</span><span><button class="link" data-alt="${esc(f.cells[4].split(/\s(?:if|when|\()/)[0].replace(/^`|`$/g,''))}">Use this instead</button></span>`:''}</div>`;
     else if(f&&f.type==='length_flags') noteHTML=`<div class="note"><b>Translator's note</b><span>The Korean here is longer than the English. ${esc(f.cells.slice(1).join(' '))}</span></div>`;
@@ -464,7 +466,8 @@ button{cursor:pointer;background:none;border:0;padding:0}
   function banner(msg,ms=6000){const b=$('#banner'); b.textContent=msg; b.hidden=false; clearTimeout(banner.t); banner.t=setTimeout(()=>b.hidden=true,ms);}
   $('#b-export').addEventListener('click',()=>{
     const edits=Object.entries(S.edits).map(([k,v])=>({key:k,english:byKey[k]?.en,original_korean:byKey[k]?.ko,new_korean:v,approved:!!S.approved[k],also_used_as:byKey[k]?.dupes||[]}));
-    const out={exported:new Date().toISOString(),app:'Fasset CashApp',locale:'ko',edits,approved_unchanged:Object.keys(S.approved).filter(k=>S.edits[k]==null),screens_done:Object.keys(S.done),counts:{edits:edits.length,approved:Object.keys(S.approved).length,screens_done:Object.keys(S.done).length}};
+    const hardcoded=copyRows.filter(r=>r.hc).map(r=>({id:r.k,english:r.en,korean:koOf(r.k),approved:!!S.approved[r.k],edited:S.edits[r.k]!=null,screens:r.screens||[]}));
+    const out={exported:new Date().toISOString(),app:'Fasset CashApp',locale:'ko',edits:edits.filter(e=>!byKey[e.key]?.hc),hardcoded,approved_unchanged:Object.keys(S.approved).filter(k=>S.edits[k]==null),screens_done:Object.keys(S.done),counts:{edits:edits.length,approved:Object.keys(S.approved).length,screens_done:Object.keys(S.done).length}};
     const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`fasset-korean-review-${new Date().toISOString().slice(0,10)}.json`; document.body.appendChild(a); a.click(); a.remove();
     banner('Your file is downloading. Send it to Hamis when you are finished for the day. You can keep working; it does not clear anything.');
   });
@@ -475,6 +478,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     S.edits={}; S.approved={}; S.done={};
     (d.edits||[]).forEach(x=>{ if(byKey[x.key]){S.edits[x.key]=x.new_korean; if(x.approved) S.approved[x.key]=true;} });
     (d.approved_unchanged||[]).forEach(k=>{if(byKey[k]) S.approved[k]=true});
+    (d.hardcoded||[]).forEach(x=>{ if(byKey[x.id]){ if(x.korean&&x.korean!==byKey[x.id].ko) S.edits[x.id]=x.korean; if(x.approved) S.approved[x.id]=true; } });
     (d.screens_done||[]).forEach(id=>S.done[id]=true);
     persist(); $('#help').hidden=true; go(idx);
     banner(`Loaded ${(d.edits||[]).length} edits and ${(d.screens_done||[]).length} finished screens.`);
