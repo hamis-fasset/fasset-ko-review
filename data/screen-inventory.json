@@ -7,11 +7,8 @@
     "namespace_call_counts": {},
     "t_calls": 0,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "login_06_dashboard",
-      "dashboard_01_home"
-    ],
+    "captured": false,
+    "capture_ids": [],
     "note": "nested navigator: main bottom tabs",
     "container": true
   },
@@ -188,8 +185,7 @@
     "captured": true,
     "capture_ids": [
       "market_02_commodities",
-      "market_03_funds",
-      "market_04_bundles"
+      "market_03_funds"
     ]
   },
   {
@@ -536,10 +532,8 @@
     },
     "t_calls": 26,
     "hardcoded_literals_estimate": 1,
-    "captured": true,
-    "capture_ids": [
-      "kyc_ae_04_link_bank"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "BankStatement",
@@ -672,7 +666,7 @@
     "hardcoded_literals_estimate": 0,
     "captured": true,
     "capture_ids": [
-      "sell_03_payment_method"
+      "sell_03_receive_method"
     ]
   },
   {
@@ -867,10 +861,8 @@
     },
     "t_calls": 17,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "history_03_detail"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "StockBuyTransactionDetail_v4",
@@ -948,8 +940,10 @@
     },
     "t_calls": 18,
     "hardcoded_literals_estimate": 0,
-    "captured": false,
-    "capture_ids": []
+    "captured": true,
+    "capture_ids": [
+      "history_03_detail"
+    ]
   },
   {
     "route": "PreviewSell",
@@ -1267,10 +1261,8 @@
     },
     "t_calls": 5,
     "hardcoded_literals_estimate": 7,
-    "captured": true,
-    "capture_ids": [
-      "history_03_detail"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "SelectSendFundsAsset",
@@ -1589,10 +1581,8 @@
     },
     "t_calls": 13,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "kyc_ae_02_proof_of_address"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "AccSetup2",
@@ -3424,7 +3414,12 @@
     "captured": true,
     "capture_ids": [
       "kyc_ae_01_financial_profile",
-      "kyc_ae_03_money_questions"
+      "kyc_ae_02_proof_of_address",
+      "kyc_ae_03_money_questions",
+      "kyc_ae_04_link_bank",
+      "kyc_lb_01_financial_profile",
+      "kyc_lb_02_money_questions",
+      "kyc_lb_03_money_questions_filled"
     ]
   },
   {
@@ -3506,10 +3501,8 @@
     },
     "t_calls": 11,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "kyc_ae_04_link_bank"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "DepositWire",
@@ -4323,10 +4316,8 @@
     },
     "t_calls": 9,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "kyc_ae_02_proof_of_address"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "POADetails",
@@ -4345,10 +4336,8 @@
     },
     "t_calls": 9,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "kyc_ae_02_proof_of_address"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "POASuccess",
@@ -4695,8 +4684,8 @@
     "captured": true,
     "capture_ids": [
       "settings_01_hub",
-      "logout_01",
-      "logout_02"
+      "logout_01_account_menu",
+      "logout_02_confirm_dialog"
     ]
   },
   {
@@ -4997,11 +4986,15 @@
   },
   {
     "route": "MyReferrals",
-    "file": "src/screens/Dashboard/referral/screens/MyReferrals.js",
+    "file": "src/screens/Dashboard/referral/screens/MyReferrals/index.js",
     "navigator": "Dashboard stack (authenticated root)",
-    "namespaces": [],
-    "namespace_call_counts": {},
-    "t_calls": 0,
+    "namespaces": [
+      "refer"
+    ],
+    "namespace_call_counts": {
+      "refer": 11
+    },
+    "t_calls": 11,
     "hardcoded_literals_estimate": 0,
     "captured": false,
     "capture_ids": [],
@@ -5083,10 +5076,8 @@
     },
     "t_calls": 5,
     "hardcoded_literals_estimate": 3,
-    "captured": true,
-    "capture_ids": [
-      "history_02_list"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "SendTransactionDetail",
@@ -5133,10 +5124,8 @@
     },
     "t_calls": 17,
     "hardcoded_literals_estimate": 12,
-    "captured": true,
-    "capture_ids": [
-      "settings_01_hub"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "PortfolioV4",
@@ -5667,8 +5656,11 @@
     },
     "t_calls": 13,
     "hardcoded_literals_estimate": 0,
-    "captured": false,
-    "capture_ids": []
+    "captured": true,
+    "capture_ids": [
+      "login_01_logged_out_home",
+      "logout_03_logged_out"
+    ]
   },
   {
     "route": "EmailSignup",
@@ -5998,12 +5990,8 @@
     },
     "t_calls": 29,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "kyc_lb_01",
-      "kyc_lb_02",
-      "kyc_lb_03"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "Splash",
@@ -6036,11 +6024,8 @@
     },
     "t_calls": 13,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "login_01_logged_out_home",
-      "logout_03"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "Auth",
@@ -6149,7 +6134,8 @@
     "captured": true,
     "capture_ids": [
       "login_06_dashboard",
-      "dashboard_01_home"
+      "dashboard_01_home",
+      "history_01_recent"
     ]
   },
   {
@@ -6180,7 +6166,8 @@
     "captured": true,
     "capture_ids": [
       "login_06_dashboard",
-      "dashboard_01_home"
+      "dashboard_01_home",
+      "history_01_recent"
     ],
     "note": "guest wrapper around PortfolioStack (TodayScreen in guestMode)",
     "container": true
@@ -6256,12 +6243,8 @@
     "namespace_call_counts": {},
     "t_calls": 0,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "login_06_dashboard",
-      "dashboard_01_home",
-      "login_01_logged_out_home"
-    ],
+    "captured": false,
+    "capture_ids": [],
     "note": "nested navigator: PortfolioStack -> PortfolioHome (TodayScreen)",
     "container": true
   },
@@ -6312,10 +6295,8 @@
     },
     "t_calls": 21,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "history_01_recent"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "AccountV4",

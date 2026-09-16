@@ -1,0 +1,120 @@
+{
+"file": "2eiEhaDiNeROlBtyxeXY5x",
+"captured": "Figma “CC-onboarding-rough”, extracted 16 Sep 2026",
+"screens": [
+{
+"id": "62:94274",
+"journey": "62:92576",
+"journeyName": "LOG IN",
+"name": "2.1 App opens · Face ID scans (system)",
+"seq": 1,
+"img": "img-figma/62-94274.jpg",
+"ns": [],
+"base": "2.1",
+"state": "",
+"shown": true,
+"w": 393,
+"h": 852
+},
+{
+"id": "62:94333",
+"journey": "62:92576",
+"journeyName": "LOG IN",
+"name": "2.2 Enter Your Login PIN",
+"seq": 2,
+"img": "img-figma/62-94333.jpg",
+"ns": [],
+"base": "2.2",
+"state": "",
+"shown": true,
+"w": 393,
+"h": 852
+},
+{
+"id": "84:128334",
+"journey": "84:128332",
+"journeyName": "BASIC INFO",
+"name": "3.1 Where you live",
+"seq": 3,
+"img": "img-figma/84-128334.jpg",
+"ns": [],
+"base": "3.1",
+"state": "",
+"shown": true,
+"w": 393,
+"h": 852
+},
+{
+"id": "442:20210",
+"journey": "441:20210",
+"journeyName": "GIFT A CARD",
+"name": "7.0a Review · gift banner · whole card taps (no button)",
+"seq": 4,
+"img": "img-figma/442-20210.jpg",
+"ns": [],
+"base": "7.0",
+"state": "a",
+"shown": true,
+"w": 393,
+"h": 852
+}
+],
+"all_screens": [
+{
+"id": "62:94274",
+"journey": "62:92576",
+"journeyName": "LOG IN",
+"name": "2.1 App opens · Face ID scans (system)",
+"seq": 1,
+"img": "img-figma/62-94274.jpg",
+"ns": [],
+"base": "2.1",
+"state": "",
+"shown": true,
+"w": 393,
+"h": 852
+},
+{
+"id": "62:94333",
+"journey": "62:92576",
+"journeyName": "LOG IN",
+"name": "2.2 Enter Your Login PIN",
+"seq": 2,
+"img": "img-figma/62-94333.jpg",
+"ns": [],
+"base": "2.2",
+"state": "",
+"shown": true,
+"w": 393,
+"h": 852
+},
+{
+"id": "84:128334",
+"journey": "84:128332",
+"journeyName": "BASIC INFO",
+"name": "3.1 Where you live",
+"seq": 3,
+"img": "img-figma/84-128334.jpg",
+"ns": [],
+"base": "3.1",
+"state": "",
+"shown": true,
+"w": 393,
+"h": 852
+},
+{
+"id": "442:20210",
+"journey": "441:20210",
+"journeyName": "GIFT A CARD",
+"name": "7.0a Review · gift banner · whole card taps (no button)",
+"seq": 4,
+"img": "img-figma/442-20210.jpg",
+"ns": [],
+"base": "7.0",
+"state": "a",
+"shown": true,
+"w": 393,
+"h": 852
+}
+]
+}

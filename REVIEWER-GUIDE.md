@@ -1,11 +1,14 @@
-# Reviewing the Korean copy: how it works
+# Reviewing the Korean copy
 
 Open https://hamis-fasset.github.io/fasset-ko-review/ in Chrome on a laptop.
 
-1. The left phone is the app in English. The right phone is the same screen in Korean. Click any text on either phone to jump to it.
-2. Fix the Korean in the panel on the right. The right phone updates as you type. Tick "Looks good" when a line is fine.
-3. Text underlined in orange or red on the Korean phone is wider than the English. Shorten it if you can.
-4. Some text stays grey and English: it is fixed in the app for now and is not your job.
-5. When a screen is finished, press "Mark this screen as done" and move on with the arrows.
-6. "All other strings" at the bottom of the screen list holds text from screens that have no picture yet. Edit them there as plain text.
-7. Your work saves in this browser automatically. At the end of each day press "Save my edits to a file" and email the file to Hamis. If you switch computers, use "Continue from a file" under the ? button.
+1. Start with the visual screens. English is on the left and the live Korean preview is on the right.
+2. Edit Korean in the right-hand panel. The Korean phone updates as you type.
+3. Tick **Looks good** only after the current Korean is approved. An edit automatically removes the old approval.
+4. Orange or red underlines mean the Korean may wrap or be cut off; shorten it if the meaning still works.
+5. Press **Mark this screen as done** after reviewing the screen. If any strings are unapproved, the tool warns you before continuing.
+6. The **Screens found in app code** section proves source coverage. Items marked **source view** have a photographed state elsewhere; items marked **no picture** are real routes without a capture and therefore have text-only review.
+7. **Unmapped copy** retains copy that the code scan could not safely assign to one screen.
+8. Work saves automatically in this browser. Use **Save my edits to a file** at the end of each session and send that JSON file to Hamis. Use **Open review file** to continue on another computer.
+
+The Korean phone is a close layout preview drawn over a real English capture. Final truncation sign-off still requires screenshots from an actual Korean build.
