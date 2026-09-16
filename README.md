@@ -11,15 +11,16 @@ The translator sees each photographed app state in English and Korean side by si
 - 373 of those source records do not yet have a visual capture.
 - Every source screen is listed in the tool. A source screen without a capture is explicitly marked **no picture** and shows its statically resolvable copy as text.
 - Copy that cannot be tied to one route is retained in **Unmapped copy**. Nothing is silently treated as visually covered.
-- `COVERAGE.md` is the full route audit. `STILL-HARDCODED.md` lists text visible in captures that engineering must move into translation keys.
+- 195 brand or runtime-fragment rows deliberately kept in English are excluded from direct review. The 34 code-referenced keys absent from the supplied copy are visible as engineering gaps but cannot be edited until source copy exists.
+- `COVERAGE.md` is the full route audit. `STILL-HARDCODED.md` lists capture text that OCR could not confidently match to a supplied key; it is an investigation list, not proof that the strings are hardcoded.
 
-The screen inventory is generated with:
+After a route audit has produced `data/screen-inventory.json`, enrich it from a CashApp checkout on the audited `development` commit with:
 
 ```sh
 node build/generate-code-screens.js /path/to/CashApp
 ```
 
-This writes `data/code-screens.json`. The scan found 60 dynamic translation calls and 34 static keys that are referenced by code but absent from the supplied copy pack; the tool flags those screen-by-screen for engineering follow-up.
+This writes `data/code-screens.json`; it does not derive the route inventory itself. Across all route and container rows, the scan found 60 dynamic translation calls and 34 static keys that are referenced by code but absent from the supplied copy pack; the tool flags those screen-by-screen for engineering follow-up.
 
 ## Visual preview implementation
 
@@ -32,7 +33,7 @@ The checked-in `img/`, `img-ko/`, and `img-figma/` directories make this folder 
 The exported JSON includes:
 
 - `edits`: localization-key changes, original Korean, reviewed Korean, approval state, and duplicate keys;
-- `hardcoded`: reviewed text that still needs engineering keys;
+- `hardcoded`: legacy export field for capture-unmatched text; engineering must first reconcile it with existing keys, server content, literals, and fragments;
 - `new_design`: copy reviewed against the supplied Figma screens;
 - `approved_unchanged` and `screens_done`.
 

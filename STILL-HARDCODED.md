@@ -1,6 +1,6 @@
-# Text visible in the app that has no translation key
+# Capture text not confidently matched to a copy key
 
-44 strings typed directly into screen components (or assembled from fragments). They are translated and editable in the review tool under ids hc.NNN, and come back in the reviewer's export under `hardcoded`. Engineering needs to give each a real key.
+These 44 strings were visible in captures but the OCR matcher could not confidently link them to the supplied copy. They are translated and editable in the review tool under ids `hc.NNN`, and come back in the reviewer's export under the legacy field `hardcoded`. This does **not** prove they are hardcoded: 15 already match English values under existing keys, while the remaining 29 may be literals, server-driven content, fragments, or OCR/truncation artifacts. Engineering should reconcile each item before creating any new key.
 
 | id | English | kind | seen on |
 |---|---|---|---|

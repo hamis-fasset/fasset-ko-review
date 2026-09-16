@@ -9,7 +9,7 @@ Generated from CashApp `development` at `1d8e0c2e378216573367dce234217e92a3b9da4
 - 39 captured visual states are traceable to 22 source-screen components.
 - 373 non-container route/component records have no visual capture.
 - 286 screens contain translation calls; 284 have at least one statically resolvable key and 109 have no translation call in the scanned files.
-- The static scan resolves 1,708 distinct copy keys, finds 60 dynamic translation calls, and finds 34 static keys that are missing from the supplied copy pack.
+- Across all route and container rows, the static scan resolves 1,708 distinct copy keys and finds 60 dynamic translation calls. The 395 non-container records account for 1,705 static keys and 51 dynamic calls. The scan also finds 34 static keys that are missing from the supplied copy pack.
 - The review tool keeps 1,535 editable canonical strings in **Unmapped copy** because a static scan cannot safely tie them to one registered route. These may be unused, dynamically loaded, or used outside route components. Of these, 1,199 are from the second source drop and 336 are from batches 1–10.
 
 This is two kinds of coverage, shown separately in the tool:
