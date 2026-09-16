@@ -31,20 +31,6 @@
 "h": 852
 },
 {
-"id": "56:89592",
-"journey": "49:85559",
-"journeyName": "SIGN-UP",
-"name": "1.2a Empty",
-"seq": 3,
-"img": "img-figma/56-89592.jpg",
-"ns": [],
-"base": "1.2",
-"state": "a",
-"shown": true,
-"w": 393,
-"h": 852
-},
-{
 "id": "56:89680",
 "journey": "49:85559",
 "journeyName": "SIGN-UP",
@@ -2478,7 +2464,7 @@
 "ns": [],
 "base": "1.2",
 "state": "a",
-"shown": true,
+"shown": false,
 "w": 393,
 "h": 852
 },
