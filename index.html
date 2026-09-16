@@ -50,19 +50,19 @@ button{cursor:pointer;background:none;border:0;padding:0}
 .phone-col{display:flex;flex-direction:column;align-items:center;gap:8px}
 .phone-col .cap{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
 .phone{position:relative;border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow);border:1px solid var(--line)}
-.phone img{display:block;width:100%;height:100%}
+.phone img,.phone canvas{display:block;width:100%;height:100%}
+.phone canvas{position:absolute;inset:0}
+.phone.loading canvas,.phone.loading .ov{visibility:hidden}
 .ov{position:absolute;inset:0}
 .box{position:absolute;cursor:pointer;border-radius:3px;outline:0 solid transparent;transition:background .12s,outline .12s}
 .box:hover,.box.hover{background:rgba(34,71,192,.14)}
 .box.sel{outline:2px solid var(--accent);outline-offset:1px;background:rgba(34,71,192,.08)}
 .box.fixed{cursor:default}
 .box.fixed:hover{background:transparent;outline:1.5px dashed var(--line-strong)}
-.box.weak{outline:1.5px dashed rgba(34,71,192,.45)}
+.box.weak:hover,.box.weak.hover{outline:1.5px solid rgba(34,71,192,.45)}
 .patch{position:absolute;display:flex;overflow:visible;pointer-events:none;white-space:pre-wrap}
 .patch span{display:block;white-space:nowrap}
 .patch.multi span{white-space:normal}
-.patch.over span{text-decoration:underline dotted var(--warn) 1.5px;text-underline-offset:.12em}
-.patch.over2 span{text-decoration-color:var(--bad)}
 .tip{position:absolute;z-index:5;background:var(--ink);color:#fff;font-size:12px;padding:5px 8px;border-radius:5px;pointer-events:none;max-width:240px;transform:translateY(-100%);margin-top:-6px}
 .hint-narrow{display:none;padding:8px 16px;background:var(--warn-soft);color:var(--warn);font-size:13px}
 
@@ -176,7 +176,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     <div class="empty" id="rest-note" hidden style="max-width:560px;margin-top:40px;text-align:left;line-height:1.6"></div>
     <div class="stage-inner">
       <div class="phone-col"><span class="cap">English (as it is today)</span><div class="phone" id="ph-en"><img id="img-en" alt=""><div class="ov" id="ov-en"></div></div></div>
-      <div class="phone-col"><span class="cap">Korean (preview)</span><div class="phone" id="ph-ko"><img id="img-ko" alt=""><div class="ov" id="ov-ko"></div></div></div>
+      <div class="phone-col"><span class="cap">Korean (preview)</span><div class="phone" id="ph-ko"><canvas id="canvas-ko" aria-label="Korean preview"></canvas><div class="ov" id="ov-ko"></div></div></div>
     </div>
   </section>
   <aside class="panel">
@@ -194,7 +194,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
       <li><b>Fix the Korean in the panel on the right.</b> Your changes show up on the phone as you type. Tick “Looks good” when a line is fine.</li>
       <li><b>When a screen is finished, press “Mark this screen as done”.</b> Your work saves automatically in this browser. When you are done for the day, press “Save my edits to a file” and send us the file.</li>
     </ol>
-    <p style="margin:0;font-size:12.5px;color:var(--ink-3)">There are 39 photographed app states with a live Korean preview. The source-code inventory also lists all 395 non-container route/component records; records without a photograph are clearly marked and can only be reviewed as text. The Korean phone is a layout preview, so spacing is close to the real app but not pixel-perfect. Orange or red underlines mean the Korean is likely too long. The 195 brand/fragment rows deliberately kept in English are not review cards; 34 keys missing from the supplied copy are shown as engineering gaps.</p>
+    <p style="margin:0;font-size:12.5px;color:var(--ink-3)">There are 39 photographed app states with a live Korean preview. The source-code inventory also lists all 395 non-container route/component records; records without a photograph are clearly marked and can only be reviewed as text. The Korean phone is a layout preview, so spacing is close to the real app but not pixel-perfect. If Korean may not fit, the editor panel shows a clear length warning. The 195 brand/fragment rows deliberately kept in English are not review cards; 34 keys missing from the supplied copy are shown as engineering gaps.</p>
     <div class="foot">
       <label class="btn" for="import-file" style="cursor:pointer">Continue from a file</label>
       <span class="sp"></span>
@@ -246,20 +246,49 @@ button{cursor:pointer;background:none;border:0;padding:0}
   function tickSaved(){ if(!savedAt) return; const m=Math.round((Date.now()-savedAt)/60000); $('#t-saved').textContent='Saved in this browser · '+(m<1?'just now':m+' min ago'); }
   setInterval(tickSaved,30000);
   const koOf=k=>S.edits[k]??byKey[k].ko;
+  function visualText(k,m){
+    let value=koOf(k);
+    if(m&&m.stripLeadingBullet) value=value.replace(/^\s*•\s*/, '');
+    if(m&&m.segment==='beforePdf') value=(value.match(/^.*?\(PDF\)/i)||[value])[0].trim();
+    if(m&&m.segment==='afterPdf') value=value.replace(/^.*?\(PDF\)\s*/i,'').trim();
+    if(m&&m.segment==='cardTitle') value=(value.match(/^.*?계좌 정보는 필요 없어요\./)||[value])[0].trim();
+    if(m&&m.segment==='cardBody') value=value.replace(/^.*?계좌 정보는 필요 없어요\.\s*/,'').trim();
+    if(m&&m.segment==='addressInstruction') value=value.split(/\s*(?=예:)/)[0].trim();
+    if(m&&m.segment==='addressExample') value=(value.match(/예:\s*.*$/)||[''])[0].trim();
+    return value;
+  }
+  function sourceVisualText(k,m){
+    let value=byKey[k].en;
+    if(m&&m.stripLeadingBullet) value=value.replace(/^\s*•\s*/, '');
+    if(m&&m.segment==='beforePdf') value=(value.match(/^.*?\(PDF\)/i)||[value])[0].trim();
+    if(m&&m.segment==='afterPdf') value=value.replace(/^.*?\(PDF\)\s*/i,'').trim();
+    if(m&&m.segment==='cardTitle') value=(value.match(/^.*?needed\./i)||[value])[0].trim();
+    if(m&&m.segment==='cardBody') value=value.replace(/^.*?needed\.\s*/i,'').trim();
+    if(m&&m.segment==='addressInstruction') value=value.split(/\s*(?=E\.g\.,)/i)[0].trim();
+    if(m&&m.segment==='addressExample') value=(value.match(/E\.g\.,\s*.*$/i)||[''])[0].trim();
+    return value;
+  }
+  const shouldPaint=(k,m)=>m.visualSafe!==false&&visualText(k,m)!==sourceVisualText(k,m);
 
   /* ---- fit measurement ---- */
   const mctx=document.createElement('canvas').getContext('2d');
   function fitRatio(k,m){ // m = ocr match box (image px)
     const fs=fontPx(m); mctx.font=`500 ${fs}px "Noto Sans KR", sans-serif`;
-    const txt=withSample(koOf(k),m.vals); const lines=m.lines||1;
+    const txt=withSample(visualText(k,m),m.vals); const lines=m.lines||1;
     const wKo=mctx.measureText(txt).width; const avail=m.w*lines; return wKo/Math.max(avail,1);
   }
   function fitLevel(r){return r>1.15?'bad':r>1?'warn':''}
-  function fontPx(m){ if(m.fs) return m.fs; return (m.lines||1)===1 ? Math.min(m.lh*0.9, 2.1*m.w/Math.max((m.text||'xxxx').length,4)) : m.lh*0.9; }
+  function fontPx(m){
+    if(m.fs) return m.fs;
+    // ocrLine is the exact selected text span. Legacy `text` can still hold
+    // adjacent icons/values or an uninstantiated {{placeholder}} template.
+    const source=m.ocrLine||withSample(m.text||'xxxx',m.vals);
+    return (m.lines||1)===1 ? Math.min(m.lh*0.9, 2.1*m.w/Math.max(source.length,4)) : m.lh*0.9;
+  }
 
   /* ---- per screen model ---- */
   let idx=Math.max(0,screens.findIndex(s=>s.id===(localStorage.getItem(LS+':screen')||''))); if(idx<0) idx=0;
-  let sel=null, zoom='fit', scale=1, imgW=1080, imgH=2400, sampleCtx=null;
+  let sel=null, zoom='fit', scale=1, imgW=1080, imgH=2400, sampleCtx=null, currentImage=null, canvasRefresh=0;
   let restQ='';
   const mappedAppKeys=new Set();
   for(const s of currentScreens){(ocr[s.id]?.matches||[]).forEach(m=>mappedAppKeys.add(byKey[m.k]?.canon||m.k)); (s.codeKeys||[]).forEach(k=>mappedAppKeys.add(k));}
@@ -285,7 +314,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     const hidden=baseKeys(s).filter(k=>!seenK.has(k)&&byKey[k]&&!byKey[k].keep).map(k=>byKey[k]).sort((a,b)=>a.k.localeCompare(b.k));
     return {visible,hidden,unmatched:o.unmatched||[],textOnly:!!s.code};
   }
-  function screenStatus(s){ const keys=baseKeys(s); const edited=keys.some(k=>S.edits[k]!=null); let fit=''; for(const m of (ocr[s.id]?.matches||[])){const l=fitLevel(fitRatio(m.k,m)); if(l==='bad') fit='bad'; else if(l==='warn'&&!fit) fit='warn';} return {done:!!S.done[s.id],edited,checked:keys.filter(k=>S.approved[k]).length,total:keys.length,fit}; }
+  function screenStatus(s){ const keys=baseKeys(s); const edited=keys.some(k=>S.edits[k]!=null); let fit=''; for(const m of (ocr[s.id]?.matches||[])){if(!shouldPaint(m.k,m)) continue; const l=fitLevel(fitRatio(m.k,m)); if(l==='bad') fit='bad'; else if(l==='warn'&&!fit) fit='warn';} return {done:!!S.done[s.id],edited,checked:keys.filter(k=>S.approved[k]).length,total:keys.length,fit}; }
 
   /* ---- layout ---- */
   function layout(){
@@ -304,10 +333,10 @@ button{cursor:pointer;background:none;border:0;padding:0}
   $('#zoom').addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return; zoom=b.dataset.z; document.querySelectorAll('#zoom button').forEach(x=>x.setAttribute('aria-pressed',x===b)); layout();});
 
   /* ---- colour sampling from the English capture ---- */
-  function sampleColors(m){
-    if(!sampleCtx) return {bg:'#fff',fg:'#111'};
+  function samplePalette(m){
+    if(!sampleCtx) return {bg:[255,255,255],fg:[17,17,17],bgCss:'#fff',fgCss:'#111'};
     const x0=Math.max(0,m.x-6), y0=Math.max(0,m.y-4), w=Math.min(imgW-x0,m.w+12), h=Math.min(imgH-y0,m.h+8);
-    let d; try{d=sampleCtx.getImageData(x0,y0,w,h).data}catch(e){return {bg:'#fff',fg:'#111'}}
+    let d; try{d=sampleCtx.getImageData(x0,y0,w,h).data}catch(e){return {bg:[255,255,255],fg:[17,17,17],bgCss:'#fff',fgCss:'#111'}}
     // bg = median of border pixels; fg = pixel most distant from bg
     const border=[]; const step=Math.max(1,Math.floor((w+h)/80));
     for(let x=0;x<w;x+=step){border.push((0*w+x)*4);border.push(((h-1)*w+x)*4);} for(let y=0;y<h;y+=step){border.push((y*w+0)*4);border.push((y*w+w-1)*4);}
@@ -318,7 +347,51 @@ button{cursor:pointer;background:none;border:0;padding:0}
     let best=0,fg=[0,0,0];
     for(let i=0;i<d.length;i+=16){const dist=Math.abs(d[i]-bg[0])+Math.abs(d[i+1]-bg[1])+Math.abs(d[i+2]-bg[2]); if(dist>best){best=dist;fg=[d[i],d[i+1],d[i+2]];}}
     if(best<60) fg=[20,20,20];
-    return {bg:`rgb(${bg.join(',')})`,fg:`rgb(${fg.join(',')})`};
+    return {bg,fg,bgCss:`rgb(${bg.join(',')})`,fgCss:`rgb(${fg.join(',')})`};
+  }
+
+  function cleanKoreanBase(image,s){
+    const canvas=$('#canvas-ko'); canvas.width=imgW; canvas.height=imgH;
+    const ctx=canvas.getContext('2d',{willReadFrequently:true}); ctx.drawImage(image,0,0,imgW,imgH);
+    for(const m of (ocr[s.id]?.matches||[])){
+      if(!shouldPaint(m.k,m)) continue;
+      const pad=m.patchPad||{left:4,right:4,top:4,bottom:4};
+      const x=Math.max(0,Math.floor(m.x-pad.left)), y=Math.max(0,Math.floor(m.y-pad.top));
+      const w=Math.min(imgW-x,Math.ceil(m.w+pad.left+pad.right)), h=Math.min(imgH-y,Math.ceil(m.h+pad.top+pad.bottom));
+      if(w<2||h<2) continue;
+      const pixels=ctx.getImageData(x,y,w,h), d=pixels.data, source=new Uint8ClampedArray(d);
+      // Build a robust local background colour from the boundary. Nearby
+      // icons can sit only a pixel or two beyond a label (Google's coloured G,
+      // status checks, copy icons); never let those colours bleed across the
+      // reconstructed text region.
+      const edge=[];
+      for(let px=0;px<w;px++){edge.push(px*4);edge.push(((h-1)*w+px)*4);}
+      for(let py=1;py<h-1;py++){edge.push((py*w)*4);edge.push((py*w+w-1)*4);}
+      const median=c=>{const values=edge.map(i=>source[i+c]).sort((a,b)=>a-b);return values[Math.floor(values.length/2)]||0};
+      const localBg=[median(0),median(1),median(2)];
+      const clean=(i,c)=>{
+        const distance=Math.abs(source[i]-localBg[0])+Math.abs(source[i+1]-localBg[1])+Math.abs(source[i+2]-localBg[2]);
+        return distance>90?localBg[c]:source[i+c];
+      };
+      // Reconstruct the small text region from its untouched boundary. The
+      // horizontal and vertical interpolations preserve local gradients and
+      // rounded fills without leaving a flat rectangular sticker.
+      for(let py=1;py<h-1;py++) for(let px=1;px<w-1;px++){
+        const i=(py*w+px)*4, li=(py*w)*4, ri=(py*w+w-1)*4, ti=px*4, bi=((h-1)*w+px)*4;
+        const tx=px/(w-1), ty=py/(h-1);
+        for(let c=0;c<3;c++){
+          const horizontal=clean(li,c)*(1-tx)+clean(ri,c)*tx;
+          const vertical=clean(ti,c)*(1-ty)+clean(bi,c)*ty;
+          d[i+c]=Math.round((horizontal+vertical)/2);
+        }
+        d[i+3]=255;
+      }
+      ctx.putImageData(pixels,x,y);
+    }
+  }
+  function refreshKoreanBase(){
+    if(!currentImage||!screens[idx]||screens[idx].code||screens[idx].id===REST_ID) return;
+    cancelAnimationFrame(canvasRefresh); canvasRefresh=requestAnimationFrame(()=>cleanKoreanBase(currentImage,screens[idx]));
   }
 
   /* ---- overlays ---- */
@@ -331,12 +404,12 @@ button{cursor:pointer;background:none;border:0;padding:0}
         const st=`left:${m.x*scale}px;top:${m.y*scale}px;width:${m.w*scale}px;height:${m.h*scale}px`;
         const cls=`box ${sel===v.k?'sel':''}`;
         en+=`<div class="${cls}" data-k="${esc(v.k)}" style="${st}" title="${esc(byKey[v.k].en)}"></div>`;
-        const ck=s.id+'|'+m.x+'|'+m.y; const c=colorCache[ck]||(colorCache[ck]=sampleColors(m));
+        const ck=s.id+'|'+m.x+'|'+m.y; const c=colorCache[ck]||(colorCache[ck]=samplePalette(m));
         const fs=fontPx(m)*scale; const cx=m.x+m.w/2; const align= m.align || (Math.abs(cx-imgW/2)<40?'center':(m.x>imgW*0.55?'right':'left'));
         const r=fitRatio(v.k,m); const lvl=fitLevel(r);
-        const txt=withSample(koOf(v.k),m.vals); const multi=(m.lines||1)>1;
-        const pad=4*scale;
-        ko+=`<div class="patch ${multi?'multi':''} ${lvl==='warn'?'over':lvl==='bad'?'over over2':''}" style="left:${(m.x-pad)*scale}px;top:${(m.y-2)*scale}px;width:${(m.w+2*pad)*scale}px;min-height:${m.h*scale}px;background:${c.bg};color:${c.fg};font-size:${fs}px;line-height:${(m.lh*1.15)*scale}px;justify-content:${align==='center'?'center':align==='right'?'flex-end':'flex-start'};text-align:${align};padding:0 ${pad}px;align-items:${multi?'flex-start':'center'}" lang="ko"><span>${esc(txt)}</span></div>`;
+        const txt=withSample(visualText(v.k,m),m.vals); const multi=(m.lines||1)>1;
+        const pad=m.patchPad||{left:4,right:4,top:4,bottom:4};
+        if(shouldPaint(v.k,m)) ko+=`<div class="patch ${multi?'multi':''}" data-fit="${lvl}" style="left:${(m.x-pad.left)*scale}px;top:${(m.y-pad.top)*scale}px;width:${(m.w+pad.left+pad.right)*scale}px;min-height:${(m.h+pad.top+pad.bottom)*scale}px;color:${c.fgCss};font-size:${fs}px;font-weight:${m.weight||500};line-height:${(m.lh*1.15)*scale}px;justify-content:${align==='center'?'center':align==='right'?'flex-end':'flex-start'};text-align:${align};padding:0 ${Math.min(pad.left,pad.right)*scale}px;align-items:${multi?'flex-start':'center'}" lang="ko"><span>${esc(txt)}</span></div>`;
         ko+=`<div class="${cls} ${m.weak?'weak':''}" data-k="${esc(v.k)}" style="${st}"></div>`;
       }
     }
@@ -364,11 +437,12 @@ button{cursor:pointer;background:none;border:0;padding:0}
     const r=byKey[k]; const ko=koOf(k); const edited=S.edits[k]!=null; const ok=!!S.approved[k];
     const enPh=[...r.en.matchAll(PH_RE)].map(x=>x[1]); const koPh=[...ko.matchAll(PH_RE)].map(x=>x[1]);
     const missing=enPh.filter(p=>!koPh.includes(p));
-    let fitHTML=''; if(m){const l=fitLevel(fitRatio(k,m)); if(l==='warn') fitHTML=`<div class="fit warn"><i></i>A bit long. It may wrap or get cut off in the app.</div>`; if(l==='bad') fitHTML=`<div class="fit bad"><i></i>Too long for this space. Please shorten.</div>`;}
+    let fitHTML=''; if(m&&shouldPaint(k,m)){const l=fitLevel(fitRatio(k,m)); if(l==='warn') fitHTML=`<div class="fit warn"><i></i>A bit long. It may wrap or get cut off in the app.</div>`; if(l==='bad') fitHTML=`<div class="fit bad"><i></i>Too long for this space. Please shorten.</div>`;}
     let noteHTML=''; const f=r.flag;
     if(r.hc) noteHTML+=`<div class="note" style="background:var(--surface-2)"><b style="color:var(--ink-2)">Not matched to a copy key</b><span>This text was visible in the capture, but the matcher could not confidently link it to the supplied copy. Review the Korean here; engineering will confirm whether it is an existing key, a literal, server content, or a fragment.</span></div>`;
+    if(m&&m.visualSafe===false) noteHTML+=`<div class="note" style="background:var(--surface-2)"><b style="color:var(--ink-2)">Preview protected</b><span>This line is grouped with an icon or live value in the screenshot, so the tool will not paint over it. Your edit is still saved and exported for the real app build.</span></div>`;
     if(m&&m.truncated) noteHTML+=`<div class="note"><b>Cut off in English</b><span>The English is already truncated on this screen, so the Korean will be too. Keep it as short as you can.</span></div>`;
-    if(m&&m.weak) noteHTML+=`<div class="note" style="background:var(--accent-soft)"><b style="color:var(--accent)">Check the meaning here</b><span>The same English is used elsewhere in the app for a different thing. Make sure this Korean fits this screen.</span></div>`;
+    if(m&&m.weak) noteHTML+=`<div class="note" style="background:var(--accent-soft)"><b style="color:var(--accent)">Source link needs engineering confirmation</b><span>The screenshot match is useful for reviewing the Korean, but this exact app key could not be proven from the capture alone. Your edit will be saved; engineering must confirm the source key before importing it into the app.</span></div>`;
     if(f&&f.type==='needs_context'&&f.cells[3]) noteHTML=`<div class="note"><b>Translator's note</b><span>${esc(f.cells[3])}</span>${f.cells[4]?`<span class="alt">${esc(f.cells[4])}</span><span><button class="link" data-alt="${esc(f.cells[4].split(/\s(?:if|when|\()/)[0].replace(/^`|`$/g,''))}">Use this instead</button></span>`:''}</div>`;
     else if(f&&f.type==='length_flags') noteHTML=`<div class="note"><b>Translator's note</b><span>The Korean here is longer than the English. ${esc(f.cells.slice(1).join(' '))}</span></div>`;
     return `<article class="card ${edited?'edited':''} ${ok?'ok':''} ${sel===k?'sel':''}" data-k="${esc(k)}">
@@ -422,7 +496,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     if(v===byKey[k].ko) delete S.edits[k]; else S.edits[k]=v;
     if(S.approved[k]) delete S.approved[k];
     invalidateDoneForKey(k);
-    persist(); renderOverlays(); refreshCardChrome(k);
+    persist(); refreshKoreanBase(); renderOverlays(); refreshCardChrome(k);
   });
   function refreshCardChrome(k){ // update card classes without re-rendering textarea
     const c=document.querySelector(`.card[data-k="${CSS.escape(k)}"]`); if(!c) return;
@@ -434,7 +508,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     if(!edited){ c.querySelector('[data-reset]')?.remove(); c.querySelector('.tag.edited')?.remove(); }
     // fit line
     const s=screens[idx]; const m=(ocr[s.id]?.matches||[]).find(x=>x.k===k); const old=c.querySelector('.fit'); if(old) old.remove();
-    if(m){const l=fitLevel(fitRatio(k,m)); if(l){const d=document.createElement('div'); d.className='fit '+l; d.innerHTML=`<i></i>${l==='warn'?'A bit long. It may wrap or get cut off in the app.':'Too long for this space. Please shorten.'}`; c.querySelector('textarea').after(d);} }
+    if(m&&shouldPaint(k,m)){const l=fitLevel(fitRatio(k,m)); if(l){const d=document.createElement('div'); d.className='fit '+l; d.innerHTML=`<i></i>${l==='warn'?'A bit long. It may wrap or get cut off in the app.':'Too long for this space. Please shorten.'}`; c.querySelector('textarea').after(d);} }
     // placeholder error
     const r=byKey[k]; const ko=koOf(k); const enPh=[...r.en.matchAll(PH_RE)].map(x=>x[1]); const koPh=[...ko.matchAll(PH_RE)].map(x=>x[1]); const missing=enPh.filter(p=>!koPh.includes(p));
     const oldErr=c.querySelector('.err'); if(oldErr) oldErr.remove();
@@ -444,8 +518,8 @@ button{cursor:pointer;background:none;border:0;padding:0}
   }
   $('#p-list').addEventListener('change',e=>{const t=e.target; if(!t.dataset.ok) return; const k=t.dataset.ok; if(t.checked) S.approved[k]=true; else {delete S.approved[k]; invalidateDoneForKey(k);} persist(); refreshCardChrome(k);});
   $('#p-list').addEventListener('click',e=>{
-    const rs=e.target.closest('[data-reset]'); if(rs){const k=rs.dataset.reset; delete S.edits[k]; delete S.approved[k]; invalidateDoneForKey(k); persist(); const ta=document.querySelector(`textarea[data-k="${CSS.escape(k)}"]`); if(ta) ta.value=byKey[k].ko; renderOverlays(); refreshCardChrome(k); return;}
-    const alt=e.target.closest('[data-alt]'); if(alt){const k=alt.closest('.card').dataset.k; const v=alt.dataset.alt.trim(); if(v){S.edits[k]=v; delete S.approved[k]; invalidateDoneForKey(k); persist(); const ta=document.querySelector(`textarea[data-k="${CSS.escape(k)}"]`); if(ta) ta.value=v; renderOverlays(); refreshCardChrome(k);} return;}
+    const rs=e.target.closest('[data-reset]'); if(rs){const k=rs.dataset.reset; delete S.edits[k]; delete S.approved[k]; invalidateDoneForKey(k); persist(); const ta=document.querySelector(`textarea[data-k="${CSS.escape(k)}"]`); if(ta) ta.value=byKey[k].ko; refreshKoreanBase(); renderOverlays(); refreshCardChrome(k); return;}
+    const alt=e.target.closest('[data-alt]'); if(alt){const k=alt.closest('.card').dataset.k; const v=alt.dataset.alt.trim(); if(v){S.edits[k]=v; delete S.approved[k]; invalidateDoneForKey(k); persist(); const ta=document.querySelector(`textarea[data-k="${CSS.escape(k)}"]`); if(ta) ta.value=v; refreshKoreanBase(); renderOverlays(); refreshCardChrome(k);} return;}
     if(e.target.closest('#b-hidden')){hiddenOpen=!hiddenOpen; renderPanel(); return;}
     const c=e.target.closest('.card'); if(c&&!e.target.matches('textarea,input,button,label')) select(c.dataset.k,false);
   });
@@ -503,8 +577,8 @@ button{cursor:pointer;background:none;border:0;padding:0}
   /* ---- go to screen ---- */
   function go(i){
     idx=i; sel=null; confirmDone=false; hiddenOpen=false; try{localStorage.setItem(LS+':screen',screens[idx].id)}catch(e){}
-    const s=screens[idx]; const img=$('#img-en'), img2=$('#img-ko');
-    sampleCtx=null; $('#ov-en').innerHTML=''; $('#ov-ko').innerHTML='';
+    const s=screens[idx]; const img=$('#img-en');
+    sampleCtx=null; currentImage=null; $('#ov-en').innerHTML=''; $('#ov-ko').innerHTML='';
     const textOnly=s.id===REST_ID||s.code; $('.stage-inner').hidden=textOnly; $('#rest-note').hidden=!textOnly;
     if(textOnly){
       $('#rest-note').innerHTML=s.id===REST_ID
@@ -512,11 +586,11 @@ button{cursor:pointer;background:none;border:0;padding:0}
         : `<b style="color:var(--ink)">${esc(s.name)}</b><br>${s.captured?'This source screen has at least one photographed state in the visual section. This code-only view covers its other possible copy.':'This route exists in the app code, but the screenshot set does not cover it yet. A true visual Korean preview requires mobile-infra to capture this screen.'}<br><span style="font-size:12px">${esc(s.file||'Source file unavailable')}</span>`;
       renderTop(); renderDrawer(); renderPanel(); $('#stage').scrollTop=0; $('#p-list').scrollTop=0; return;
     }
-    img.alt=`${s.journeyName} · ${s.name} (English)`; img2.alt=`${s.journeyName} · ${s.name} (Korean preview)`;
+    img.alt=`${s.journeyName} · ${s.name} (English)`; $('#canvas-ko').setAttribute('aria-label',`${s.journeyName} · ${s.name} (Korean preview)`); $('#ph-ko').classList.add('loading');
     const load=new Image(); load.crossOrigin='anonymous';
-    load.onload=()=>{ imgW=load.naturalWidth; imgH=load.naturalHeight; const c=document.createElement('canvas'); c.width=imgW; c.height=imgH; const cx=c.getContext('2d',{willReadFrequently:true}); cx.drawImage(load,0,0); sampleCtx=cx; for(const k in colorCache) if(k.startsWith(s.id+'|')) delete colorCache[k]; layout(); };
+    load.onload=()=>{ imgW=load.naturalWidth; imgH=load.naturalHeight; const c=document.createElement('canvas'); c.width=imgW; c.height=imgH; const cx=c.getContext('2d',{willReadFrequently:true}); cx.drawImage(load,0,0); sampleCtx=cx; currentImage=load; cleanKoreanBase(load,s); for(const k in colorCache) if(k.startsWith(s.id+'|')) delete colorCache[k]; layout(); $('#ph-ko').classList.remove('loading'); };
     load.onerror=()=>{ $('.stage-inner').hidden=true; $('#rest-note').hidden=false; $('#rest-note').innerHTML='<b style="color:var(--bad)">This screenshot did not load.</b><br>Refresh the page. If it is still missing, send Hamis the screen name shown at the top.'; };
-    load.src=s.img; img.src=s.img; img2.src=s.img;
+    load.src=s.img; img.src=s.img;
     renderTop(); renderDrawer(); renderPanel(); layout();
     $('#stage').scrollTop=0; $('#p-list').scrollTop=0;
   }
