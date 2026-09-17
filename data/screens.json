@@ -1466,6 +1466,73 @@
 "modals",
 "accountsV4"
 ]
+},
+{
+"id": "card_full_01_entry",
+"journey": "card_full",
+"journeyName": "Card",
+"name": "Card introduction",
+"seq": 1,
+"img": "img/card_full_01_entry.jpg",
+"ns": [
+"fassetCard",
+"CardBanner",
+"new"
+]
+},
+{
+"id": "notifications_full_01_list",
+"journey": "notifications_full",
+"journeyName": "Notifications",
+"name": "Notifications",
+"seq": 1,
+"img": "img/notifications_full_01_list.jpg",
+"ns": [
+"notifications",
+"notification",
+"new"
+]
+},
+{
+"id": "swap_full_02_source_asset_picker",
+"journey": "swap_full",
+"journeyName": "Swap",
+"name": "Select asset to swap",
+"seq": 2,
+"img": "img/swap_full_02_source_asset_picker.jpg",
+"ns": [
+"swap",
+"tradeV4",
+"convert",
+"new"
+]
+},
+{
+"id": "wallet_full_02_global_usd_account",
+"journey": "wallet_full",
+"journeyName": "Wallet",
+"name": "Global USD Account",
+"seq": 2,
+"img": "img/wallet_full_02_global_usd_account.jpg",
+"ns": [
+"accountsV4",
+"account",
+"portfolio",
+"new"
+]
+},
+{
+"id": "withdraw_full_02_methods",
+"journey": "withdraw_full",
+"journeyName": "Withdraw",
+"name": "Withdrawal methods",
+"seq": 2,
+"img": "img/withdraw_full_02_methods.jpg",
+"ns": [
+"cryptoWithDraw",
+"withdraw",
+"new"
+]
 }
 ],
 "journeys": [
@@ -1544,7 +1611,27 @@
 {
 "id": "account_full",
 "name": "Account"
+},
+{
+"id": "card_full",
+"name": "Card"
+},
+{
+"id": "notifications_full",
+"name": "Notifications"
+},
+{
+"id": "swap_full",
+"name": "Swap"
+},
+{
+"id": "wallet_full",
+"name": "Wallet"
+},
+{
+"id": "withdraw_full",
+"name": "Withdraw"
 }
 ],
-"captured": "Android 13 emulator · app 6.11 build 552 · captured 14–15 Sep 2026"
+"captured": "Android 13 emulator · app 6.11 builds 552 and 579 · captured 14–17 Sep 2026"
 }

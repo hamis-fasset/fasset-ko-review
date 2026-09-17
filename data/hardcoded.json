@@ -1078,5 +1078,158 @@
   "screens": [
    "logout_03_logged_out"
   ]
+ },
+ "hc.126": {
+  "en": "Noah Saleh",
+  "norm": "noah saleh",
+  "ko": "Noah Saleh",
+  "kind": "text",
+  "screens": [
+   "card_full_01_entry"
+  ]
+ },
+ "hc.127": {
+  "en": "I accept the E-Sign Consent",
+  "norm": "i accept the e sign consent",
+  "ko": "전자서명 동의에 동의합니다",
+  "kind": "text",
+  "screens": [
+   "card_full_02_activation_disclosures"
+  ]
+ },
+ "hc.128": {
+  "en": "I accept the Fasset Card Terms, Fasset Privacy Policy and Issuer Privacy Policy",
+  "norm": "i accept the fasset card terms fasset privacy policy and issuer privacy policy",
+  "ko": "Fasset Card 이용약관, Fasset 개인정보 처리방침 및 발급사 개인정보 처리방침에 동의합니다",
+  "kind": "text",
+  "screens": [
+   "card_full_02_activation_disclosures"
+  ]
+ },
+ "hc.129": {
+  "en": "I certify that the information I have provided is accurate and that I will abide by all the rules and requirements related to my Fasset Card",
+  "norm": "i certify that the information i have provided is accurate and that i will abide by all the rules and requirements related to my fasset card",
+  "ko": "제공한 정보가 정확하며 Fasset Card 관련 모든 규정과 요건을 준수할 것을 확인합니다",
+  "kind": "text",
+  "screens": [
+   "card_full_02_activation_disclosures"
+  ]
+ },
+ "hc.130": {
+  "en": "Order Fulfilled",
+  "norm": "order fulfilled",
+  "ko": "판매 주문 완료",
+  "kind": "text",
+  "screens": [
+   "notifications_full_01_list"
+  ]
+ },
+ "hc.131": {
+  "en": "Your sell order for Nvidia Corp worth of 8.240686 USD has been fulfilled",
+  "norm": "your sell order for nvidia corp worth of 8 240686 usd has been fulfilled",
+  "ko": "Nvidia Corp 8.240686 USD 판매 주문이 체결됐어요",
+  "kind": "text",
+  "screens": [
+   "notifications_full_01_list"
+  ]
+ },
+ "hc.132": {
+  "en": "Your sell order for Nvidia Corp worth of 8.245191 USDT has been fulfilled",
+  "norm": "your sell order for nvidia corp worth of 8 245191 usdt has been fulfilled",
+  "ko": "Nvidia Corp 8.245191 USDT 판매 주문이 체결됐어요",
+  "kind": "text",
+  "screens": [
+   "notifications_full_01_list"
+  ]
+ },
+ "hc.133": {
+  "en": "Your sell order for Apple Inc. worth of 354.782138 USD has been fulfilled",
+  "norm": "your sell order for apple inc worth of 354 782138 usd has been fulfilled",
+  "ko": "Apple Inc. 354.782138 USD 판매 주문이 체결됐어요",
+  "kind": "text",
+  "screens": [
+   "notifications_full_01_list"
+  ]
+ },
+ "hc.134": {
+  "en": "Your sell order for Nvidia Corp worth of 8.253273 USD has been fulfilled",
+  "norm": "your sell order for nvidia corp worth of 8 253273 usd has been fulfilled",
+  "ko": "Nvidia Corp 8.253273 USD 판매 주문이 체결됐어요",
+  "kind": "text",
+  "screens": [
+   "notifications_full_01_list"
+  ]
+ },
+ "hc.135": {
+  "en": "Your sell order for Nvidia Corp worth of 8.262269 USDT has been fulfilled",
+  "norm": "your sell order for nvidia corp worth of 8 262269 usdt has been fulfilled",
+  "ko": "Nvidia Corp 8.262269 USDT 판매 주문이 체결됐어요",
+  "kind": "text",
+  "screens": [
+   "notifications_full_01_list"
+  ]
+ },
+ "hc.136": {
+  "en": "Your sell order for Nvidia Corp worth of 8.302585 USD has been fulfilled",
+  "norm": "your sell order for nvidia corp worth of 8 302585 usd has been fulfilled",
+  "ko": "Nvidia Corp 8.302585 USD 판매 주문이 체결됐어요",
+  "kind": "text",
+  "screens": [
+   "notifications_full_01_list"
+  ]
+ },
+ "hc.137": {
+  "en": "Location verification underway",
+  "norm": "location verification underway",
+  "ko": "위치 확인 중",
+  "kind": "text",
+  "screens": [
+   "wallet_full_02_global_usd_account"
+  ]
+ },
+ "hc.138": {
+  "en": "Money moved to Global USD Account",
+  "norm": "money moved to global usd account",
+  "ko": "Global USD 계정으로 이체",
+  "kind": "text",
+  "screens": [
+   "wallet_full_02_global_usd_account"
+  ]
+ },
+ "hc.139": {
+  "en": "Money moved to Crypto Wallet",
+  "norm": "money moved to crypto wallet",
+  "ko": "디지털 자산 지갑으로 이체",
+  "kind": "text",
+  "screens": [
+   "wallet_full_02_global_usd_account"
+  ]
+ },
+ "hc.140": {
+  "en": "Sent to pk user",
+  "norm": "sent to pk user",
+  "ko": "pk user님에게 전송",
+  "kind": "text",
+  "screens": [
+   "wallet_full_02_global_usd_account"
+  ]
+ },
+ "hc.141": {
+  "en": "How do you want to withdraw funds?",
+  "norm": "how do you want to withdraw funds",
+  "ko": "어떤 방법으로 출금할까요?",
+  "kind": "text",
+  "screens": [
+   "withdraw_full_02_methods"
+  ]
+ },
+ "hc.142": {
+  "en": "Select from available options to withdraw your funds seamlessly.",
+  "norm": "select from available options to withdraw your funds",
+  "ko": "사용 가능한 출금 방법을 선택하세요",
+  "kind": "text",
+  "screens": [
+   "withdraw_full_02_methods"
+  ]
  }
 }

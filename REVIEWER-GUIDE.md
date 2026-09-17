@@ -2,7 +2,7 @@
 
 Open the secure reviewer link Hamis sends you in Chrome on a laptop. It begins with `https://fasset-ko-review.netlify.app/`.
 
-You are reviewing one app. The screens run in the order a customer meets them: sign up, log in, your details, identity check and home come from the new design; every other screen (market, buying, selling, deposit, earn, rewards, history, settings, account, security, logging out) is the current app as it looks today, followed by the new Send money and Gift a card flows. Copy not linked to visible text in a pictured state is at the end under "Unmapped copy", with English and editable Korean side by side.
+You are reviewing one app. The screens run in the order a customer meets them: sign up, log in, your details, identity check and home come from the new design; every other screen (wallet, notifications, card, market, buying, selling, swap, deposit, withdraw, earn, rewards, history, settings, account, security, logging out) is the current app as it looks today, followed by the new Send money and Gift a card flows. Copy not linked to visible text in a pictured state is at the end under "Unmapped copy", with English and editable Korean side by side.
 
 1. The left phone is the app in English. The right phone is the same screen in Korean. Click any text on either phone to jump to it.
 2. Fix the Korean in the panel on the right. The right phone updates as you type. Tick "Looks good" when a line is fine.

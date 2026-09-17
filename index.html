@@ -248,7 +248,7 @@ body.view-mode .top{box-shadow:0 1px 12px rgba(23,26,32,.05)}
 <script>
 (async function(){
   const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  const BUILD_VERSION='20260917-220500';
+  const BUILD_VERSION='20260918-003000';
   const PH_RE=/\{\{\s*(\w+)\s*\}\}/g;
   const SAMPLE={amount:'1,250.00',currency:'USD',name:'지민',count:'3',coin:'BTC',percent:'1.00',time:'30',days:'7',balance:'6,800.60',limit:'2,500',code:'AB12CD',value:'jimin@email.com',otpType:'SMS',spend:'BTC',receive:'USDT',from:'BTC',to:'USDT',min:'10',max:'5,000',type:'USDT',symbol:'BTC',timer:'10',suffix:'···4821',channelName:'GoPay',current:'2',total:'5',deviceName:'iPhone 15',transactionType:'P2P',dynamicLink:'fasset.link/abc',appLink:'fasset.com/app',value1:'45',value2:'AED',value3:'USD',asset:'BTC'};
   const fmtPh=s=>esc(s).replace(PH_RE,(m,n)=>`<span class="ph">{{${n}}}</span>`);
@@ -280,7 +280,7 @@ body.view-mode .top{box-shadow:0 1px 12px rgba(23,26,32,.05)}
   /* ---- one product: onboarding + home from the redesign, everything else from the current app ---- */
   const SUPERSEDED=new Set(['login','signup','forgot_password']); // current-app captures the redesign replaces; their keys stay reviewable in the unmapped list
   const FIG_GROUP={'SIGN-UP':['Sign up',1],'LOG IN':['Log in',2],'BASIC INFO':['Your details',3],'KYC':['Identity check',4],'SEND MONEY':['Send money',40],'GIFT A CARD':['Gift a card',41]};
-  const APP_GROUP={dashboard:['Home',5],market:['Market',10],market_full:['Market',10],buy:['Buying',11],sell:['Selling',12],deposit_full:['Deposit',13],earn_full:['Earn',14],rewards:['Rewards',15],history:['History',16],history_full:['History',16],settings:['Settings',17],account_full:['Account',18],security:['Security',19],kyc_ae:['Identity questionnaire (UAE)',20],kyc_lb:['Identity questionnaire (Lebanon)',21],logout:['Logging out',22]};
+  const APP_GROUP={dashboard:['Home',5],wallet_full:['Wallet',6],notifications_full:['Notifications',7],card_full:['Card',8],market:['Market',10],market_full:['Market',10],buy:['Buying',11],sell:['Selling',12],swap_full:['Swap',12.5],deposit_full:['Deposit',13],withdraw_full:['Withdraw',13.5],earn_full:['Earn',14],rewards:['Rewards',15],history:['History',16],history_full:['History',16],settings:['Settings',17],account_full:['Account',18],security:['Security',19],kyc_ae:['Identity questionnaire (UAE)',20],kyc_lb:['Identity questionnaire (Lebanon)',21],logout:['Logging out',22]};
   const groupOf=s=>{ if(s.v==='fig'){ if(/\bHome\b/.test(s.name)) return ['Home',5]; return FIG_GROUP[s.journeyName]||[s.journeyName,39]; } return APP_GROUP[s.journey]||[s.journeyName,25]; };
   const cleanName=n=>String(n).replace(/^\d+(\.\d+)*[a-zA-Z]?\s+/,'').replace(/\s*\(placeholder\)\s*$/,'');
   const currentScreens=scr.screens.filter(s=>s.v==='app'&&!SUPERSEDED.has(s.journey)).map(s=>({...s,codeKeys:[]}));

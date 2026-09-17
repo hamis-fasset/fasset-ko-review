@@ -119,6 +119,56 @@ for(const screenId of ['earn_full_04_flex_saver_detail','earn_full_05_stable_sav
 const dailyRate=ocr.earn_full_03_savings?.matches.find(item=>item.k==='portfolio.daily');
 if(dailyRate) dailyRate.ocrLine='3.5%';
 
+// Vision drops the D from USDT on this backend-generated notification. The
+// geometry still maps the complete two-line message; keep it paintable so the
+// Korean preview does not leave one English notification behind.
+const notificationUsdt=ocr.notifications_full_01_list?.matches.find(item=>item.k==='hc.132');
+if(notificationUsdt){
+  notificationUsdt.visualSafe=true;
+  notificationUsdt.ocrLine='Your sell order for Nvidia Corp worth of 8.245191 UST has been fulfilled';
+}
+
+// The Global USD activity title wraps around a circular plus icon. Treat the
+// two text lines separately so the icon is never erased, then draw the shorter
+// Korean title at normal activity-row size.
+const globalUsdActivity=ocr.wallet_full_02_global_usd_account?.matches.find(item=>item.k==='hc.138');
+if(globalUsdActivity){
+  Object.assign(globalUsdActivity,{x:240,y:1520,w:439,h:77,lines:2,lh:36,fs:31,
+    align:'left',visualSafe:true,ocrLine:'Money moved to Global USD',extraOcrLines:['Account'],
+    originalBox:{x:240,y:1520,w:439,h:77},patchPad:{left:4,right:4,top:4,bottom:4}});
+}
+
+// OCR split the withdrawal-method description after "funds". Keep the source
+// sentence whole so the second English line is erased before Korean is drawn.
+const withdrawalDescription=ocr.withdraw_full_02_methods?.matches.find(item=>item.k==='hc.142');
+if(withdrawalDescription){
+  Object.assign(withdrawalDescription,{x:107,y:554,w:719,h:72,lines:2,lh:36,fs:28,
+    align:'left',visualSafe:true,
+    ocrLine:'Select from available options to withdraw your funds',extraOcrLines:['seamlessly.'],
+    originalBox:{x:107,y:554,w:719,h:72},patchPad:{left:4,right:4,top:4,bottom:4}});
+}
+for(const store of [copy,hardcoded]){
+  const row=Array.isArray(store)?store.find(item=>item.k==='hc.142'):store?.['hc.142'];
+  if(row) row.en='Select from available options to withdraw your funds seamlessly.';
+}
+
+// Correct OCR-only consent text retained in the engineering export. The
+// activation screenshot is excluded because its fixed CTA obscures the third
+// row, but the recovered source still needs to be accurate for handoff.
+for(const [key,en] of [
+  ['hc.127','I accept the E-Sign Consent'],
+  ['hc.128','I accept the Fasset Card Terms, Fasset Privacy Policy and Issuer Privacy Policy'],
+  ['hc.129','I certify that the information I have provided is accurate and that I will abide by all the rules and requirements related to my Fasset Card']
+]){
+  const copyRow=copy.find(item=>item.k===key); if(copyRow) copyRow.en=en;
+  if(hardcoded?.[key]){hardcoded[key].en=en;hardcoded[key].norm=en.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
+}
+
+// "Valid Thru" is baked into the promotional card artwork at an angle, not a
+// live UI label. Translating it as horizontal HTML text damages the artwork.
+const promoValidThru=ocr.card_full_01_entry?.matches.find(item=>item.k==='fassetCard.validThruLabel');
+if(promoValidThru) promoValidThru.visualSafe=false;
+
 // The deposit capture matcher collapsed a payment-method title and its grey
 // timing/fee subtitle into one protected two-line row. Split the visual boxes
 // while retaining one reviewer/edit key, so each line keeps its own size and

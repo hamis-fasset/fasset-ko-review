@@ -6,7 +6,7 @@
 
 The Netlify version is canonical because it autosaves secure reviewer sessions to Netlify Blobs. GitHub Pages remains a static fallback and stores work only in the browser.
 
-The admin can also generate a **public read-only view link** for any review session. View mode contains only the 245 pictured states, defaults to the Korean app, and lets visitors switch between Korean, English and side-by-side comparison. It has no editor, approval, submission, storage or admin controls. The share token is read-only and separate from the reviewer token; creating a new view link rotates the previous one.
+The admin can also generate a **public read-only view link** for any review session. View mode contains only the 250 pictured states, defaults to side-by-side English/Korean comparison, and lets visitors switch languages. It has no editor, approval, submission, storage or admin controls. The share token is read-only and separate from the reviewer token; creating a new view link rotates the previous one.
 
 Public case study: `/method.html` documents the AI-native PM method, agent orchestration, JSON/Python pipeline, visual reconstruction, QA system and honest coverage boundaries. The repo version is `METHOD.md`.
 
@@ -16,9 +16,9 @@ The reviewer sees each screen in English and Korean side by side. Editing a Kore
 
 ## Coverage
 
-- **245 pictured states** have a live English/Korean preview (75 current-app captures and 170 new-design frames). The misleading Pakistan duplicate is excluded. The raw app set contains 89 captures; 14 onboarding captures are superseded by the redesign and hidden.
+- **250 pictured states** have a live English/Korean preview (80 current-app captures and 170 new-design frames). The misleading Pakistan duplicate is excluded. The app dataset contains 94 captures; 14 onboarding captures are superseded by the redesign and hidden.
 - 395 non-container route/component records were found in the CashApp `development` branch at commit `1d8e0c2e378216573367dce234217e92a3b9da44` (393 route names and 391 distinct component files).
-- 375 of those source records do not yet have a verified mapping to an active visual capture.
+- 370 of those source records do not yet have a verified mapping to an active visual capture.
 - The route inventory is engineering evidence in `COVERAGE.md`; it is intentionally not shown as hundreds of empty reviewer screens.
 - Copy not linked to text visible in a pictured state is retained in one **Unmapped copy** workspace. It pairs English with editable Korean, identifies the original pack versus the remaining-30% audit, and supports approval like a pictured screen.
 - 195 brand or runtime-fragment rows deliberately kept in English are excluded from direct review. The 34 code-referenced keys absent from the supplied copy are visible as engineering gaps but cannot be edited until source copy exists.
@@ -43,7 +43,7 @@ prefetched; there is no per-screen canvas work in normal operation.
 
 ```sh
 cd ~/Downloads/fasset-ko-work
-venv/bin/python ocr/plates_v2.py            # all 260 source states; or --only <id> ...
+venv/bin/python ocr/plates_v2.py            # all 265 source states; or --only <id> ...
 ```
 
 
@@ -80,8 +80,8 @@ Invalid JSON or a JSON file with the wrong review shape is rejected before brows
 
 ## Release checklist
 
-1. Run `venv/bin/python ocr/plates_v2.py`; it must report 260 plates and zero fallbacks.
-2. Export both languages with no explicit IDs; each manifest must contain 245 screens. Build and visually QA those exact pairs.
+1. Run `venv/bin/python ocr/plates_v2.py`; it must report 265 plates and zero fallbacks.
+2. Export both languages with no explicit IDs; each manifest must contain 250 screens. Build and visually QA those exact pairs.
 3. Commit the complete runtime set: HTML, JSON/box data, build scripts, pinned Node dependencies and `plates-v2/`. Do not commit the obsolete `plates/` directory.
 4. Deploy production with `netlify deploy --prod`, then smoke-test reviewer-link creation, server restore, editing, approval, submission, admin listing/download and representative deep links. Push `main` so the implementation remains versioned and GitHub Pages stays a static fallback.
 
