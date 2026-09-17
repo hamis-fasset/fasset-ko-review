@@ -103,5 +103,13 @@
  "hc.107": "미국",
  "hc.108": "계속 진행하면 이용약관에 동의하게 됩니다.",
  "hc.109": "- 올란드 제도",
- "hc.110": "Reducing investment risk with USDC, a stablecoin linked to the US"
+ "hc.110": "Reducing investment risk with USDC, a stablecoin linked to the US",
+ "hc.111": "안전한 인증번호를 보내 거래를 인증해요",
+ "hc.112": "Google Authenticator를 설치한 뒤, 설정 키 생성 버튼을 눌러 시작하세요",
+ "hc.113": "1. 아직 없다면 앱 스토어에서 Google Authenticator 앱을 설치해요",
+ "hc.114": "2. Google Authenticator 앱을 열고 새 계정 추가를 선택해요.",
+ "hc.115": "3. 위 설정 키 옆의 복사 아이콘을 눌러 키를 복사해요.",
+ "hc.116": "4. 앱에서 \"설정 키 입력\"을 선택하고 계정 이름을 입력해요. 예: \"Fasset App\"",
+ "hc.117": "5. 복사한 설정 키를 입력란에 붙여 넣어요. 키 유형이 \"시간 기반\"(카운터 기반 아님)인지 확인해 주세요.",
+ "hc.118": "6. 저장 또는 설정 완료 후 인증을 진행해요"
 }

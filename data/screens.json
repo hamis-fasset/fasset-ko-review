@@ -376,6 +376,40 @@
 ]
 },
 {
+"id": "market_full_01_digital_assets_list",
+"journey": "market_full",
+"journeyName": "Market",
+"name": "Digital assets list",
+"seq": 1,
+"img": "img/market_full_01_digital_assets_list.jpg",
+"ns": [
+"market_v4",
+"market",
+"bundles",
+"bundle",
+"stock",
+"stockMarketClosed",
+"tradeV4"
+]
+},
+{
+"id": "market_full_02_sorting_sheet",
+"journey": "market_full",
+"journeyName": "Market",
+"name": "Sort options",
+"seq": 2,
+"img": "img/market_full_02_sorting_sheet.jpg",
+"ns": [
+"market_v4",
+"market",
+"bundles",
+"bundle",
+"stock",
+"stockMarketClosed",
+"tradeV4"
+]
+},
+{
 "id": "buy_01_trade_sheet",
 "journey": "buy",
 "journeyName": "Buying",
@@ -1034,6 +1068,36 @@
 ]
 },
 {
+"id": "history_full_01_list",
+"journey": "history_full",
+"journeyName": "History",
+"name": "All transactions (list)",
+"seq": 1,
+"img": "img/history_full_01_list.jpg",
+"ns": [
+"accountsV4",
+"buyV4",
+"sellFlow",
+"p2pTabs",
+"voucher"
+]
+},
+{
+"id": "history_full_02_buy_detail",
+"journey": "history_full",
+"journeyName": "History",
+"name": "Purchase details",
+"seq": 2,
+"img": "img/history_full_02_buy_detail.jpg",
+"ns": [
+"accountsV4",
+"buyV4",
+"sellFlow",
+"p2pTabs",
+"voucher"
+]
+},
+{
 "id": "settings_01_hub",
 "journey": "settings",
 "journeyName": "Settings",
@@ -1073,6 +1137,48 @@
 "preferences",
 "myFasset",
 "modals"
+]
+},
+{
+"id": "security_01_two_factor_settings",
+"journey": "security",
+"journeyName": "Security",
+"name": "Two-factor settings",
+"seq": 1,
+"img": "img/security_01_two_factor_settings.jpg",
+"ns": [
+"new",
+"myFasset",
+"verifyDevice",
+"pin"
+]
+},
+{
+"id": "security_03_gauth_confirm",
+"journey": "security",
+"journeyName": "Security",
+"name": "Google Authenticator · confirm",
+"seq": 3,
+"img": "img/security_03_gauth_confirm.jpg",
+"ns": [
+"new",
+"myFasset",
+"verifyDevice",
+"pin"
+]
+},
+{
+"id": "security_04_gauth_password",
+"journey": "security",
+"journeyName": "Security",
+"name": "Google Authenticator · password",
+"seq": 4,
+"img": "img/security_04_gauth_password.jpg",
+"ns": [
+"new",
+"myFasset",
+"verifyDevice",
+"pin"
 ]
 },
 {
@@ -1264,6 +1370,10 @@
 "name": "Market"
 },
 {
+"id": "market_full",
+"name": "Market"
+},
+{
 "id": "buy",
 "name": "Buying"
 },
@@ -1288,8 +1398,16 @@
 "name": "History"
 },
 {
+"id": "history_full",
+"name": "History"
+},
+{
 "id": "settings",
 "name": "Settings"
+},
+{
+"id": "security",
+"name": "Security"
 },
 {
 "id": "logout",

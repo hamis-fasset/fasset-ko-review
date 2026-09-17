@@ -111,7 +111,8 @@
   "ko": "{{asset}} 구매",
   "kind": "text",
   "screens": [
-   "history_02_list"
+   "history_02_list",
+   "history_full_01_list"
   ]
  },
  "hc.017": {
@@ -967,6 +968,79 @@
   "kind": "text",
   "screens": [
    "market_04_bundles"
+  ]
+ },
+ "hc.111": {
+  "en": "Authenticate transactions by sending secure codes",
+  "norm": "authenticate transactions by sending secure codes",
+  "ko": "안전한 인증번호를 보내 거래를 인증해요",
+  "kind": "text",
+  "screens": [
+   "security_01_two_factor_settings",
+   "security_03_gauth_confirm"
+  ]
+ },
+ "hc.112": {
+  "en": "Download Google Authenticator to get started and then tap the Generate Setup Key button",
+  "norm": "download google authenticator to get started and then tap the generate setup key button",
+  "ko": "Google Authenticator를 설치한 뒤, 설정 키 생성 버튼을 눌러 시작하세요",
+  "kind": "text",
+  "screens": [
+   "security_04_gauth_password"
+  ]
+ },
+ "hc.113": {
+  "en": "1. Download the Google Authenticator app from your app store if you haven't already",
+  "norm": "1 download the google authenticator app from your app store if you haven t already",
+  "ko": "1. 아직 없다면 앱 스토어에서 Google Authenticator 앱을 설치해요",
+  "kind": "text",
+  "screens": [
+   "security_04_gauth_password"
+  ]
+ },
+ "hc.114": {
+  "en": "2. Open the Google Authenticator app and select the option to add a new account.",
+  "norm": "2 open the google authenticator app and select the option to add a new account",
+  "ko": "2. Google Authenticator 앱을 열고 새 계정 추가를 선택해요.",
+  "kind": "text",
+  "screens": [
+   "security_04_gauth_password"
+  ]
+ },
+ "hc.115": {
+  "en": "3. Copy the setup key provided above by tapping the copy icon next to it.",
+  "norm": "3 copy the setup key provided above by tapping the copy icon next to it",
+  "ko": "3. 위 설정 키 옆의 복사 아이콘을 눌러 키를 복사해요.",
+  "kind": "text",
+  "screens": [
+   "security_04_gauth_password"
+  ]
+ },
+ "hc.116": {
+  "en": "4. In the app, choose the option to \"Enter a setup key\" then Enter a name for the account, e.g., \"Fasset App.\"",
+  "norm": "4 in the app choose the option to enter a setup key then enter a name for the account e g fasset app",
+  "ko": "4. 앱에서 \"설정 키 입력\"을 선택하고 계정 이름을 입력해요. 예: \"Fasset App\"",
+  "kind": "text",
+  "screens": [
+   "security_04_gauth_password"
+  ]
+ },
+ "hc.117": {
+  "en": "5. Paste the setup key into the provided field. Ensure the key type is set to \"Time-based\" (not counter-based).",
+  "norm": "5 paste the setup key into the provided field ensure the key type is set to time based not counter based",
+  "ko": "5. 복사한 설정 키를 입력란에 붙여 넣어요. 키 유형이 \"시간 기반\"(카운터 기반 아님)인지 확인해 주세요.",
+  "kind": "text",
+  "screens": [
+   "security_04_gauth_password"
+  ]
+ },
+ "hc.118": {
+  "en": "6. Save or complete the setup then Verify the",
+  "norm": "6 save or complete the setup then verify the",
+  "ko": "6. 저장 또는 설정 완료 후 인증을 진행해요",
+  "kind": "text",
+  "screens": [
+   "security_04_gauth_password"
   ]
  }
 }

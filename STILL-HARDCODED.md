@@ -1,6 +1,6 @@
 # Text visible in the app that has no translation key
 
-103 strings typed directly into screen components (or assembled from fragments). Editable in the review tool under ids hc.NNN; returned in the reviewer's export under `hardcoded`. Engineering needs to give each a real key.
+111 strings typed directly into screen components (or assembled from fragments). Editable in the review tool under ids hc.NNN; returned in the reviewer's export under `hardcoded`. Engineering needs to give each a real key.
 
 | id | English | kind | seen on |
 |---|---|---|---|
@@ -15,7 +15,7 @@
 | hc.012 | The quoted price includes applicable fees and potential slippage, and may change based on market conditions. Trading assets involves significant risk due to their volatility and unpredictability. Please invest responsibly and refer to our Risk Disclosure for more information. | text | Buying · Confirm purchase, Selling · Confirm sale |
 | hc.013 | By proceeding, you agree with our Terms of Service | text | Buying · Confirm purchase, Selling · Confirm sale |
 | hc.015 | Sold {{asset}} | text | History · All transactions |
-| hc.016 | Bought {{asset}} | text | History · All transactions |
+| hc.016 | Bought {{asset}} | text | History · All transactions, History · All transactions (list) |
 | hc.017 | Awaiting a | truncated | Logging out · Logged out |
 | hc.018 | Nationality | text | Identity check (UAE) · Financial profile, Identity check (Lebanon) · Financial profile |
 | hc.019 | Enter the country you were born in | text | Identity check (UAE) · Financial profile |
@@ -107,3 +107,11 @@
 | hc.108 | By continuing you agree with our Terms of Service | text | Signing up · Sign up · personal details |
 | hc.109 | - Åland Islands | text | Signing up · Sign up · choose country |
 | hc.110 | Reducing investment risk with USDC, a stablecoin linked to the US | text | Market · Bundles |
+| hc.111 | Authenticate transactions by sending secure codes | text | Security · Two-factor settings, Security · Google Authenticator · confirm |
+| hc.112 | Download Google Authenticator to get started and then tap the Generate Setup Key button | text | Security · Google Authenticator · password |
+| hc.113 | 1. Download the Google Authenticator app from your app store if you haven't already | text | Security · Google Authenticator · password |
+| hc.114 | 2. Open the Google Authenticator app and select the option to add a new account. | text | Security · Google Authenticator · password |
+| hc.115 | 3. Copy the setup key provided above by tapping the copy icon next to it. | text | Security · Google Authenticator · password |
+| hc.116 | 4. In the app, choose the option to "Enter a setup key" then Enter a name for the account, e.g., "Fasset App." | text | Security · Google Authenticator · password |
+| hc.117 | 5. Paste the setup key into the provided field. Ensure the key type is set to "Time-based" (not counter-based). | text | Security · Google Authenticator · password |
+| hc.118 | 6. Save or complete the setup then Verify the | text | Security · Google Authenticator · password |
