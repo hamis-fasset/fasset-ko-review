@@ -1346,6 +1346,126 @@
 "pep",
 "cardKyc"
 ]
+},
+{
+"id": "account_full_01_information",
+"journey": "account_full",
+"journeyName": "Account",
+"name": "Account information",
+"seq": 1,
+"img": "img/account_full_01_information.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals",
+"accountsV4"
+]
+},
+{
+"id": "account_full_02_update_username",
+"journey": "account_full",
+"journeyName": "Account",
+"name": "Update username",
+"seq": 2,
+"img": "img/account_full_02_update_username.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals",
+"accountsV4"
+]
+},
+{
+"id": "account_full_03_update_email",
+"journey": "account_full",
+"journeyName": "Account",
+"name": "Email",
+"seq": 3,
+"img": "img/account_full_03_update_email.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals",
+"accountsV4"
+]
+},
+{
+"id": "account_full_04_update_phone",
+"journey": "account_full",
+"journeyName": "Account",
+"name": "Update phone number",
+"seq": 4,
+"img": "img/account_full_04_update_phone.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals",
+"accountsV4"
+]
+},
+{
+"id": "account_full_05_update_legal_name",
+"journey": "account_full",
+"journeyName": "Account",
+"name": "Legal name",
+"seq": 5,
+"img": "img/account_full_05_update_legal_name.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals",
+"accountsV4"
+]
+},
+{
+"id": "account_full_06_update_dob",
+"journey": "account_full",
+"journeyName": "Account",
+"name": "Date of birth",
+"seq": 6,
+"img": "img/account_full_06_update_dob.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals",
+"accountsV4"
+]
+},
+{
+"id": "account_full_07_delete_account_sheet",
+"journey": "account_full",
+"journeyName": "Account",
+"name": "Delete account sheet",
+"seq": 7,
+"img": "img/account_full_07_delete_account_sheet.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals",
+"accountsV4"
+]
+},
+{
+"id": "account_full_08_change_password",
+"journey": "account_full",
+"journeyName": "Account",
+"name": "Change password",
+"seq": 8,
+"img": "img/account_full_08_change_password.jpg",
+"ns": [
+"account",
+"preferences",
+"myFasset",
+"modals",
+"accountsV4"
+]
 }
 ],
 "journeys": [
@@ -1420,6 +1540,10 @@
 {
 "id": "kyc_lb",
 "name": "Identity check (Lebanon)"
+},
+{
+"id": "account_full",
+"name": "Account"
 }
 ],
 "captured": "Android 13 emulator · app 6.11 build 552 · captured 14–15 Sep 2026"

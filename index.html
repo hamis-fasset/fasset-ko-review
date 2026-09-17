@@ -66,6 +66,13 @@ button{cursor:pointer;background:none;border:0;padding:0}
 .patch span{display:block;white-space:nowrap}
 .patch.multi span{white-space:normal}
 .tip{position:absolute;z-index:5;background:var(--ink);color:#fff;font-size:12px;padding:5px 8px;border-radius:5px;pointer-events:none;max-width:240px;transform:translateY(-100%);margin-top:-6px}
+/* export mode (?screen=<id>&export=ko): only the Korean phone, at a fixed size, for headless QA renders */
+body.export .top,body.export .panel,body.export .hint-narrow,body.export .drawer,body.export .scrim,body.export #banner,body.export #help,body.export .cap,body.export .phone-col:first-child{display:none!important}
+body.export .main{display:block;height:auto}
+body.export .stage{padding:0;overflow:visible;justify-content:flex-start}
+body.export .stage-inner{gap:0}
+body.export .phone{border-radius:0;box-shadow:none;border:0}
+body.export .ov .box{display:none}
 .hint-narrow{display:none;padding:8px 16px;background:var(--warn-soft);color:var(--warn);font-size:13px}
 
 /* panel */
@@ -196,7 +203,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
       <li><b>Fix the Korean in the panel on the right.</b> Your changes show up on the phone as you type. Tick “Looks good” when a line is fine.</li>
       <li><b>When a screen is finished, press “Mark this screen as done”.</b> Your work saves automatically in this browser. When you are done for the day, press “Save my edits to a file” and send us the file.</li>
     </ol>
-    <p style="margin:0;font-size:12.5px;color:var(--ink-3)">There are 39 photographed app states with a live Korean preview. The source-code inventory also lists all 395 non-container route/component records; records without a photograph are clearly marked and can only be reviewed as text. The Korean phone is a layout preview, so spacing is close to the real app but not pixel-perfect. If Korean may not fit, the editor panel shows a clear length warning. The 195 brand/fragment rows deliberately kept in English are not review cards; 34 keys missing from the supplied copy are shown as engineering gaps.</p>
+    <p style="margin:0;font-size:12.5px;color:var(--ink-3)">This is one app. Sign up, log in, your details, identity check and home come from the new design; every other screen is the current app as it looks today. Screens run in the order a customer meets them. The source-code inventory at the end lists screens without a photograph, which can only be reviewed as text. The Korean phone is a layout preview, so spacing is close to the real app but not pixel-perfect. If Korean may not fit, the editor panel shows a clear length warning. Brand names and sentence fragments deliberately kept in English are not review cards.</p>
     <div class="foot">
       <label class="btn" for="import-file" style="cursor:pointer">Continue from a file</label>
       <span class="sp"></span>
@@ -226,18 +233,30 @@ button{cursor:pointer;background:none;border:0;padding:0}
   const copyRows=copyA.concat(copyF||[]); const ocr=Object.assign({},ocrA,ocrF||{});
   const scr={screens:scrA.screens.map(s=>({...s,v:'app'})).concat(((scrF&&scrF.screens)||[]).map(s=>({...s,v:'fig'})))};
   const HAS_FIG=!!(scrF&&scrF.screens&&scrF.screens.length);
+  const Q=new URLSearchParams(location.search); const EXPORT=Q.get('export'); const WANT=Q.get('screen');
+  if(EXPORT) document.body.classList.add('export');
   let VER='app'; try{VER=localStorage.getItem('fasset-ko-version')||'app'}catch(e){} if(VER==='fig'&&!HAS_FIG) VER='app';
   fetch('data/review-meta.json').then(r=>r.ok?r.json():null).then(m=>{ if(!m) return; const el=document.createElement('span'); el.className='pill'; el.style.background='var(--ok-soft)'; el.style.color='var(--ok)'; el.textContent=`Reviewed copy applied ${new Date(m.applied_at).toLocaleDateString('en-GB',{day:'numeric',month:'short'})} · ${m.changes} changes`; document.querySelector('.top .where').after(el); }).catch(()=>{});
   const byKey=Object.fromEntries(copyRows.map(r=>[r.k,r]));
   const REST_ID='__rest';
   const CAPTURE_ID_ALIASES={sell_03_payment_method:'sell_03_receive_method',logout_01:'logout_01_account_menu',logout_02:'logout_02_confirm_dialog',logout_03:'logout_03_logged_out',kyc_lb_01:'kyc_lb_01_financial_profile',kyc_lb_02:'kyc_lb_02_money_questions',kyc_lb_03:'kyc_lb_03_money_questions_filled'};
-  const currentScreens=scr.screens.filter(s=>s.v==='app').map(s=>({...s,codeKeys:[]}));
+  /* ---- one product: onboarding + home from the redesign, everything else from the current app ---- */
+  const SUPERSEDED=new Set(['login','signup','forgot_password']); // current-app captures the redesign replaces; their keys stay reviewable in the unmapped list
+  const FIG_GROUP={'SIGN-UP':['Sign up',1],'LOG IN':['Log in',2],'BASIC INFO':['Your details',3],'KYC':['Identity check',4],'SEND MONEY':['Send money',40],'GIFT A CARD':['Gift a card',41]};
+  const APP_GROUP={dashboard:['Home',5],market:['Market',10],market_full:['Market',10],buy:['Buying',11],sell:['Selling',12],deposit_full:['Deposit',13],earn_full:['Earn',14],rewards:['Rewards',15],history:['History',16],history_full:['History',16],settings:['Settings',17],account_full:['Account',18],security:['Security',19],kyc_ae:['Identity questionnaire (UAE)',20],kyc_lb:['Identity questionnaire (Lebanon)',21],logout:['Logging out',22]};
+  const groupOf=s=>{ if(s.v==='fig'){ if(/\bHome\b/.test(s.name)) return ['Home',5]; return FIG_GROUP[s.journeyName]||[s.journeyName,39]; } return APP_GROUP[s.journey]||[s.journeyName,25]; };
+  const cleanName=n=>String(n).replace(/^\d+(\.\d+)*[a-zA-Z]?\s+/,'').replace(/\s*\(placeholder\)\s*$/,'');
+  const currentScreens=scr.screens.filter(s=>s.v==='app'&&!SUPERSEDED.has(s.journey)).map(s=>({...s,codeKeys:[]}));
   const codeScreens=(codeA?.screens||[]).filter(s=>!s.container).map((s,seq)=>({
     id:s.id,journey:'code',journeyName:'Screens found in app code',name:s.route.replace(/([a-z0-9])([A-Z])/g,'$1 $2').replace(/_/g,' '),seq:seq+1,img:null,ns:[],v:'app',code:true,keys:s.keys.filter(k=>byKey[k]),file:s.file,navigator:s.navigator,dynamicCalls:s.dynamicCalls,hardcodedEstimate:s.hardcodedEstimate,unresolvedKeys:s.unresolvedKeys||[],captured:s.captured,captureIds:(s.captureIds||[]).map(id=>CAPTURE_ID_ALIASES[id]||id)
   }));
-  const allScreens=currentScreens.concat(codeScreens,((scrF&&scrF.screens)||[]).map(s=>({...s,v:'fig'})));
+  const figScreens=((scrF&&scrF.screens)||[]).map((s,i)=>({...s,v:'fig',figName:s.name,name:cleanName(s.name),srcIdx:i}));
+  const visual=currentScreens.concat(figScreens).map((s,i)=>{const g=groupOf(s); const name=g[0]==='Home'?(s.v==='fig'?`${s.name} · new design`:`${s.name} · current app`):s.name; return {...s,name,journey:'g'+g[1],journeyName:g[0],ord:g[1],srcIdx:s.srcIdx??i};});
+  visual.sort((a,b)=>a.ord-b.ord||(a.v===b.v?0:(a.v==='fig'?-1:1))||(a.v==='fig'?a.srcIdx-b.srcIdx:(a.seq-b.seq))||String(a.id).localeCompare(String(b.id)));
+  const allScreens=visual.concat(codeScreens);
   allScreens.push({id:REST_ID,journey:'rest',journeyName:'Copy not mapped to a screen',name:'Unmapped copy',seq:1,img:null,ns:[],v:'app',rest:true});
-  let screens=allScreens.filter(s=>s.v===VER);
+  VER='app';
+  let screens=allScreens;
 
   /* ---- state ---- */
   const LS='fasset-ko-review-v2';
@@ -282,14 +301,19 @@ button{cursor:pointer;background:none;border:0;padding:0}
   function fitLevel(r){return r>1.15?'bad':r>1?'warn':''}
   function fontPx(m){
     if(m.fs) return m.fs;
-    // ocrLine is the exact selected text span. Legacy `text` can still hold
-    // adjacent icons/values or an uninstantiated {{placeholder}} template.
+    // The OCR box is the English ink. Its height is a known fraction of the nominal font size depending
+    // on which glyph classes the line contains (caps/ascenders, descenders, or x-height only). Korean is
+    // then set at 0.92 of that nominal size, which matches how Hangul sits next to Latin in the app.
+    // (Replaced the old width-per-character guess, which made most Korean lines 15-35% too small.)
     const source=m.ocrLine||withSample(m.text||'xxxx',m.vals);
-    return (m.lines||1)===1 ? Math.min(m.lh*0.9, 2.1*m.w/Math.max(source.length,4)) : Math.min(m.lh*0.9, 2.1*m.w*(m.lines||1)/Math.max(source.length,8));
+    if((m.lines||1)>1) return m.lh*0.82;
+    const hasD=/[gjpqy,;()\[\]{}Q@$]/.test(source), hasA=/[bdfhklt0-9!?\/|"'A-Z]/.test(source);
+    const k=hasD&&hasA?0.96:hasA?0.73:hasD?0.75:0.53;
+    return Math.max(10, 0.92*m.h/k);
   }
 
   /* ---- per screen model ---- */
-  let idx=Math.max(0,screens.findIndex(s=>s.id===(localStorage.getItem(LS+':screen')||''))); if(idx<0) idx=0;
+  let idx=Math.max(0,screens.findIndex(s=>s.id===(WANT||localStorage.getItem(LS+':screen')||''))); if(idx<0) idx=0;
   let sel=null, zoom='fit', scale=1, imgW=1080, imgH=2400, sampleCtx=null, currentImage=null, canvasRefresh=0;
   let restQ='';
   const mappedAppKeys=new Set();
@@ -320,6 +344,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
 
   /* ---- layout ---- */
   function layout(){
+    if(EXPORT){ const k=imgW>800?0.5:1; const w=imgW*k, h=imgH*k; scale=w/imgW; ['#ph-en','#ph-ko'].forEach(q=>{const el=$(q); el.style.width=w+'px'; el.style.height=h+'px';}); renderOverlays(); document.body.dataset.ready=(currentImage&&!$('#ph-ko').classList.contains('loading'))?'1':''; return; }
     const stage=$('#stage'); const availH=stage.clientHeight-32; const availW=stage.clientWidth-32-28;
     let h= zoom==='fit'? Math.min(availH, (availW/2)*imgH/imgW) : Math.max(availH*1.6, 1400);
     if(window.innerWidth<=1100&&zoom==='fit') h=Math.min(h, window.innerHeight*0.9);
@@ -328,28 +353,46 @@ button{cursor:pointer;background:none;border:0;padding:0}
     renderOverlays();
   }
   window.addEventListener('resize',layout);
-  if(HAS_FIG){ $('#version').hidden=false; document.querySelectorAll('#version button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===VER)); }
-  $('#version').addEventListener('click',e=>{const b=e.target.closest('button'); if(!b||b.dataset.v===VER) return; VER=b.dataset.v; try{localStorage.setItem('fasset-ko-version',VER)}catch(_){}
-    document.querySelectorAll('#version button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.v===VER));
-    screens=allScreens.filter(s=>s.v===VER); idx=0; go(0); });
+  $('#version').hidden=true; // one product, one list
   $('#zoom').addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return; zoom=b.dataset.z; document.querySelectorAll('#zoom button').forEach(x=>x.setAttribute('aria-pressed',x===b)); layout();});
 
   /* ---- colour sampling from the English capture ---- */
   function samplePalette(m){
-    if(!sampleCtx) return {bg:[255,255,255],fg:[17,17,17],bgCss:'#fff',fgCss:'#111'};
-    const x0=Math.max(0,m.x-6), y0=Math.max(0,m.y-4), w=Math.min(imgW-x0,m.w+12), h=Math.min(imgH-y0,m.h+8);
-    let d; try{d=sampleCtx.getImageData(x0,y0,w,h).data}catch(e){return {bg:[255,255,255],fg:[17,17,17],bgCss:'#fff',fgCss:'#111'}}
-    // bg = median of border pixels; fg = pixel most distant from bg
+    const dflt={bg:[255,255,255],fg:[17,17,17],bgCss:'#fff',fgCss:'#111'};
+    if(m.fg&&/^#[0-9a-f]{6}$/i.test(m.fg)){ const fg=[1,3,5].map(i=>parseInt(m.fg.slice(i,i+2),16)); return {bg:[0,0,0],fg,bgCss:'transparent',fgCss:`rgb(${fg.join(',')})`}; }
+    if(!sampleCtx) return dflt;
+    // Integer geometry: fractional Figma boxes used to produce NaN indices, a NaN background and a
+    // black fallback colour on every new-design frame (fixed 17 Sep 2026).
+    const x0=Math.max(0,Math.floor(m.x-6)), y0=Math.max(0,Math.floor(m.y-4));
+    const w=Math.max(2,Math.min(imgW-x0,Math.ceil(m.w+12))), h=Math.max(2,Math.min(imgH-y0,Math.ceil(m.h+8)));
+    let d; try{d=sampleCtx.getImageData(x0,y0,w,h).data}catch(e){return dflt}
+    // bg = the dominant colour bucket on the region's border, averaged
     const border=[]; const step=Math.max(1,Math.floor((w+h)/80));
-    for(let x=0;x<w;x+=step){border.push((0*w+x)*4);border.push(((h-1)*w+x)*4);} for(let y=0;y<h;y+=step){border.push((y*w+0)*4);border.push((y*w+w-1)*4);}
+    for(let x=0;x<w;x+=step){border.push(x*4);border.push(((h-1)*w+x)*4);} for(let y=0;y<h;y+=step){border.push((y*w)*4);border.push((y*w+w-1)*4);}
     const buckets={}; border.forEach(i=>{const key=(d[i]>>3)+','+(d[i+1]>>3)+','+(d[i+2]>>3); (buckets[key]=buckets[key]||[]).push(i);});
     const top=Object.values(buckets).sort((a,b)=>b.length-a.length)[0]||[];
     const avg=c=>Math.round(top.reduce((s,i)=>s+d[i+c],0)/Math.max(top.length,1));
     const bg=top.length?[avg(0),avg(1),avg(2)]:[255,255,255];
-    let best=0,fg=[0,0,0];
-    for(let i=0;i<d.length;i+=16){const dist=Math.abs(d[i]-bg[0])+Math.abs(d[i+1]-bg[1])+Math.abs(d[i+2]-bg[2]); if(dist>best){best=dist;fg=[d[i],d[i+1],d[i+2]];}}
-    if(best<60) fg=[20,20,20];
+    const lum=c=>0.299*c[0]+0.587*c[1]+0.114*c[2];
+    // Figma frames carry the text fill from the design; trust it when it contrasts with the sampled bg.
+    if(m.color&&/^#[0-9a-f]{6}$/i.test(m.color)){
+      const fg=[1,3,5].map(i=>parseInt(m.color.slice(i,i+2),16));
+      // ... but not on a dimmed frame (a sheet over the screen): there the sampled ink is much darker than the design fill.
+      const sampled=sampleInk(d,bg); 
+      if(Math.abs(lum(fg)-lum(bg))>=60 && (!sampled || Math.abs(lum(fg)-lum(sampled))<70)) return {bg,fg,bgCss:`rgb(${bg.join(',')})`,fgCss:`rgb(${fg.join(',')})`};
+    }
+    // fg = the ink colour: average of the pixels farthest from bg (top band), not a single outlier pixel
+    // which used to land on an anti-aliased edge, a neighbouring icon or a gradient.
+    const fg=sampleInk(d,bg)||(lum(bg)>128?[20,20,20]:[240,240,240]);
     return {bg,fg,bgCss:`rgb(${bg.join(',')})`,fgCss:`rgb(${fg.join(',')})`};
+  }
+  function sampleInk(d,bg){
+    const dist=[]; let best=0;
+    for(let i=0;i<d.length;i+=8){const v=Math.abs(d[i]-bg[0])+Math.abs(d[i+1]-bg[1])+Math.abs(d[i+2]-bg[2]); dist.push([v,i]); if(v>best) best=v;}
+    if(best<60) return null;
+    const cut=best*0.82; let n=0,r=0,g=0,b=0;
+    for(const [v,i] of dist) if(v>=cut){n++;r+=d[i];g+=d[i+1];b+=d[i+2];}
+    return [Math.round(r/n),Math.round(g/n),Math.round(b/n)];
   }
 
   function cleanKoreanBase(image,s){
@@ -358,8 +401,9 @@ button{cursor:pointer;background:none;border:0;padding:0}
     for(const m of (ocr[s.id]?.matches||[])){
       if(!shouldPaint(m.k,m)) continue;
       const pad=m.patchPad||{left:4,right:4,top:4,bottom:4};
-      const x=Math.max(0,Math.floor(m.x-pad.left)), y=Math.max(0,Math.floor(m.y-pad.top));
-      const w=Math.min(imgW-x,Math.ceil(m.w+pad.left+pad.right)), h=Math.min(imgH-y,Math.ceil(m.h+pad.top+pad.bottom));
+      const P=m.paint||{x:m.x-pad.left,y:m.y-pad.top,w:m.w+pad.left+pad.right,h:m.h+pad.top+pad.bottom};
+      const x=Math.max(0,Math.floor(P.x)), y=Math.max(0,Math.floor(P.y));
+      const w=Math.min(imgW-x,Math.ceil(P.w)), h=Math.min(imgH-y,Math.ceil(P.h));
       if(w<2||h<2) continue;
       const pixels=ctx.getImageData(x,y,w,h), d=pixels.data, source=new Uint8ClampedArray(d);
       // Build a robust local background colour from the boundary. Nearby
@@ -547,7 +591,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
   /* ---- drawer, top bar ---- */
   let drawerQ='';
   function renderDrawer(){
-    let html=`<div class="drawer-search"><input id="screen-q" value="${esc(drawerQ)}" placeholder="Find a screen…" aria-label="Find a screen"></div>${VER==='app'?`<p class="why" style="font-size:12px;color:var(--ink-3);margin:0 8px 10px">${currentScreens.length} visual states · ${codeScreens.length} source screens · ${unmappedRows.length} unmapped strings</p>`:''}`,last='';
+    let html=`<div class="drawer-search"><input id="screen-q" value="${esc(drawerQ)}" placeholder="Find a screen…" aria-label="Find a screen"></div><p class="why" style="font-size:12px;color:var(--ink-3);margin:0 8px 10px">${visual.length} screens with a Korean preview · ${codeScreens.length} source screens · ${unmappedRows.length} unmapped strings</p>`,last='';
     let shown=0;
     screens.forEach((s,i)=>{ const hay=`${s.name} ${s.journeyName} ${s.file||''}`.toLowerCase(); if(drawerQ&&!hay.includes(drawerQ.toLowerCase())) return; shown+=1; if(s.journey!==last){html+=`<h3>${esc(s.journeyName)}</h3>`; last=s.journey;}
       const st=screenStatus(s); const dot=st.done?'done':st.edited?'edited':'';
@@ -578,7 +622,8 @@ button{cursor:pointer;background:none;border:0;padding:0}
 
   /* ---- go to screen ---- */
   function go(i){
-    idx=i; sel=null; confirmDone=false; hiddenOpen=false; try{localStorage.setItem(LS+':screen',screens[idx].id)}catch(e){}
+    idx=i; sel=null; confirmDone=false; hiddenOpen=false; if(!EXPORT) try{localStorage.setItem(LS+':screen',screens[idx].id)}catch(e){}
+    document.body.dataset.ready='';
     const s=screens[idx]; const img=$('#img-en');
     sampleCtx=null; currentImage=null; $('#ov-en').innerHTML=''; $('#ov-ko').innerHTML='';
     const textOnly=s.id===REST_ID||s.code; $('.stage-inner').hidden=textOnly; $('#rest-note').hidden=!textOnly;
@@ -590,7 +635,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     }
     img.alt=`${s.journeyName} · ${s.name} (English)`; $('#canvas-ko').setAttribute('aria-label',`${s.journeyName} · ${s.name} (Korean preview)`); $('#ph-ko').classList.add('loading');
     const load=new Image(); load.crossOrigin='anonymous';
-    load.onload=()=>{ imgW=load.naturalWidth; imgH=load.naturalHeight; const c=document.createElement('canvas'); c.width=imgW; c.height=imgH; const cx=c.getContext('2d',{willReadFrequently:true}); cx.drawImage(load,0,0); sampleCtx=cx; currentImage=load; cleanKoreanBase(load,s); for(const k in colorCache) if(k.startsWith(s.id+'|')) delete colorCache[k]; layout(); $('#ph-ko').classList.remove('loading'); };
+    load.onload=()=>{ imgW=load.naturalWidth; imgH=load.naturalHeight; const c=document.createElement('canvas'); c.width=imgW; c.height=imgH; const cx=c.getContext('2d',{willReadFrequently:true}); cx.drawImage(load,0,0); sampleCtx=cx; currentImage=load; cleanKoreanBase(load,s); for(const k in colorCache) if(k.startsWith(s.id+'|')) delete colorCache[k]; layout(); $('#ph-ko').classList.remove('loading'); (document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{ if(EXPORT){ renderOverlays(); requestAnimationFrame(()=>{document.body.dataset.ready='1';}); } }); };
     load.onerror=()=>{ $('.stage-inner').hidden=true; $('#rest-note').hidden=false; $('#rest-note').innerHTML='<b style="color:var(--bad)">This screenshot did not load.</b><br>Refresh the page. If it is still missing, send Hamis the screen name shown at the top.'; };
     load.src=s.img; img.src=s.img;
     renderTop(); renderDrawer(); renderPanel(); layout();
@@ -623,14 +668,15 @@ button{cursor:pointer;background:none;border:0;padding:0}
     banner(`Loaded ${(d.edits||[]).length} edits and ${(d.screens_done||[]).length} finished screens.`);
     e.target.value='';
   });
-  function checkAllDone(){ if(screens.every(s=>S.done[s.id])) banner(VER==='app'?'Every screen and the unmapped-copy list are marked done. Press “Save my edits to a file” and send it to Hamis. Thank you.':`All ${screens.length} design screens are marked done. Save the review file and send it to Hamis.`,10000); }
+  function checkAllDone(){ if(screens.every(s=>S.done[s.id])) banner('Every screen and the unmapped-copy list are marked done. Press “Save my edits to a file” and send it to Hamis. Thank you.',10000); }
 
   /* ---- help ---- */
   $('#b-help').addEventListener('click',()=>$('#help').hidden=false);
   $('#b-gotit').addEventListener('click',()=>{$('#help').hidden=true; S.seen=true; persist();});
   $('#help').addEventListener('click',e=>{if(e.target===e.currentTarget){$('#help').hidden=true;}});
-  if(!S.seen) $('#help').hidden=false;
+  if(!S.seen&&!EXPORT) $('#help').hidden=false;
 
+  window.__ko={samplePalette,get sampleCtx(){return sampleCtx},get imgW(){return imgW},get imgH(){return imgH},ocr,get screen(){return screens[idx]}};
   document.fonts?.ready.then(()=>renderOverlays());
   go(idx); savedAt=null; $('#t-saved').textContent='Saves automatically in this browser';
 })();

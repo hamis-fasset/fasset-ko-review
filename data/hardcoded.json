@@ -9,15 +9,6 @@
    "signup_01_welcome"
   ]
  },
- "hc.003": {
-  "en": "Log in with Facebook",
-  "norm": "log in with facebook",
-  "ko": "Facebook으로 로그인",
-  "kind": "fragment",
-  "screens": [
-   "login_02_login_options"
-  ]
- },
  "hc.004": {
   "en": "Pay friends. No bank details needed. Send and request money instantly to friends using your Fasset tag",
   "norm": "pay friends no bank details needed send and request money instantly to friends using your fasset tag",
@@ -113,15 +104,6 @@
   "screens": [
    "history_02_list",
    "history_full_01_list"
-  ]
- },
- "hc.017": {
-  "en": "Awaiting a",
-  "norm": "awaiting a",
-  "ko": "활성화 대기 중",
-  "kind": "truncated",
-  "screens": [
-   "logout_03_logged_out"
   ]
  },
  "hc.018": {
@@ -388,15 +370,6 @@
   "kind": "text",
   "screens": [
    "kyc_ae_01_financial_profile"
-  ]
- },
- "hc.047": {
-  "en": "Log in with Google G",
-  "norm": "log in with google g",
-  "ko": "Google로 로그인",
-  "kind": "fragment",
-  "screens": [
-   "login_02_login_options"
   ]
  },
  "hc.048": {
@@ -1041,6 +1014,69 @@
   "kind": "text",
   "screens": [
    "security_04_gauth_password"
+  ]
+ },
+ "hc.119": {
+  "en": "Update username",
+  "norm": "update username",
+  "ko": "사용자 이름 변경",
+  "kind": "text",
+  "screens": [
+   "account_full_02_update_username"
+  ]
+ },
+ "hc.120": {
+  "en": "You cannot change your email address. If you need help,",
+  "norm": "you cannot change your email address if you need help",
+  "ko": "이메일 주소는 변경할 수 없어요. 도움이 필요하면",
+  "kind": "text",
+  "screens": [
+   "account_full_03_update_email"
+  ]
+ },
+ "hc.121": {
+  "en": "You cannot change your legal name. If you need help, contact",
+  "norm": "you cannot change your legal name if you need help contact",
+  "ko": "법적 이름은 변경할 수 없어요. 도움이 필요하면",
+  "kind": "text",
+  "screens": [
+   "account_full_05_update_legal_name"
+  ]
+ },
+ "hc.122": {
+  "en": "You cannot change your date of birth. If you need help, contact",
+  "norm": "you cannot change your date of birth if you need help contact",
+  "ko": "생년월일은 변경할 수 없어요. 도움이 필요하면",
+  "kind": "text",
+  "screens": [
+   "account_full_06_update_dob"
+  ]
+ },
+ "hc.123": {
+  "en": "Log in with Google C",
+  "norm": "log in with google c",
+  "ko": "Google로 로그인",
+  "kind": "fragment",
+  "screens": [
+   "login_02_login_options"
+  ]
+ },
+ "hc.124": {
+  "en": "Log in with Facebook",
+  "norm": "log in with facebook",
+  "ko": "Facebook으로 로그인",
+  "kind": "fragment",
+  "screens": [
+   "login_02_login_options"
+  ]
+ },
+ "hc.125": {
+  "en": "Awaiting a",
+  "norm": "awaiting a",
+  "ko": "Awaiting a",
+  "kind": "truncated",
+  "screens": [
+   "logout_03_logged_out"
   ]
  }
 }
