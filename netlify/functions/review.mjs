@@ -26,7 +26,7 @@ export default async req => {
     if (!record || !same(record.tokenHash, hash(token))) return json({ error: 'Invalid review link.' }, 401);
 
     if (req.method === 'GET') {
-      const { tokenHash, ...safe } = record;
+      const { tokenHash, viewTokenHash, ...safe } = record;
       return json(safe);
     }
     if (req.method !== 'PUT') return json({ error: 'Method not allowed.' }, 405);
@@ -63,4 +63,3 @@ export default async req => {
 };
 
 export const config = { path: '/api/review' };
-

@@ -79,6 +79,17 @@ body.export .stage{padding:0;overflow:visible;justify-content:flex-start}
 body.export .stage-inner{gap:0}
 body.export .phone{border-radius:0;box-shadow:none;border:0}
 body.export .ov .box{display:none}
+.view-only{display:none}
+body.view-mode .view-only{display:flex}
+body.view-mode .review-only,body.view-mode .panel,body.view-mode #help,body.view-mode .hint-narrow{display:none!important}
+body.view-mode .main{display:block;height:calc(100vh - var(--top))}
+body.view-mode .stage{height:100%;padding:24px}
+body.view-mode .stage-inner{justify-content:center}
+body.view-mode .box{pointer-events:none}
+body.view-mode.lang-ko .phone-col:first-child,body.view-mode.lang-en .phone-col:nth-child(2){display:none}
+body.view-mode .top .where{margin-right:0}
+body.view-mode .top{box-shadow:0 1px 12px rgba(23,26,32,.05)}
+.showcase-mark{font-weight:600;color:var(--accent);white-space:nowrap}
 .hint-narrow{display:none;padding:8px 16px;background:var(--warn-soft);color:var(--warn);font-size:13px}
 
 /* panel */
@@ -167,6 +178,14 @@ body.export .ov .box{display:none}
 }
 @media (max-width:760px){.stage-inner{flex-direction:column;align-items:center}.top .saved,.top .pill{display:none}}
 @media (max-width:760px){.card.paired .pair-grid{grid-template-columns:1fr}}
+@media (max-width:760px){
+  body.view-mode .top{gap:6px;padding:0 8px}
+  body.view-mode .top .where,body.view-mode .showcase-mark,body.view-mode .top>a.view-only{display:none!important}
+  body.view-mode #b-all{padding:7px 9px}
+  body.view-mode .seg{margin-right:auto}
+  body.view-mode .seg button{padding:4px 8px}
+  body.view-mode .stage{padding:16px 8px}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -174,16 +193,19 @@ body.export .ov .box{display:none}
 
 <header class="top">
   <div class="where"><span class="j" id="t-journey">—</span><span class="s" id="t-screen">Loading…</span></div>
+  <span class="showcase-mark view-only">Fasset · Korean app preview</span>
   <span class="pill" id="t-progress">Loading coverage…</span>
+  <div class="seg view-only" id="view-lang" aria-label="Preview language"><button data-lang="en">English</button><button data-lang="ko" aria-pressed="true">Korean</button><button data-lang="both">Compare</button></div>
   <button class="btn" id="b-all">All screens</button>
   <button class="btn icon" id="b-prev" title="Previous screen (←)" aria-label="Previous screen">‹</button>
   <button class="btn icon" id="b-next" title="Next screen (→)" aria-label="Next screen">›</button>
-  <span class="saved" id="t-saved">Local backup ready</span>
-  <span class="server" id="t-server">Checking server…</span>
-  <label class="btn" for="import-file" style="cursor:pointer">Open review file</label><input id="import-file" type="file" accept="application/json" hidden>
-  <button class="btn" id="b-export">Download backup</button>
-  <button class="btn primary" id="b-submit" disabled>Submit review</button>
-  <button class="btn icon" id="b-help" title="How this works" aria-label="How this works">?</button>
+  <a class="btn view-only" href="method.html" target="_blank">How this was built</a>
+  <span class="saved review-only" id="t-saved">Local backup ready</span>
+  <span class="server review-only" id="t-server">Checking server…</span>
+  <label class="btn review-only" for="import-file" style="cursor:pointer">Open review file</label><input id="import-file" type="file" accept="application/json" hidden>
+  <button class="btn review-only" id="b-export">Download backup</button>
+  <button class="btn primary review-only" id="b-submit" disabled>Submit review</button>
+  <button class="btn icon review-only" id="b-help" title="How this works" aria-label="How this works">?</button>
 </header>
 <div class="hint-narrow">This tool works best in a wider window.</div>
 
@@ -249,9 +271,10 @@ body.export .ov .box{display:none}
   const copyRows=copyA.concat(copyF||[]); const ocr=Object.assign({},ocrA,ocrF||{});
   const scr={screens:scrA.screens.map(s=>({...s,v:'app'})).concat(((scrF&&scrF.screens)||[]).map(s=>({...s,v:'fig'})))};
   const HAS_FIG=!!(scrF&&scrF.screens&&scrF.screens.length);
-  const Q=new URLSearchParams(location.search); const EXPORT=Q.get('export'); const WANT=Q.get('screen');
+  const Q=new URLSearchParams(location.search); const EXPORT=Q.get('export'); const WANT=Q.get('screen'); const VIEW_ID=Q.get('view')||''; const VIEW_MODE=!!VIEW_ID;
   if(EXPORT) document.body.classList.add('export',`export-${EXPORT}`);
-  fetch(versioned('data/review-meta.json')).then(r=>r.ok?r.json():null).then(m=>{ if(!m) return; const el=document.createElement('span'); el.className='pill'; el.style.background='var(--ok-soft)'; el.style.color='var(--ok)'; el.textContent=`Reviewed copy applied ${new Date(m.applied_at).toLocaleDateString('en-GB',{day:'numeric',month:'short'})} · ${m.changes} changes`; document.querySelector('.top .where').after(el); }).catch(()=>{});
+  if(VIEW_MODE){document.body.classList.add('view-mode','lang-ko');document.title='Fasset · Korean app preview';}
+  if(!VIEW_MODE) fetch(versioned('data/review-meta.json')).then(r=>r.ok?r.json():null).then(m=>{ if(!m) return; const el=document.createElement('span'); el.className='pill'; el.style.background='var(--ok-soft)'; el.style.color='var(--ok)'; el.textContent=`Reviewed copy applied ${new Date(m.applied_at).toLocaleDateString('en-GB',{day:'numeric',month:'short'})} · ${m.changes} changes`; document.querySelector('.top .where').after(el); }).catch(()=>{});
   const byKey=Object.fromEntries(copyRows.map(r=>[r.k,r]));
   const REST_ID='__rest';
   /* ---- one product: onboarding + home from the redesign, everything else from the current app ---- */
@@ -267,11 +290,12 @@ body.export .ov .box{display:none}
   visual.sort((a,b)=>a.ord-b.ord||(a.v===b.v?0:(a.v==='fig'?-1:1))||(a.v==='fig'?a.srcIdx-b.srcIdx:(a.seq-b.seq))||String(a.id).localeCompare(String(b.id)));
   const allScreens=visual.slice();
   allScreens.push({id:REST_ID,journey:'rest',journeyName:'Copy not mapped to a screen',name:'Unmapped copy',seq:1,img:null,ns:[],v:'app',rest:true});
-  let screens=allScreens;
+  let screens=VIEW_MODE?visual:allScreens;
 
   /* ---- state ---- */
   const LS='fasset-ko-review-v2';
   const REVIEW_ID=Q.get('review')||'';
+  const VIEW_TOKEN=VIEW_MODE?location.hash.slice(1):'';
   const TOKEN_KEY=REVIEW_ID?`${LS}:token:${REVIEW_ID}`:'';
   const STATE_KEY=REVIEW_ID?`${LS}:state:${REVIEW_ID}`:LS;
   const SCREEN_KEY=REVIEW_ID?`${LS}:screen:${REVIEW_ID}`:`${LS}:screen`;
@@ -313,6 +337,12 @@ body.export .ov .box{display:none}
       serverReady=true;$('#b-submit').disabled=false;setServerStatus(d.submittedAt?'Submitted · server copy safe':'Saved to server','good');
       if(localIsNewer) queueServerSave();
     }catch(e){serverReady=false;setServerStatus('Invalid or unavailable reviewer link','bad');}
+  }
+  async function restoreView(){
+    if(!VIEW_ID||!VIEW_TOKEN) throw new Error('Invalid view link.');
+    const r=await fetch(`/api/view?id=${encodeURIComponent(VIEW_ID)}`,{headers:{authorization:`Bearer ${VIEW_TOKEN}`}}); const d=await r.json().catch(()=>({}));
+    if(!r.ok) throw new Error(d.error||'Could not load app preview.');
+    const remote=d.state||{}; S.edits=remote.edits||{}; S.approved=remote.approved||{}; S.done=remote.done||{};
   }
   const koOf=k=>S.edits[k]??(byKey[k]?byKey[k].ko:'');
   function visualText(k,m){
@@ -366,7 +396,7 @@ body.export .ov .box{display:none}
 
   /* ---- per screen model ---- */
   let idx=Math.max(0,screens.findIndex(s=>s.id===(WANT||localStorage.getItem(SCREEN_KEY)||''))); if(idx<0) idx=0;
-  let sel=null, zoom='fit', scale=1, imgW=1080, imgH=2400, sampleCtx=null, currentImage=null, canvasRefresh=0;
+  let sel=null, zoom='fit', viewLang='ko', scale=1, imgW=1080, imgH=2400, sampleCtx=null, currentImage=null, canvasRefresh=0;
   let restQ='';
   const mappedKeys=new Set();
   for(const s of visual)(ocr[s.id]?.matches||[]).forEach(m=>mappedKeys.add(byKey[m.k]?.canon||m.k));
@@ -396,14 +426,15 @@ body.export .ov .box{display:none}
   /* ---- layout ---- */
   function layout(){
     if(EXPORT){ const k=imgW>800?0.5:1; const w=imgW*k, h=imgH*k; scale=w/imgW; ['#ph-en','#ph-ko'].forEach(q=>{const el=$(q); el.style.width=w+'px'; el.style.height=h+'px';}); renderOverlays(); document.body.dataset.ready=(currentImage&&!$('#ph-ko').classList.contains('loading'))?'1':''; return; }
-    const stage=$('#stage'); const availH=stage.clientHeight-32; const availW=stage.clientWidth-32-28;
-    let h= zoom==='fit'? Math.min(availH, (availW/2)*imgH/imgW) : Math.max(availH*1.6, 1400);
+    const stage=$('#stage'); const availH=stage.clientHeight-32; const availW=stage.clientWidth-32-28; const phoneCount=VIEW_MODE&&viewLang!=='both'?1:2;
+    let h= zoom==='fit'? Math.min(availH, (availW/phoneCount)*imgH/imgW) : Math.max(availH*1.6, 1400);
     if(window.innerWidth<=1100&&zoom==='fit') h=Math.min(h, window.innerHeight*0.9);
     const w=h*imgW/imgH; scale=w/imgW;
     ['#ph-en','#ph-ko'].forEach(q=>{const el=$(q); el.style.width=w+'px'; el.style.height=h+'px';});
     renderOverlays();
   }
   window.addEventListener('resize',layout);
+  $('#view-lang').addEventListener('click',e=>{const b=e.target.closest('[data-lang]');if(!b)return;viewLang=b.dataset.lang;document.body.classList.remove('lang-en','lang-ko','lang-both');document.body.classList.add('lang-'+viewLang);document.querySelectorAll('#view-lang button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));layout();});
   // one product, one list, one layout
 
 
@@ -700,7 +731,7 @@ body.export .ov .box{display:none}
 
   /* ---- go to screen ---- */
   function go(i){
-    idx=i; sel=null; confirmDone=false; hiddenOpen=false; if(!EXPORT) try{localStorage.setItem(SCREEN_KEY,screens[idx].id)}catch(e){}
+    idx=i; sel=null; confirmDone=false; hiddenOpen=false; if(!EXPORT&&!VIEW_MODE) try{localStorage.setItem(SCREEN_KEY,screens[idx].id)}catch(e){}
     document.body.dataset.ready='';
     const s=screens[idx]; const img=$('#img-en');
     sampleCtx=null; currentImage=null; $('#ov-en').innerHTML=''; $('#ov-ko').innerHTML='';
@@ -765,7 +796,7 @@ body.export .ov .box{display:none}
   $('#b-help').addEventListener('click',()=>$('#help').hidden=false);
   $('#b-gotit').addEventListener('click',()=>{$('#help').hidden=true; S.seen=true; persist();});
   $('#help').addEventListener('click',e=>{if(e.target===e.currentTarget){$('#help').hidden=true;}});
-  if(!S.seen&&!EXPORT) $('#help').hidden=false;
+  if(!S.seen&&!EXPORT&&!VIEW_MODE) $('#help').hidden=false;
 
   window.__ko={
     samplePalette,
@@ -777,7 +808,8 @@ body.export .ov .box{display:none}
     goTo(id){const i=screens.findIndex(s=>s.id===id);if(i<0)return false;go(i);return true;}
   };
   document.fonts?.ready.then(()=>renderOverlays());
-  await restoreServer(); go(idx); savedAt=null; $('#t-saved').textContent='Browser backup active';
+  try{if(VIEW_MODE) await restoreView(); else await restoreServer();}catch(e){$('#t-screen').textContent=e.message; screens=[]; return;}
+  go(idx); savedAt=null; $('#t-saved').textContent='Browser backup active';
 })();
 </script>
 </body>

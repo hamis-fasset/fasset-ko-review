@@ -6,6 +6,10 @@
 
 The Netlify version is canonical because it autosaves secure reviewer sessions to Netlify Blobs. GitHub Pages remains a static fallback and stores work only in the browser.
 
+The admin can also generate a **public read-only view link** for any review session. View mode contains only the 245 pictured states, defaults to the Korean app, and lets visitors switch between Korean, English and side-by-side comparison. It has no editor, approval, submission, storage or admin controls. The share token is read-only and separate from the reviewer token; creating a new view link rotates the previous one.
+
+Public case study: `/method.html` documents the AI-native PM method, agent orchestration, JSON/Python pipeline, visual reconstruction, QA system and honest coverage boundaries. The repo version is `METHOD.md`.
+
 The reviewer sees one app in the order a customer meets it: sign up, log in, your details, identity check and home from the redesign (Figma "CC-onboarding-rough"), then every other screen from the current app (real Android captures), then the new Send money and Gift a card flows. There is no version switch. The current app's own login, sign-up, forgot-password and home captures are not shown because the redesign replaces them; their keys stay in the bundle and are reviewable under Unmapped copy.
 
 The reviewer sees each screen in English and Korean side by side. Editing a Korean string updates the phone preview immediately. “Looks good” is the approval action; editing a previously approved string clears that approval. A reviewer link generated in the admin dashboard autosaves every change to the server, with browser storage as an offline fallback. **Submit review** marks the server copy ready; **Download backup** remains available but is not the workflow.

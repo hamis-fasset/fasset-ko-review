@@ -1,5 +1,5 @@
 import { getStore } from '@netlify/blobs';
-import { randomBytes, randomUUID, timingSafeEqual } from 'node:crypto';
+import { createHash, randomBytes, randomUUID, timingSafeEqual } from 'node:crypto';
 
 const json = (value, status = 200) => Response.json(value, {
   status,
@@ -19,6 +19,7 @@ const summary = r => ({
   edits: Object.keys(r.state?.edits || {}).length,
   approved: Object.keys(r.state?.approved || {}).length,
   screensDone: Object.keys(r.state?.done || {}).length,
+  viewCreatedAt: r.viewCreatedAt || null,
 });
 
 export default async req => {
@@ -31,13 +32,24 @@ export default async req => {
     const url = new URL(req.url);
     if (req.method === 'POST') {
       const body = await req.json().catch(() => ({}));
+      if (body.action === 'createView') {
+        const id = String(body.id || '');
+        if (!/^[0-9a-f-]{36}$/i.test(id)) return json({ error: 'Invalid review.' }, 400);
+        const key = `session:${id}`;
+        const record = await store.get(key, { type: 'json', consistency: 'strong' });
+        if (!record) return json({ error: 'Review not found.' }, 404);
+        const viewToken = randomBytes(32).toString('hex');
+        const now = new Date().toISOString();
+        await store.setJSON(key, { ...record, viewTokenHash: createHash('sha256').update(viewToken).digest('hex'), viewCreatedAt: now });
+        return json({ id, viewToken, reviewerName: record.reviewerName, viewCreatedAt: now });
+      }
       const reviewerName = String(body.reviewerName || '').trim().slice(0, 100);
       if (!reviewerName) return json({ error: 'Reviewer name is required.' }, 400);
       const id = randomUUID();
       const token = randomBytes(32).toString('hex');
       const now = new Date().toISOString();
-      const tokenHash = (await import('node:crypto')).createHash('sha256').update(token).digest('hex');
-      await store.setJSON(`session:${id}`, { id, tokenHash, reviewerName, createdAt: now, updatedAt: now, submittedAt: null, state: { edits: {}, approved: {}, done: {}, build: '' } });
+      const tokenHash = createHash('sha256').update(token).digest('hex');
+      await store.setJSON(`session:${id}`, { id, tokenHash, viewTokenHash: null, reviewerName, createdAt: now, updatedAt: now, submittedAt: null, state: { edits: {}, approved: {}, done: {}, build: '' } });
       return json({ id, token, reviewerName, createdAt: now }, 201);
     }
     if (req.method !== 'GET') return json({ error: 'Method not allowed.' }, 405);
@@ -46,7 +58,7 @@ export default async req => {
     if (id) {
       const record = await store.get(`session:${id}`, { type: 'json', consistency: 'strong' });
       if (!record) return json({ error: 'Review not found.' }, 404);
-      const { tokenHash, ...safe } = record;
+      const { tokenHash, viewTokenHash, ...safe } = record;
       return json(safe);
     }
 
@@ -60,4 +72,3 @@ export default async req => {
 };
 
 export const config = { path: '/api/admin' };
-
