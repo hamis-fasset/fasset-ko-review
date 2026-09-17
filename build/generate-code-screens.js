@@ -81,8 +81,6 @@ const FILE_FIXES = {
 };
 const CAPTURE_CORRECTIONS = {
   Signup: ['login_01_logged_out_home', 'logout_03_logged_out'],
-  Login: ['login_02_login_options'],
-  LoginForm: ['login_03_email_form'],
   PortfolioHome: ['login_06_dashboard', 'dashboard_01_home', 'history_01_recent'],
   Markets: ['market_01_root'],
   MarketAssetListing: ['market_02_commodities', 'market_03_funds'],

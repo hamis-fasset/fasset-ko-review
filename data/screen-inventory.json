@@ -5633,10 +5633,8 @@
     },
     "t_calls": 9,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "login_02_login_options"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "Signup",
@@ -5888,10 +5886,8 @@
     },
     "t_calls": 12,
     "hardcoded_literals_estimate": 0,
-    "captured": true,
-    "capture_ids": [
-      "login_03_email_form"
-    ]
+    "captured": false,
+    "capture_ids": []
   },
   {
     "route": "NewLoginForm",

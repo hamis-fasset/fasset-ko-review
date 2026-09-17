@@ -11351,7 +11351,7 @@
 "k": "fx.7661be4aa8",
 "ns": "5 · SEND MONEY",
 "en": "No fee",
-"ko": "수수료 없음",
+"ko": "무료",
 "c": "label",
 "canon": "fx.7661be4aa8",
 "dupes": [],
@@ -11863,7 +11863,7 @@
 "k": "fx.dbbae5432f",
 "ns": "5 · SEND MONEY",
 "en": "Debit or credit card",
-"ko": "체크카드 또는 신용카드",
+"ko": "체크·신용카드",
 "c": "label",
 "canon": "fx.dbbae5432f",
 "dupes": [],
@@ -13729,7 +13729,7 @@
 "k": "fx.984988275c",
 "ns": "7 · GIFT A CARD",
 "en": "Gift a virtual card or choose a physical card from {{amount}}.",
-"ko": "가상 카드를 선물하거나 {{amount}}부터 실물 카드를 선택할 수 있어요.",
+"ko": "가상 카드를 선물하거나 {{amount}}부터 실물 카드를 골라 보세요.",
 "c": "body",
 "canon": "fx.984988275c",
 "dupes": [],
@@ -14037,7 +14037,7 @@
 "k": "fx.5a68b0500a",
 "ns": "7 · GIFT A CARD",
 "en": "No issuance fee",
-"ko": "발급 수수료 없음",
+"ko": "발급 무료",
 "c": "label",
 "canon": "fx.5a68b0500a",
 "dupes": [],
@@ -15123,9 +15123,9 @@
 {
 "k": "fx.3ca1270b03",
 "ns": "7 · GIFT A CARD",
-"en": "Find your address Search for your card delivery address.",
-"ko": "주소 찾기 카드 배송 주소를 검색해 주세요.",
-"c": "body",
+"en": "Find your address",
+"ko": "주소 찾기",
+"c": "title",
 "canon": "fx.3ca1270b03",
 "dupes": [],
 "keep": false,
@@ -16394,7 +16394,7 @@
 "k": "fx.1dfd42d04f",
 "ns": "7 · GIFT A CARD",
 "en": "Estimated delivery",
-"ko": "예상 배송일",
+"ko": "예상 배송",
 "c": "label",
 "canon": "fx.1dfd42d04f",
 "dupes": [],
@@ -16422,7 +16422,7 @@
 "k": "fx.a736f5a242",
 "ns": "7 · GIFT A CARD",
 "en": "Up to 20 working days",
-"ko": "영업일 기준 최대 20일",
+"ko": "최대 20영업일",
 "c": "label",
 "canon": "fx.a736f5a242",
 "dupes": [],
@@ -16856,7 +16856,7 @@
 "k": "fx.bcb00709d9",
 "ns": "7 · GIFT A CARD",
 "en": "Pay in USD at supported Visa merchants",
-"ko": "지원되는 Visa 가맹점에서 USD로 결제할 수 있어요.",
+"ko": "Visa 가맹점에서 USD로 결제",
 "c": "body",
 "canon": "fx.bcb00709d9",
 "dupes": [],
@@ -16878,7 +16878,7 @@
 "k": "fx.c0502012be",
 "ns": "7 · GIFT A CARD",
 "en": "Pay at supported merchants and withdraw at supported ATMs",
-"ko": "지원되는 가맹점에서 결제하고 지원되는 ATM에서 출금할 수 있어요.",
+"ko": "가맹점 결제·ATM 출금",
 "c": "body",
 "canon": "fx.c0502012be",
 "dupes": [],
@@ -18227,6 +18227,622 @@
 "frame_name": "7.45 Country without cards · sheet over 3.2c What you can do (Kenya)",
 "node": "I502:48022;4:17201;4:14397;4:14509",
 "section": "7 · GIFT A CARD"
+}
+],
+"template": null
+},
+{
+"k": "fx.75afa87237",
+"ns": "KYC",
+"en": "Occupation",
+"ko": "직업",
+"c": "label",
+"canon": "fx.75afa87237",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:57962",
+"frame_name": "4.12 A little about your work",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:59687",
+"frame_name": "4.13L A little about your work (Labuan)",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.70cafc7ba7",
+"ns": "KYC",
+"en": "Employer",
+"ko": "고용주",
+"c": "label",
+"canon": "fx.70cafc7ba7",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:57962",
+"frame_name": "4.12 A little about your work",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:59687",
+"frame_name": "4.13L A little about your work (Labuan)",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.7f5d2306c8",
+"ns": "KYC",
+"en": "e.g. Microsoft",
+"ko": "예: Microsoft",
+"c": "label",
+"canon": "fx.7f5d2306c8",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:57962",
+"frame_name": "4.12 A little about your work",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:59687",
+"frame_name": "4.13L A little about your work (Labuan)",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.1a71ce4a5d",
+"ns": "BASIC INFO",
+"en": "Search countries",
+"ko": "국가 검색",
+"c": "label",
+"canon": "fx.1a71ce4a5d",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "84:128334",
+"frame_name": "3.1 Where you live",
+"node": null,
+"section": "BASIC INFO"
+},
+{
+"frame": "94:43222",
+"frame_name": "3.1e Notify me → confirmed (toast)",
+"node": null,
+"section": "BASIC INFO"
+},
+{
+"frame": "94:43343",
+"frame_name": "3.1f Number from an unsupported country · nothing pre-selected",
+"node": null,
+"section": "BASIC INFO"
+},
+{
+"frame": "94:42912",
+"frame_name": "3.1g Scrolled · unsupported greyed in place",
+"node": null,
+"section": "BASIC INFO"
+}
+],
+"template": null
+},
+{
+"k": "fx.3fb83760cf",
+"ns": "BASIC INFO",
+"en": "Email (optional)",
+"ko": "이메일(선택)",
+"c": "label",
+"canon": "fx.3fb83760cf",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "97:50886",
+"frame_name": "3.3e Labuan · date of birth, email optional",
+"node": null,
+"section": "BASIC INFO"
+},
+{
+"frame": "97:52059",
+"frame_name": "3.3g Date doesn't exist · 31 February",
+"node": null,
+"section": "BASIC INFO"
+},
+{
+"frame": "97:52168",
+"frame_name": "3.3h Under minimum age · 14 years old",
+"node": null,
+"section": "BASIC INFO"
+},
+{
+"frame": "97:52457",
+"frame_name": "3.3i Date in the future",
+"node": null,
+"section": "BASIC INFO"
+}
+],
+"template": null
+},
+{
+"k": "fx.a88b7dcd1a",
+"ns": "BASIC INFO",
+"en": "Email",
+"ko": "이메일",
+"c": "label",
+"canon": "fx.a88b7dcd1a",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "97:51130",
+"frame_name": "3.3a Empty · name focused",
+"node": null,
+"section": "BASIC INFO"
+},
+{
+"frame": "97:51684",
+"frame_name": "3.3c Invalid email",
+"node": null,
+"section": "BASIC INFO"
+},
+{
+"frame": "97:51775",
+"frame_name": "3.3d Email on another account",
+"node": null,
+"section": "BASIC INFO"
+},
+{
+"frame": "97:52546",
+"frame_name": "3.3j Saving",
+"node": null,
+"section": "BASIC INFO"
+}
+],
+"template": null
+},
+{
+"k": "fx.f8b06dcb72",
+"ns": "LOG IN",
+"en": "Log out, then log in again to reset your PIN.",
+"ko": "PIN을 재설정하려면 로그아웃한 뒤 다시 로그인해 주세요.",
+"c": "body",
+"canon": "fx.f8b06dcb72",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "62:94501",
+"frame_name": "2.2c Forgot PIN · sheet (existing, unchanged)",
+"node": null,
+"section": "LOG IN"
+}
+],
+"template": null
+},
+{
+"k": "fx.c5cfcbfcc3",
+"ns": "Preview recovery",
+"en": "\"Fasset\" Would Like to Access the Camera",
+"ko": "\"Fasset\"이(가) 카메라에 접근하려고 합니다",
+"c": "body",
+"canon": "fx.c5cfcbfcc3",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:57375",
+"frame_name": "4.2 Camera permission · iOS asks",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:59007",
+"frame_name": "4.3L Camera permission · iOS asks",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.c1b5f17f8f",
+"ns": "Preview recovery",
+"en": "Fasset uses the camera to scan your ID and take your selfie.",
+"ko": "Fasset에서 신분증을 스캔하고 셀피를 촬영하기 위해 카메라를 사용합니다.",
+"c": "body",
+"canon": "fx.c1b5f17f8f",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:57375",
+"frame_name": "4.2 Camera permission · iOS asks",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:59007",
+"frame_name": "4.3L Camera permission · iOS asks",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.db8d4636ae",
+"ns": "Preview recovery",
+"en": "Don't Allow",
+"ko": "허용 안 함",
+"c": "body",
+"canon": "fx.db8d4636ae",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:57375",
+"frame_name": "4.2 Camera permission · iOS asks",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:59007",
+"frame_name": "4.3L Camera permission · iOS asks",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "322:12863",
+"frame_name": "5.9 iOS contacts permission",
+"node": null,
+"section": "SEND MONEY"
+}
+],
+"template": null
+},
+{
+"k": "fx.6452e7c5a4",
+"ns": "Preview recovery",
+"en": "Allow",
+"ko": "허용",
+"c": "body",
+"canon": "fx.6452e7c5a4",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:57375",
+"frame_name": "4.2 Camera permission · iOS asks",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:59007",
+"frame_name": "4.3L Camera permission · iOS asks",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "322:12863",
+"frame_name": "5.9 iOS contacts permission",
+"node": null,
+"section": "SEND MONEY"
+}
+],
+"template": null
+},
+{
+"k": "fx.27fd9b4906",
+"ns": "Preview recovery",
+"en": "\"Fasset\" Would Like to Access Your Contacts",
+"ko": "\"Fasset\"이(가) 연락처에 접근하려고 합니다",
+"c": "body",
+"canon": "fx.27fd9b4906",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "322:12863",
+"frame_name": "5.9 iOS contacts permission",
+"node": null,
+"section": "SEND MONEY"
+}
+],
+"template": null
+},
+{
+"k": "fx.15585c01eb",
+"ns": "Preview recovery",
+"en": "Find contacts on Fasset and choose who to send money to.",
+"ko": "Fasset에서 연락처를 찾아 송금할 사람을 선택하세요.",
+"c": "body",
+"canon": "fx.15585c01eb",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "322:12863",
+"frame_name": "5.9 iOS contacts permission",
+"node": null,
+"section": "SEND MONEY"
+}
+],
+"template": null
+},
+{
+"k": "fx.85c04c4b6b",
+"ns": "Preview recovery",
+"en": "Place your original card inside the frame.",
+"ko": "원본 카드를 프레임 안에 넣어 주세요.",
+"c": "body",
+"canon": "fx.85c04c4b6b",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:61759",
+"frame_name": "4.3 Before you start",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.271dab4c9a",
+"ns": "Preview recovery",
+"en": "Don't use a photo of your ID.",
+"ko": "신분증 사진을 사용하지 마세요.",
+"c": "body",
+"canon": "fx.271dab4c9a",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:61759",
+"frame_name": "4.3 Before you start",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:61851",
+"frame_name": "4.4L Before you start (Labuan)",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.5334c6358b",
+"ns": "Preview recovery",
+"en": "Hold your phone steady.",
+"ko": "휴대폰을 움직이지 마세요.",
+"c": "body",
+"canon": "fx.5334c6358b",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:61759",
+"frame_name": "4.3 Before you start",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:61851",
+"frame_name": "4.4L Before you start (Labuan)",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.3d9ea25bf0",
+"ns": "Preview recovery",
+"en": "Don't use a photocopy.",
+"ko": "복사본을 사용하지 마세요.",
+"c": "body",
+"canon": "fx.3d9ea25bf0",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:61759",
+"frame_name": "4.3 Before you start",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:61851",
+"frame_name": "4.4L Before you start (Labuan)",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.1682153b82",
+"ns": "Preview recovery",
+"en": "Keep all four corners visible.",
+"ko": "네 모서리가 모두 보이게 해 주세요.",
+"c": "body",
+"canon": "fx.1682153b82",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:61759",
+"frame_name": "4.3 Before you start",
+"node": null,
+"section": "KYC"
+},
+{
+"frame": "103:61851",
+"frame_name": "4.4L Before you start (Labuan)",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.9862a71d1a",
+"ns": "Preview recovery",
+"en": "Place your original document inside the frame.",
+"ko": "원본 문서를 프레임 안에 넣어 주세요.",
+"c": "body",
+"canon": "fx.9862a71d1a",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "103:61851",
+"frame_name": "4.4L Before you start (Labuan)",
+"node": null,
+"section": "KYC"
+}
+],
+"template": null
+},
+{
+"k": "fx.8fa136b7e6",
+"ns": "Preview recovery",
+"en": "Search for your card delivery address.",
+"ko": "카드 배송 주소를 검색해 주세요.",
+"c": "body",
+"canon": "fx.8fa136b7e6",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "455:21789",
+"frame_name": "7.24 Delivery address · Ayesha confirms hers (module screen, as is)",
+"node": null,
+"section": "GIFT A CARD"
+}
+],
+"template": null
+},
+{
+"k": "fx.a41b60aee8",
+"ns": "CARDS",
+"en": "Get a new card",
+"ko": "새 카드 받기",
+"c": "label",
+"canon": "fx.a41b60aee8",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "472:22869",
+"frame_name": "7.44 Own card while a gift waits · sheet over Cards (module screen) · opens on “Get new card”",
+"node": null,
+"section": "GIFT A CARD"
+}
+],
+"template": null
+},
+{
+"k": "fx.039794a643",
+"ns": "LOG IN",
+"en": "Phone number",
+"ko": "휴대폰 번호",
+"c": "label",
+"canon": "fx.039794a643",
+"dupes": [],
+"keep": false,
+"ph": [],
+"batch": 0,
+"flag": null,
+"figma": [
+{
+"frame": "62:95272",
+"frame_name": "2.5b Phone · Welcome back (phone remembers nothing)",
+"node": null,
+"section": "LOG IN"
 }
 ],
 "template": null

@@ -61,6 +61,133 @@ if(awaitingActivation) awaitingActivation.truncated=true;
 const confirmAndProceed=ocr.kyc_ae_02_proof_of_address?.matches.find(item=>item.k==='new.confirmAndProceed');
 if(confirmAndProceed) confirmAndProceed.truncated=true;
 
+// Exact visual corrections confirmed in the fifth browser-render QA pass.
+// `draw` is deliberately separate from the source/erase box: moving Korean
+// must never move the English glyph mask or consume a neighbouring icon.
+const setDraw=(screenId,key,draw,predicate=()=>true)=>{
+  const match=ocr[screenId]?.matches.find(item=>item.k===key&&predicate(item));
+  if(match) match.draw={x:match.x,y:match.y,w:match.w,h:match.h,...draw};
+};
+setDraw('logout_03_logged_out','portfolio.identityCheck',{x:174});
+for(const screenId of ['kyc_lb_02_money_questions','kyc_lb_03_money_questions_filled']){
+  setDraw(screenId,'fassetCard.purposeOfAccountLabel',{align:'left'});
+}
+setDraw('account_full_06_update_dob','hc.122',{align:'left'});
+
+for(const [screenId,key,predicate] of [
+  ['buy_07_success','buyV4.orderCompleted',()=>true],
+  ['sell_03_receive_method','buyV4.cashWallet',()=>true],
+  ['history_02_list','hc.015',item=>item.y===582],
+  ['account_full_08_change_password','account.security',()=>true]
+]){
+  const match=ocr[screenId]?.matches.find(item=>item.k===key&&predicate(item));
+  if(match) match.weight=400;
+}
+
+// Keep the source bullets and draw only the translated list text after them.
+for(const key of ['hc.027','hc.028','hc.029','hc.030','hc.031','hc.032','hc.033']){
+  const match=ocr.kyc_ae_02_proof_of_address?.matches.find(item=>item.k===key);
+  if(match){match.stripLeadingBullet=true;match.draw={x:match.x+24,y:match.y,w:Math.max(1,match.w-24),h:match.h,align:'left'};}
+}
+
+// The source extractor split the green "contact us" link at a line break.
+// Treat it as one sentence so neither an English "us" nor an incomplete
+// Korean fragment is presented to the reviewer.
+for(const [key,en,ko] of [
+  ['hc.121','You cannot change your legal name. If you need help, contact us','법적 이름은 변경할 수 없어요. 도움이 필요하면 고객센터로 문의해 주세요.'],
+  ['hc.122','You cannot change your date of birth. If you need help, contact us','생년월일은 변경할 수 없어요. 도움이 필요하면 고객센터로 문의해 주세요.']
+]){
+  const row=copy.find(item=>item.k===key); if(row){row.en=en;row.ko=ko;}
+  if(hardcoded?.[key]){hardcoded[key].en=en;hardcoded[key].ko=ko;}
+}
+const legalNameHelp=ocr.account_full_05_update_legal_name?.matches.find(item=>item.k==='hc.121');
+if(legalNameHelp){legalNameHelp.ocrLine='You cannot change your legal name. If you need help, contact us';legalNameHelp.text=legalNameHelp.ocrLine;legalNameHelp.lines=2;legalNameHelp.h=76;legalNameHelp.lh=36;}
+const dobHelp=ocr.account_full_06_update_dob?.matches.find(item=>item.k==='hc.122');
+if(dobHelp){dobHelp.ocrLine='You cannot change your date of birth. If you need help, contact us';dobHelp.text=dobHelp.ocrLine;dobHelp.lines=2;dobHelp.h=76;dobHelp.lh=36;dobHelp.align='left';}
+
+const limits=copy.find(item=>item.k==='hc.082');
+if(limits) limits.ko='최소 투자 금액 60 USDT\n최대 투자 금액 100,000 USDT';
+if(hardcoded?.['hc.082']) hardcoded['hc.082'].ko='최소 투자 금액 60 USDT\n최대 투자 금액 100,000 USDT';
+
+const saverConsent=copy.find(item=>item.k==='hc.080');
+if(saverConsent){saverConsent.en='I have read and agree to the Fasset User Agreement';saverConsent.ko='Fasset 이용약관을 읽고 동의합니다';}
+if(hardcoded?.['hc.080']){hardcoded['hc.080'].en='I have read and agree to the Fasset User Agreement';hardcoded['hc.080'].ko='Fasset 이용약관을 읽고 동의합니다';}
+for(const screenId of ['earn_full_04_flex_saver_detail','earn_full_05_stable_saver_detail']){
+  const match=ocr[screenId]?.matches.find(item=>item.k==='hc.080');
+  if(match){match.ocrLine='I have read and agree to Fasset User /';match.text=match.ocrLine;}
+}
+const dailyRate=ocr.earn_full_03_savings?.matches.find(item=>item.k==='portfolio.daily');
+if(dailyRate) dailyRate.ocrLine='3.5%';
+
+// The deposit capture matcher collapsed a payment-method title and its grey
+// timing/fee subtitle into one protected two-line row. Split the visual boxes
+// while retaining one reviewer/edit key, so each line keeps its own size and
+// colour and Vision can erase exactly the corresponding source tokens.
+const bankLinkedGeometry={
+  deposit_full_01_methods_approved:{title:{x:212,y:707,w:325,h:33},body:{x:212,y:759,w:429,h:36}},
+  deposit_full_04_wire_bank_sheet:{title:{x:212,y:707,w:324,h:33},body:{x:215,y:760,w:426,h:33}},
+  deposit_full_11_methods_unverified:{title:{x:212,y:707,w:325,h:33},body:{x:212,y:759,w:429,h:36}},
+  deposit_full_12_card_kyc_gate:{title:{x:212,y:707,w:325,h:33},body:{x:216,y:760,w:426,h:33}}
+};
+for(const [screenId,geometry] of Object.entries(bankLinkedGeometry)){
+  const matches=ocr[screenId]?.matches;
+  if(!matches) continue;
+  const found=matches.map((item,index)=>item.k==='hc.049'?index:-1).filter(index=>index>=0);
+  if(!found.length) continue;
+  const insertAt=found[0], base=matches[insertAt];
+  const common={
+    ...base,k:'hc.049',vals:{},weak:false,hc:true,lines:1,align:'left',
+    alignWhy:'default',visualSafe:true,patchPad:{left:4,right:4,top:4,bottom:4},weight:400
+  };
+  const title={
+    ...common,...geometry.title,lh:geometry.title.h,fs:35.3,
+    text:'Bank Linked Transfer',ocrLine:'Bank Linked Transfer',segment:'bankLinkedTitle',
+    originalBox:{...geometry.title}
+  };
+  const body={
+    ...common,...geometry.body,lh:geometry.body.h,fs:29.7,
+    text:'Up to 8 business hours • No fee',ocrLine:'Up to 8 business hours • No fee',segment:'bankLinkedBody',
+    originalBox:{...geometry.body}
+  };
+  matches.splice(insertAt,found.length,title,body);
+}
+
+// Recommendation-card durations are runtime values. The source match is safe:
+// localize the UI label and provide a Korean sample value for the preview,
+// while the editable bundle retains the {{value1}} placeholder.
+for(const match of ocr.earn_full_01_overview?.matches||[]){
+  if(match.k!=='new.stakingTitle') continue;
+  match.visualSafe=true;
+  match.valsKo={value1:'1일'};
+}
+
+// Final browser-render QA found three source-box problems that the old
+// colour-based cleaner had hidden. Keep the warning independent of the large
+// balance above it, make the shared copy correct for both Saver products, and
+// expose the two-line investment limits on the Flex screen.
+const saverWarning=copy.find(item=>item.k==='earn.usdtNotEnough');
+if(saverWarning) saverWarning.ko='지갑에 USDT가 부족해요. 이 상품을 이용하려면 USDT를 구매해 주세요.';
+for(const screenId of ['earn_full_04_flex_saver_detail','earn_full_05_stable_saver_detail']){
+  const match=ocr[screenId]?.matches.find(item=>item.k==='earn.usdtNotEnough');
+  if(match) Object.assign(match,{
+    x:167,y:721,w:778,h:75,lines:2,lh:38,fs:31,
+    text:'Insufficient USDT in your wallet. Please purchase USDT to participate in the Stable Saver plan.',
+    ocrLine:'Insufficient USDT in your wallet. Please purchase USDT to participate in the Stable Saver plan.',
+    originalBox:{x:167,y:721,w:778,h:75},patchPad:{left:4,right:4,top:3,bottom:3},
+    align:'left',visualSafe:true
+  });
+}
+const flexLimits=copy.find(item=>item.k==='hc.079');
+if(flexLimits) flexLimits.ko='최소 투자 금액 40 USDT\n최대 투자 금액 100,000 USDT';
+if(hardcoded?.['hc.079']) hardcoded['hc.079'].ko='최소 투자 금액 40 USDT\n최대 투자 금액 100,000 USDT';
+const flexLimitsMatch=ocr.earn_full_04_flex_saver_detail?.matches.find(item=>item.k==='hc.079');
+if(flexLimitsMatch) flexLimitsMatch.visualSafe=true;
+
+// Apple Vision's word rectangle is exact enough for placement, but this one
+// heading has a faint anti-aliased cap just outside the two-pixel default mask.
+const currentPhone=ocr.account_full_04_update_phone?.matches.find(item=>item.k==='myFasset.currentPhone');
+if(currentPhone) currentPhone.visionPad=4;
+
 for(const screenId of ['history_01_recent','history_02_list']){
   promoteUnmatched(screenId,/^(Sold|Bought) [A-Z]{2,6}$/,
     item=>item.text.startsWith('Sold')?'hc.015':'hc.016',

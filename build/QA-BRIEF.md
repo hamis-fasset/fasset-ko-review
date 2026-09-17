@@ -1,7 +1,7 @@
 # Visual QA brief: Korean preview versus English original
 
 You are checking how the Korean review tool paints Korean text over English screenshots. Each image in your batch
-is a pair: LEFT = the English screen as captured, RIGHT = the Korean preview produced by the live tool. The two
+is a pair: LEFT = the English rebuilt by the live tool, RIGHT = the Korean preview produced by the same live tool. Both use the same pre-cleaned plate, so a visible difference must come from text reconstruction rather than two different background images. The two
 phones are the same size and aligned, so any Korean element should sit exactly where its English counterpart sits.
 
 Open every image in your batch list with the Read tool. Look at every piece of text on the right phone and compare

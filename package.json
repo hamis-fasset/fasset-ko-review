@@ -1,0 +1,13 @@
+{
+  "name": "fasset-ko-review",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Public Korean copy review tool and browser-rendered visual QA exporter",
+  "scripts": {
+    "export:ko": "SIDE=ko node build/export-ko.js http://127.0.0.1:8791/index.html ../qa/ko",
+    "export:en": "SIDE=en node build/export-ko.js http://127.0.0.1:8791/index.html ../qa/en"
+  },
+  "dependencies": {
+    "playwright-core": "1.63.0"
+  }
+}

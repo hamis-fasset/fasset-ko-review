@@ -681,16 +681,16 @@
  "hc.079": {
   "en": "Minimum investment 40 USDT Maximum investment 100,000 USDT",
   "norm": "minimum investment 40 usdt maximum investment 100 000 usdt",
-  "ko": "최소 투자 금액 40 USDT 최대 투자 금액 100,000 USDT",
+  "ko": "최소 투자 금액 40 USDT\n최대 투자 금액 100,000 USDT",
   "kind": "text",
   "screens": [
    "earn_full_04_flex_saver_detail"
   ]
  },
  "hc.080": {
-  "en": "I have read and agree to Fasset User /",
+  "en": "I have read and agree to the Fasset User Agreement",
   "norm": "i have read and agree to fasset user",
-  "ko": "Fasset 이용약관에 동의합니다 /",
+  "ko": "Fasset 이용약관을 읽고 동의합니다",
   "kind": "text",
   "screens": [
    "earn_full_04_flex_saver_detail",
@@ -709,7 +709,7 @@
  "hc.082": {
   "en": "Minimum investment 60 USDT Maximum investment 100,000 USDT",
   "norm": "minimum investment 60 usdt maximum investment 100 000 usdt",
-  "ko": "최소 투자 금액 60 USDT 최대 투자 금액 100,000 USDT",
+  "ko": "최소 투자 금액 60 USDT\n최대 투자 금액 100,000 USDT",
   "kind": "text",
   "screens": [
    "earn_full_05_stable_saver_detail"
@@ -1035,18 +1035,18 @@
   ]
  },
  "hc.121": {
-  "en": "You cannot change your legal name. If you need help, contact",
+  "en": "You cannot change your legal name. If you need help, contact us",
   "norm": "you cannot change your legal name if you need help contact",
-  "ko": "법적 이름은 변경할 수 없어요. 도움이 필요하면",
+  "ko": "법적 이름은 변경할 수 없어요. 도움이 필요하면 고객센터로 문의해 주세요.",
   "kind": "text",
   "screens": [
    "account_full_05_update_legal_name"
   ]
  },
  "hc.122": {
-  "en": "You cannot change your date of birth. If you need help, contact",
+  "en": "You cannot change your date of birth. If you need help, contact us",
   "norm": "you cannot change your date of birth if you need help contact",
-  "ko": "생년월일은 변경할 수 없어요. 도움이 필요하면",
+  "ko": "생년월일은 변경할 수 없어요. 도움이 필요하면 고객센터로 문의해 주세요.",
   "kind": "text",
   "screens": [
    "account_full_06_update_dob"

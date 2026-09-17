@@ -6,15 +6,15 @@ Generated from CashApp `development` at `1d8e0c2e378216573367dce234217e92a3b9da4
 
 - 452 route registrations collapse to 402 distinct route+component rows.
 - 7 rows are navigator containers; 395 are reviewable non-container route/component records (393 route names and 391 distinct component files).
-- 39 captured visual states are traceable to 22 source-screen components.
-- 373 non-container route/component records have no visual capture.
+- The unified reviewer contains 246 design/visual states: 245 image previews (75 active current-app captures + 170 Figma states) and one text-only Pakistan design state awaiting a corrected image.
+- The original source-to-capture map traces active captures to 20 source-screen components; 375 non-container route/component records have no verified active capture mapping. This is a code-to-image mapping count, not the total number of images in the reviewer.
 - 286 screens contain translation calls; 284 have at least one statically resolvable key and 109 have no translation call in the scanned files.
 - Across all route and container rows, the static scan resolves 1,708 distinct copy keys and finds 60 dynamic translation calls. The 395 non-container records account for 1,705 static keys and 51 dynamic calls. The scan also finds 34 static keys that are missing from the supplied copy pack.
-- The review tool keeps 1,535 editable canonical strings in **Unmapped copy** because a static scan cannot safely tie them to one registered route. These may be unused, dynamically loaded, or used outside route components. Of these, 1,199 are from the second source drop and 336 are from batches 1–10.
+- The review tool currently keeps 1,510 editable canonical strings in **Unmapped copy** because a static scan cannot safely tie them to one registered route. These may be unused, dynamically loaded, or used outside route components.
 
 This is two kinds of coverage, shown separately in the tool:
 
-1. **Visual coverage:** real English capture plus live Korean rendering for 39 states.
+1. **Visual/design coverage:** 245 live English/Korean previews plus one explicitly text-only design state. Fourteen legacy onboarding captures are hidden because the redesign replaces them.
 2. **Source coverage:** all 395 non-container route/component records, with exact static keys where resolvable. A source record without a capture is text-only and is never presented as visually verified.
 
 ## Corrected visual-state mapping
@@ -23,10 +23,6 @@ The mapping was verified against OCR-visible keys and the current source. Naviga
 
 | capture id | source screen |
 |---|---|
-| login_01_logged_out_home | Signup |
-| login_02_login_options | Login |
-| login_03_email_form | LoginForm |
-| login_06_dashboard | PortfolioHome (TodayScreen) |
 | dashboard_01_home | PortfolioHome (TodayScreen) |
 | market_01_root | Markets |
 | market_02_commodities | MarketAssetListing |
@@ -63,7 +59,7 @@ The mapping was verified against OCR-visible keys and the current source. Naviga
 | kyc_lb_02_money_questions | KycJourney |
 | kyc_lb_03_money_questions_filled | KycJourney |
 
-The earlier inventory incorrectly counted 32 captured components. It included navigator/wrapper guesses and misidentified history and KYC states. The corrected total is 22 identifiable source components and 373 uncaptured components.
+The earlier inventory incorrectly counted 32 captured components. It included navigator/wrapper guesses and hidden legacy onboarding states. The current active-map total is 20 identifiable source components and 375 uncaptured components. Figma frames are listed in the visual reviewer but are not guessed onto source-code routes without verified source evidence.
 
 ## Highest-copy screens without a capture
 
@@ -103,5 +99,6 @@ These 34 keys need an engineering/source-pack decision before Korean can be comp
 
 - `data/screen-inventory.json`: 402 corrected route+component rows.
 - `data/code-screens.json`: source commit, exact per-screen keys, capture mapping, dynamic-call counts, missing keys, and hard-coded estimates.
-- `data/screens.json`: the 39 visual states shown in the current-app reviewer.
+- `data/screens.json`: 89 raw current-app captures; the reviewer shows 75 and hides 14 onboarding states superseded by the redesign.
+- `data/figma/screens.json`: 171 active redesign states, of which 170 have a usable image and one is text-only pending a corrected source export.
 - `data/ocr.json`: on-image boxes and exact copy-key matches.
