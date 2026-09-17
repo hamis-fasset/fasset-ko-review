@@ -212,7 +212,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
   const PH_RE=/\{\{\s*(\w+)\s*\}\}/g;
   const SAMPLE={amount:'1,250.00',currency:'USD',name:'지민',count:'3',coin:'BTC',percent:'1.00',time:'30',days:'7',balance:'6,800.60',limit:'2,500',code:'AB12CD',value:'jimin@email.com',otpType:'SMS',spend:'BTC',receive:'USDT',from:'BTC',to:'USDT',min:'10',max:'5,000',type:'USDT',symbol:'BTC',timer:'10',suffix:'···4821',channelName:'GoPay',current:'2',total:'5',deviceName:'iPhone 15',transactionType:'P2P',dynamicLink:'fasset.link/abc',appLink:'fasset.com/app',value1:'45',value2:'AED',value3:'USD',asset:'BTC'};
   const fmtPh=s=>esc(s).replace(PH_RE,(m,n)=>`<span class="ph">{{${n}}}</span>`);
-  const withSample=(s,vals)=>s.replace(PH_RE,(m,n)=>{const v=vals&&vals[n]; if(v) return (/^[a-z]{2,5}$/.test(v)?v.toUpperCase():v); return SAMPLE[n]??n;});
+  const withSample=(s,vals)=>s.replace(PH_RE,(m,n)=>{const v=vals&&vals[n]; if(v) return (/^[a-z]{2,5}$/.test(v)?v.toUpperCase():v); if(vals&&n in vals) return ''; return SAMPLE[n]??n;}).replace(/\s{2,}/g,' ').trim();
 
   const J=u=>fetch(u).then(r=>r.ok?r.json():null).catch(()=>null);
   const [copyA,scrA,ocrA,codeA,copyF,scrF,ocrF]=await Promise.all([J('data/copy.json'),J('data/screens.json'),J('data/ocr.json'),J('data/code-screens.json'),J('data/figma/copy.json'),J('data/figma/screens.json'),J('data/figma/boxes.json')]);
@@ -285,7 +285,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
     // ocrLine is the exact selected text span. Legacy `text` can still hold
     // adjacent icons/values or an uninstantiated {{placeholder}} template.
     const source=m.ocrLine||withSample(m.text||'xxxx',m.vals);
-    return (m.lines||1)===1 ? Math.min(m.lh*0.9, 2.1*m.w/Math.max(source.length,4)) : m.lh*0.9;
+    return (m.lines||1)===1 ? Math.min(m.lh*0.9, 2.1*m.w/Math.max(source.length,4)) : Math.min(m.lh*0.9, 2.1*m.w*(m.lines||1)/Math.max(source.length,8));
   }
 
   /* ---- per screen model ---- */
