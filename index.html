@@ -195,7 +195,7 @@ body.view-mode .top{box-shadow:0 1px 12px rgba(23,26,32,.05)}
   <div class="where"><span class="j" id="t-journey">—</span><span class="s" id="t-screen">Loading…</span></div>
   <span class="showcase-mark view-only">Fasset · Korean app preview</span>
   <span class="pill" id="t-progress">Loading coverage…</span>
-  <div class="seg view-only" id="view-lang" aria-label="Preview language"><button data-lang="en">English</button><button data-lang="ko" aria-pressed="true">Korean</button><button data-lang="both">Compare</button></div>
+  <div class="seg view-only" id="view-lang" aria-label="Preview language"><button data-lang="en">English</button><button data-lang="ko">Korean</button><button data-lang="both" aria-pressed="true">Compare</button></div>
   <button class="btn" id="b-all">All screens</button>
   <button class="btn icon" id="b-prev" title="Previous screen (←)" aria-label="Previous screen">‹</button>
   <button class="btn icon" id="b-next" title="Next screen (→)" aria-label="Next screen">›</button>
@@ -273,7 +273,7 @@ body.view-mode .top{box-shadow:0 1px 12px rgba(23,26,32,.05)}
   const HAS_FIG=!!(scrF&&scrF.screens&&scrF.screens.length);
   const Q=new URLSearchParams(location.search); const EXPORT=Q.get('export'); const WANT=Q.get('screen'); const VIEW_ID=Q.get('view')||''; const VIEW_MODE=!!VIEW_ID;
   if(EXPORT) document.body.classList.add('export',`export-${EXPORT}`);
-  if(VIEW_MODE){document.body.classList.add('view-mode','lang-ko');document.title='Fasset · Korean app preview';}
+  if(VIEW_MODE){document.body.classList.add('view-mode','lang-both');document.title='Fasset · Korean app preview';}
   if(!VIEW_MODE) fetch(versioned('data/review-meta.json')).then(r=>r.ok?r.json():null).then(m=>{ if(!m) return; const el=document.createElement('span'); el.className='pill'; el.style.background='var(--ok-soft)'; el.style.color='var(--ok)'; el.textContent=`Reviewed copy applied ${new Date(m.applied_at).toLocaleDateString('en-GB',{day:'numeric',month:'short'})} · ${m.changes} changes`; document.querySelector('.top .where').after(el); }).catch(()=>{});
   const byKey=Object.fromEntries(copyRows.map(r=>[r.k,r]));
   const REST_ID='__rest';
@@ -396,7 +396,7 @@ body.view-mode .top{box-shadow:0 1px 12px rgba(23,26,32,.05)}
 
   /* ---- per screen model ---- */
   let idx=Math.max(0,screens.findIndex(s=>s.id===(WANT||localStorage.getItem(SCREEN_KEY)||''))); if(idx<0) idx=0;
-  let sel=null, zoom='fit', viewLang='ko', scale=1, imgW=1080, imgH=2400, sampleCtx=null, currentImage=null, canvasRefresh=0;
+  let sel=null, zoom='fit', viewLang='both', scale=1, imgW=1080, imgH=2400, sampleCtx=null, currentImage=null, canvasRefresh=0;
   let restQ='';
   const mappedKeys=new Set();
   for(const s of visual)(ocr[s.id]?.matches||[]).forEach(m=>mappedKeys.add(byKey[m.k]?.canon||m.k));
