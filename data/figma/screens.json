@@ -325,20 +325,6 @@
 "h": 852
 },
 {
-"id": "56:91766",
-"journey": "49:85559",
-"journeyName": "SIGN-UP",
-"name": "1.4a Empty",
-"seq": 27,
-"img": "img-figma/56-91766.jpg",
-"ns": [],
-"base": "1.4",
-"state": "a",
-"shown": true,
-"w": 393,
-"h": 852
-},
-{
 "id": "56:91797",
 "journey": "49:85559",
 "journeyName": "SIGN-UP",
@@ -362,20 +348,6 @@
 "ns": [],
 "base": "1.5",
 "state": "",
-"shown": true,
-"w": 393,
-"h": 852
-},
-{
-"id": "56:91829",
-"journey": "49:85559",
-"journeyName": "SIGN-UP",
-"name": "1.5b Partial",
-"seq": 30,
-"img": "img-figma/56-91829.jpg",
-"ns": [],
-"base": "1.5",
-"state": "b",
 "shown": true,
 "w": 393,
 "h": 852
@@ -2800,7 +2772,7 @@
 "ns": [],
 "base": "1.4",
 "state": "a",
-"shown": true,
+"shown": false,
 "w": 393,
 "h": 852
 },
@@ -2842,7 +2814,7 @@
 "ns": [],
 "base": "1.5",
 "state": "b",
-"shown": true,
+"shown": false,
 "w": 393,
 "h": 852
 },
