@@ -2,3 +2,6 @@ node_modules/
 .DS_Store
 build/__pycache__/
 plates/
+
+# Local Netlify folder
+.netlify

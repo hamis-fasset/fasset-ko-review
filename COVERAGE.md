@@ -6,16 +6,16 @@ Generated from CashApp `development` at `1d8e0c2e378216573367dce234217e92a3b9da4
 
 - 452 route registrations collapse to 402 distinct route+component rows.
 - 7 rows are navigator containers; 395 are reviewable non-container route/component records (393 route names and 391 distinct component files).
-- The unified reviewer contains 246 design/visual states: 245 image previews (75 active current-app captures + 170 Figma states) and one text-only Pakistan design state awaiting a corrected image.
+- The unified reviewer contains 245 image previews (75 active current-app captures + 170 Figma states). The supplied Pakistan bitmap duplicates Kenya, so it is excluded rather than presented as a real visual state.
 - The original source-to-capture map traces active captures to 20 source-screen components; 375 non-container route/component records have no verified active capture mapping. This is a code-to-image mapping count, not the total number of images in the reviewer.
 - 286 screens contain translation calls; 284 have at least one statically resolvable key and 109 have no translation call in the scanned files.
 - Across all route and container rows, the static scan resolves 1,708 distinct copy keys and finds 60 dynamic translation calls. The 395 non-container records account for 1,705 static keys and 51 dynamic calls. The scan also finds 34 static keys that are missing from the supplied copy pack.
-- The review tool currently keeps 1,510 editable canonical strings in **Unmapped copy** because a static scan cannot safely tie them to one registered route. These may be unused, dynamically loaded, or used outside route components.
+- The review tool keeps every editable canonical string not linked to visible text in a pictured state in **Unmapped copy**, including copy from both developer handoffs. The live count is computed from the shipped data.
 
-This is two kinds of coverage, shown separately in the tool:
+This is two kinds of coverage, separated by audience:
 
-1. **Visual/design coverage:** 245 live English/Korean previews plus one explicitly text-only design state. Fourteen legacy onboarding captures are hidden because the redesign replaces them.
-2. **Source coverage:** all 395 non-container route/component records, with exact static keys where resolvable. A source record without a capture is text-only and is never presented as visually verified.
+1. **Reviewer coverage:** 245 live English/Korean previews plus one Unmapped Copy workspace. Fourteen legacy onboarding captures are hidden because the redesign replaces them.
+2. **Engineering evidence:** all 395 non-container route/component records remain documented here with exact static keys where resolvable. Uncaptured routes are not presented to the translator as empty screens.
 
 ## Corrected visual-state mapping
 

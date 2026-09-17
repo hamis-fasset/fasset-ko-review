@@ -1,0 +1,9 @@
+.git/
+.netlify/
+node_modules/
+plates/
+img-ko/
+img-figma-ko/
+qa/
+*.log
+

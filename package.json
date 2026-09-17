@@ -8,6 +8,7 @@
     "export:en": "SIDE=en node build/export-ko.js http://127.0.0.1:8791/index.html ../qa/en"
   },
   "dependencies": {
+    "@netlify/blobs": "11.1.0",
     "playwright-core": "1.63.0"
   }
 }

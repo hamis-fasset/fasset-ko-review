@@ -1,18 +1,22 @@
 # Korean copy review tool
 
-**Public site:** https://hamis-fasset.github.io/fasset-ko-review/
+**Reviewer site:** https://fasset-ko-review.netlify.app/
+
+**Admin:** https://fasset-ko-review.netlify.app/admin.html
+
+The Netlify version is canonical because it autosaves secure reviewer sessions to Netlify Blobs. GitHub Pages remains a static fallback and stores work only in the browser.
 
 The reviewer sees one app in the order a customer meets it: sign up, log in, your details, identity check and home from the redesign (Figma "CC-onboarding-rough"), then every other screen from the current app (real Android captures), then the new Send money and Gift a card flows. There is no version switch. The current app's own login, sign-up, forgot-password and home captures are not shown because the redesign replaces them; their keys stay in the bundle and are reviewable under Unmapped copy.
 
-The reviewer sees each screen in English and Korean side by side. Editing a Korean string updates the phone preview immediately. “Looks good” is the approval action; editing a previously approved string clears that approval. Work is stored in the browser and can be moved between computers with the visible **Open review file** / **Save my edits to a file** controls.
+The reviewer sees each screen in English and Korean side by side. Editing a Korean string updates the phone preview immediately. “Looks good” is the approval action; editing a previously approved string clears that approval. A reviewer link generated in the admin dashboard autosaves every change to the server, with browser storage as an offline fallback. **Submit review** marks the server copy ready; **Download backup** remains available but is not the workflow.
 
 ## Coverage
 
-- 246 visual/design states are reviewable: **245 have a live English/Korean preview** (75 current-app captures and 170 new-design frames), and one Pakistan design state is text-only because its supplied bitmap duplicates Kenya. The raw app set contains 89 captures; 14 onboarding captures are superseded by the redesign and hidden.
+- **245 pictured states** have a live English/Korean preview (75 current-app captures and 170 new-design frames). The misleading Pakistan duplicate is excluded. The raw app set contains 89 captures; 14 onboarding captures are superseded by the redesign and hidden.
 - 395 non-container route/component records were found in the CashApp `development` branch at commit `1d8e0c2e378216573367dce234217e92a3b9da44` (393 route names and 391 distinct component files).
 - 375 of those source records do not yet have a verified mapping to an active visual capture.
-- Every source screen is listed in the tool. A source screen without a capture is explicitly marked **no picture** and shows its statically resolvable copy as text.
-- Copy that cannot be tied to one route is retained in **Unmapped copy**. Nothing is silently treated as visually covered.
+- The route inventory is engineering evidence in `COVERAGE.md`; it is intentionally not shown as hundreds of empty reviewer screens.
+- Copy not linked to text visible in a pictured state is retained in one **Unmapped copy** workspace. It pairs English with editable Korean, identifies the original pack versus the remaining-30% audit, and supports approval like a pictured screen.
 - 195 brand or runtime-fragment rows deliberately kept in English are excluded from direct review. The 34 code-referenced keys absent from the supplied copy are visible as engineering gaps but cannot be edited until source copy exists.
 - `COVERAGE.md` is the full route audit. `STILL-HARDCODED.md` lists capture text that OCR could not confidently match to a supplied key; it is an investigation list, not proof that the strings are hardcoded.
 
@@ -75,6 +79,6 @@ Invalid JSON or a JSON file with the wrong review shape is rejected before brows
 1. Run `venv/bin/python ocr/plates_v2.py`; it must report 260 plates and zero fallbacks.
 2. Export both languages with no explicit IDs; each manifest must contain 245 screens. Build and visually QA those exact pairs.
 3. Commit the complete runtime set: HTML, JSON/box data, build scripts, pinned Node dependencies and `plates-v2/`. Do not commit the obsolete `plates/` directory.
-4. Push `main`, wait for GitHub Pages, verify the deployed commit and smoke-test loading, editing, approval persistence, export/import and representative deep links.
+4. Deploy production with `netlify deploy --prod`, then smoke-test reviewer-link creation, server restore, editing, approval, submission, admin listing/download and representative deep links. Push `main` so the implementation remains versioned and GitHub Pages stays a static fallback.
 
-The earlier Claude artifact is obsolete; only the GitHub Pages URL above should be shared.
+The earlier Claude artifact and direct GitHub Pages URL are obsolete for reviewers; share only a secure reviewer link created in the Netlify admin dashboard.
